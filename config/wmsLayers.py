@@ -6,7 +6,7 @@ layers = [
       },
       "services": {
          "wms": {
-            "url": "https://wci.earth2observe.eu/thredds/wms/cnr/3B42-rainfall-3h-agg.nc?",
+            "url": "https://wci.earth2observe.eu/thredds/wms/cnr/3b42-rainfall-3h-agg.nc?",
             "params": {
                "GetCapabilities": {
                   "SERVICE": "WMS",
@@ -16,7 +16,7 @@ layers = [
             }
          },
          "wcs": {
-            "url": "https://wci.earth2observe.eu/thredds/wcs/cnr/3B42-rainfall-3h-agg.nc?",
+            "url": "https://wci.earth2observe.eu/thredds/wcs/cnr/3b42-rainfall-3h-agg.nc?",
             "params": {
                "DescribeCoverage": {
                   "SERVICE": "WCS",
@@ -27,7 +27,7 @@ layers = [
          }
       },
       "indicators": {
-         "rfe": {
+         "r": {
             "Confidence": "Unknown",
             "interval": "3-Hourly",
             "niceName": "Rainfall (3B42), 3-hourly",
@@ -86,7 +86,7 @@ layers = [
       },
       "services": {
          "wms": {
-            "url": "https://wci.earth2observe.eu/thredds/wms/cnr/cmorph-daily-rainfall-agg.nc?",
+            "url": "https://wci.earth2observe.eu/thredds/wms/cnr/cmorph-rainfall-daily-agg.nc?",
             "params": {
                "GetCapabilities": {
                   "SERVICE": "WMS",
@@ -96,7 +96,7 @@ layers = [
             }
          },
          "wcs": {
-            "url": "https://wci.earth2observe.eu/thredds/wcs/cnr/cmorph-daily-rainfall-agg.nc?",
+            "url": "https://wci.earth2observe.eu/thredds/wcs/cnr/cmorph-rainfall-daily-agg.nc?",
             "params": {
                "DescribeCoverage": {
                   "SERVICE": "WCS",

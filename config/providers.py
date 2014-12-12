@@ -1,22 +1,14 @@
 providers ={
   "CNR": {
-    "logo": "",
-    "website": "http://www.cnr.it/",
-    "email": ""
+    "website": "http://www.cnr.it/"
    },
   "Deltares": {
-    "logo": "",
-    "website": "http://www.deltares.nl/",
-    "email": ""
+    "website": "http://www.deltares.nl/"
    },
   "ECMWF": {
-    "logo": "",
-    "website": "http://www.ecmwf.int",
-    "email": ""
+    "website": "http://www.ecmwf.int"
   }, 
   "TU Wien": {
-    "logo": "",
-    "website": "http://geo.tuwien.ac.at/",
-    "email": ""
-  },
+    "website": "http://geo.tuwien.ac.at/"
+  }
 }
