@@ -41,7 +41,7 @@ gisportal.layer = function( options ) {
       tags : null,
       options : null,
 
-      providerDetails: {},
+      provider: {},
       offsetVectors: null,
 
       autoScale: gisportal.config.autoScale
@@ -89,6 +89,8 @@ gisportal.layer = function( options ) {
    
 
    this.tags['providerTag'] = this.providerTag;
+
+   this.provider = gisportal.providers[ this.providerTag ]
 
    // I do not like the metadataQueue but it is used to
    // prevent race conditions of AJAX calls such as
@@ -745,9 +747,6 @@ gisportal.getLayerData = function(fileName, layer, options) {
       success: function(data) {
          // Initialises the layer with the data from the AJAX call
          gisportal.layers[id].init(data, options);
-
-         // Track the indicator change
-         gisportal.analytics.events.layerChange( layer )
       },
       error: function(request, errorType, exception) {
          var data = {

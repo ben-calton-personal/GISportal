@@ -27,7 +27,6 @@ gisportal.middlewarePath = window.location.origin + gisportal.config.paths.middl
 
 // Flask url paths, relates to /middleware/portalflask/views/
 gisportal.wcsLocation = gisportal.middlewarePath + '/wcs?';
-gisportal.wfsLocation = gisportal.middlewarePath + '/wfs?';
 gisportal.stateLocation = gisportal.middlewarePath + '/state';
 gisportal.graphLocation = gisportal.middlewarePath + '/graph';
 
@@ -38,7 +37,6 @@ OpenLayers.ProxyHost = gisportal.middlewarePath + '/proxy?url=';   // Flask (Pyt
 // includes layer names, titles, abstracts, etc.
 gisportal.cache = {};
 gisportal.cache.wmsLayers = [];
-gisportal.cache.wfsLayers = [];
 
 // gisportal.layers has all of the actual layer details
 gisportal.layers = {};
@@ -125,84 +123,28 @@ gisportal.loadLayers = function() {
       gritterErrorHandler(data); 
    };
     
-   // Get WMS cache
-   gisportal.genericAsync('GET', './cache/mastercache.json', null, gisportal.initWMSlayers, errorHandling, 'json', {}); 
-   
+   //Provider cache
    $.ajax({
       url:  './cache/providers.json',
       dataType: 'json',
       success: function( providers ){
          gisportal.providers = providers;
+         loadWmsLayers();
       }
    });
 
-};
-
-/**
- * Used to show points and popup information about WFS features
- * @param {object} layer - The gisportal.layers layer
- * @param {object} olLayer - The Open Layers map layer
- * @time {string} time - The date of the feature
- */
-gisportal.getFeature = function(layer, olLayer, time) {
-   
-   var errorHandling = function(request, errorType, exception) {
-      var data = {
-         type: 'getFeature',
-         request: request,
-         errorType: errorType,
-         exception: exception,
-         url: this.url
-      };  
-      gritterErrorHandler(data); 
-   };
-  
-   var featureID = layer.WFSDatesToIDs[time];   
-   var updateLayer = function(data, opts) {
-      var output = data.output;
-      var pos = output.position.split(' ');
-      var point = new OpenLayers.Geometry.Point(pos[1], pos[0]);
-      var feature = new OpenLayers.Feature.Vector(point, {
-         message: $('<div/>').html(output.content).html(),
-         location: 'Lon: ' + pos[1] + ' Lat: ' + pos[0] 
+   function loadWmsLayers(){
+      // Get WMS cache
+      $.ajax({
+         url:  './cache/mastercache.json',
+         dataType: 'json',
+         success: gisportal.initWMSlayers,
+         error: errorHandling,
       });
-      olLayer.addFeatures(feature);
    };
-   
-   var params = {
-      baseurl: layer.wfsURL,
-      request: 'GetFeature',
-      version: '1.1.0',
-      featureID: featureID,
-      typeName: layer.urlName
-   };   
-   var request = $.param(params);   
-   
-   gisportal.genericAsync('GET', gisportal.wfsLocation, request, updateLayer, errorHandling, 'json', {layer: layer}); 
+
 };
 
-/**
- * Generic Asyc Ajax to save having lots of different ones all over the place.
- * 
- * @param {string} url - The url to use as part of the ajax call
- * @param {Object} data - The data to be sent
- * @param {Function} success - Called if everything goes ok.
- * @param {Function} error - Called if problems arise from the ajax call.
- * @param {string} dataType - What data type will be returned, xml, json, etc
- * @param {object} opts - Object to pass to success function
- */
-gisportal.genericAsync = function(type, url, data, success, error, dataType, opts) {
-   $.ajax({
-      type: type,
-      url: url, 
-      data: data,
-      dataType: dataType,
-      async: true,
-      cache: false,
-      success: function(data) { success(data, opts); },
-      error: error
-   });
-};
 
 /**
  * Create all the base layers for the map.
@@ -319,7 +261,7 @@ gisportal.createOpLayers = function() {
          "exBoundingBox": indicator.EX_GeographicBoundingBox, 
          "providerTag": server.options.providerShortTag,
          "positive" : server.options.positive, 
-         "providerDetails" : indicator.ProviderDetails, 
+         "provider" : indicator.providerDetails, 
          "offsetVectors" : indicator.OffsetVectors, 
          "tags": indicator.tags,
          "moreProviderInfo" : indicator.MoreProviderInfo,
@@ -343,42 +285,6 @@ gisportal.createOpLayers = function() {
    gisportal.configurePanel.refreshData();
    // Batch add here in future.
 };
-
-/** Create  the country borders overlay
- *
- */
-gisportal.createCountryBorderLayer = function(layerName) {
-   // first remove the old country border layer if it exists
-   var old_layer = map.getLayersByName('country_borders');
-   if (old_layer.length > 0) {
-      old_layer[0].destroy();
-   }
-
-   if (layerName != '0') {
-      // then add the selected one
-      var layer = new OpenLayers.Layer.WMS(
-         'country_borders',
-         'https://rsg.pml.ac.uk/geoserver/wms?',
-         { layers: layerName, transparent: true },
-         { projection: gisportal.lonlat, wrapDateLine: true, transitionEffect: 'resize' }
-      );
-
-      layer.id = 'country_borders';
-      layer.controlID = 'country_borders';
-      layer.displayTitle = 'Country Borders';
-      layer.name = 'country_borders';
-      
-      map.addLayer(layer);   
-   }
- }
-
-gisportal.setCountryBordersToTopLayer = function() {
-   // if the country border layer is on the map move it to the top
-   var border_layer = map.getLayersByName('country_borders');
-   if (border_layer.length > 0) {
-      border_layer[0].setZIndex(2000);   
-   }
-}
 
 /**
  * Get a layer that has been added to the map by its id.
@@ -890,16 +796,18 @@ gisportal.main = function() {
  */
 gisportal.ajaxState = function(id) { 
    // Async to get state object
-   gisportal.genericAsync('GET', gisportal.stateLocation + '/' + id, null, function(data, opts) {         
-      if(data.output.status == 200) {
-         gisportal.setState($.parseJSON(data.output.state));
+   
+   $.ajax({
+      url: gisportal.stateLocation + '/' + id,
+      dataType: 'json',
+      success: function( data ) {         
+         gisportal.setState( data );
          console.log('Success! State retrieved');
-      } else {
+      },
+      error: function( request ){
          console.log('Error: Failed to retrieved state. The server returned a ' + data.output.status);
       }
-   }, function(request, errorType, exception) {
-      console.log('Error: Failed to retrieved state. Ajax failed!');
-   }, 'json', {});
+   });
 } 
 
 /**
@@ -935,6 +843,9 @@ gisportal.zoomOverall = function()  {
  */
 gisportal.initStart = function()  {
    
+   // Work out if we should skip the splash page
+   // Should we auto resume ?
+   // Do we have to show the T&C box first ?
    var autoLoad = null;
    if( gisportal.config.skipWelcomePage == true )
       if( gisportal.config.autoResumeSavedState == true && gisportal.hasAutoSaveState() )
@@ -948,15 +859,17 @@ gisportal.initStart = function()  {
    if( autoLoad != null)
       return setTimeout(autoLoad, 1000);
 
-
+   // Splash page parameters
    var data = {
       homepageSlides  : gisportal.config.homepageSlides,
       hasAutoSaveState: gisportal.hasAutoSaveState()
    };
 
+   // Render the spasl page HTML
    var rendered = gisportal.templates['start']( data );
    $('.js-start-container').html( rendered );
 
+   // Start JS slider library
    window.mySwipe = new Swipe($('.homepageSlider')[0] , {
      speed: 800,
      auto: 3000,
@@ -965,12 +878,13 @@ gisportal.initStart = function()  {
    });
 
 
-   // Load there previously saved state
+   // If clicked - Load the users previously saved state
    $('.js-load-last-state').click(function(){
       gisportal.launchMap();
       gisportal.loadState( gisportal.getAutoSaveState() );
    });
    
+   // Make the terms and conditions template
    $('.js-tac-content').html( gisportal.templates['terms-and-conditions-text']() );
 
    $('.js-tac-accept').click(function(){
@@ -1017,52 +931,13 @@ gisportal.launchMap = function(){
 
 }
 
+/**
+ * Returns if the user has agree to the
+ * terms and conditions in the past
+ * @return {Boolean} True is they have agreed, False if not
+ */
 gisportal.hasAgreedToTermsAndCondictions = function(){
    return gisportal.storage.get( 'tac-agreed', false );
-}
-
-
-gisportal.loading = {};
-gisportal.loading.counter = 0;
-gisportal.loading.loadingElement = jQuery('');
-gisportal.loading.loadingTimeout = null;
-
-
-/**
- * Increases the counter of how many things are currently loading
- */
-gisportal.loading.increment = function(){
-   gisportal.loading.counter++;
-   gisportal.loading.updateLoadingIcon();
-}
-
-/**
- * Drecreases the counter of how many things are currently loading
- */
-gisportal.loading.decrement = function(){
-   gisportal.loading.counter--;
-   gisportal.loading.updateLoadingIcon();
-}
-
-/**
- * Either show or hide the loading icon.
- *  A delay is added to show because layers can update in a few milliseconds causing a horrible flash
- */
-gisportal.loading.updateLoadingIcon = function(){
-   
-   if( gisportal.loading.loadingTimeout != null )
-      return ;
-   
-   gisportal.loading.loadingTimeout = setTimeout(function(){
-      gisportal.loading.loadingTimeout = null
-      if( gisportal.loading.counter > 0 ){
-         gisportal.loading.loadingElement.show();
-      
-      }else{
-         gisportal.loading.loadingElement.hide();
-      }
-   }, gisportal.loading.counter ? 300 : 600);
-
 }
 
 /**

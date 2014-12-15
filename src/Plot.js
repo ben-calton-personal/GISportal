@@ -132,6 +132,13 @@ gisportal.graphs.Plot =(function(){
       plotRequest.type = this.plotType();
       plotRequest.title = this.title();
       plotRequest.style = "basic";
+      plotRequest.downloadTypes = [
+         { key: 'csv', label: 'CSV' },
+         { key: 'png', label: 'PNG' },
+         { key: 'meta-data', label: 'Meta Data' },
+         { key: 'logos', label: 'Logos' },
+         { key: 'svg', label: 'SVG' }
+      ];
    }
    
 
@@ -144,10 +151,10 @@ gisportal.graphs.Plot =(function(){
       this._components.forEach(function( component ){
          var layer = gisportal.layers[ component.indicator ];
 
-         if( ! layer.providerDetails.logo )
+         if( ! layer.provider.logo )
             return;
 
-         var providerLogo = portalLocation() + layer.providerDetails.logo;
+         var providerLogo = portalLocation() + layer.provider.logo;
          if( providers.indexOf( providerLogo ) == -1 )
             providers.push( providerLogo );
       });
@@ -240,38 +247,51 @@ gisportal.graphs.Plot =(function(){
    }
 
    Plot.prototype.buildRequestDataTimeSeries = function( seriesArray ){
-      var totalCount = 1;
+      var totalCount = 0;
       for( var i = 0; i < this._components.length; i++ ){
          var component = this._components[ i ];
-         var indicator = gisportal.layers[ component.indicator ];
+         var layer = gisportal.layers[ component.indicator ];
 
-         // Add all 5 timeseires values
-         var showByDefault = 'mean';
-         var sub_series = [ 'std', 'min', 'max', 'median', 'mean' ].map(function( metric ){
-            return {
-               "label" : (totalCount++) + ') ' + indicator.descriptiveName + " " + metric ,
-               "subSeriesLabel":  totalCount + ') ' +metric,
-               "key"  : metric,
-               "yAxis": component.yAxis,
-               "type": "line",
-               "disabled": metric != showByDefault
-            };
-         });
+         var groupKey = layer.descriptiveName;
+
+         var meta = "";
+
+         meta += "Region: " + layer.tags.region + "<br>";
+         meta += "Confidence: " + layer.tags.Confidence + "<br>";
+         meta += "Provider: " + layer.providerTag + "<br>";
+         meta += "Interval: " + layer.tags.interval + "<br>";
+         if( component.bbox )
+            meta += "Bounding Box: " + component.bbox + "<br>";
+         else
+            meta += "BBox: All coverage<br>";
+
+         if( component.elevation )
+            meta += "Depth: " + component.elevation + layer.elevationUnits + "<br>";
+
+         var markdowns = [];
+         if( layer.moreIndicatorInfo )
+            markdowns.push( gisportal.middlewarePath + '/metadata/indicator/' + layer.name );
+         if( layer.moreProviderInfo )
+            markdowns.push( gisportal.middlewarePath + '/metadata/provider/' + layer.providerTag );
 
          var newSeries = {
             "handler" : "OPEC_SERVICE_WCS",
             "data_source" : {
-               "coverage"  : indicator.urlName,
+               "coverage"  : layer.urlName,
                "t_bounds"  : [this.tBounds()[0].toISOString(), this.tBounds()[1].toISOString()],
                "bbox": component.bbox,
                "depth": component.elevation,
                
-               "threddsUrl"  : indicator.wcsURL,
-               "metaCacheUrl" : indicator.cacheUrl(),
+               "threddsUrl"  : layer.wcsURL,
+               "metaCacheUrl" : layer.cacheUrl(),
                "middlewareUrl" : gisportal.middlewarePath + '/wcs'
             },
-            "sub_series" : sub_series
-            
+            "label": (++totalCount) + ') ' + layer.descriptiveName,
+            "yAxis": component.yAxis,
+            "type": "line",
+            "meta": meta,
+            "markdown": markdowns,
+            "logo": portalLocation() + layer.provider.logo
          };
          seriesArray.push( newSeries );
       }
@@ -290,7 +310,8 @@ gisportal.graphs.Plot =(function(){
       $.ajax({
          method: 'post',
          url: graphServerUrl + '/plot',
-         data: JSON.stringify(request),
+         contentType : 'application/json',
+         data: JSON.stringify({ request: request }),
          dataType: 'json',
          success: function( data ){
             
