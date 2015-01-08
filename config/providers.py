@@ -8,7 +8,7 @@ providers ={
   "ECMWF": {
     "website": "http://www.ecmwf.int"
   }, 
-  "TU Wien": {
+  "TUWien": {
     "website": "http://geo.tuwien.ac.at/"
   }
 }

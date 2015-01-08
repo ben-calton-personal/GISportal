@@ -1,92 +1,12 @@
 layers = [
    {
-      "name": "3b42_rainfall_3h",
-      "options": {
-         "providerShortTag": "CNR"
-      },
-      "services": {
-         "wms": {
-            "url": "https://wci.earth2observe.eu/thredds/wms/cnr/3b42-rainfall-3h-agg.nc?",
-            "params": {
-               "GetCapabilities": {
-                  "SERVICE": "WMS",
-                  "request": "GetCapabilities",
-                  "version": "1.3.0"
-               }
-            }
-         },
-         "wcs": {
-            "url": "https://wci.earth2observe.eu/thredds/wcs/cnr/3b42-rainfall-3h-agg.nc?",
-            "params": {
-               "DescribeCoverage": {
-                  "SERVICE": "WCS",
-                  "request": "describeCoverage",
-                  "version": "1.0.0"
-               }
-            }
-         }
-      },
-      "indicators": {
-         "r": {
-            "Confidence": "Unknown",
-            "interval": "3-Hourly",
-            "niceName": "Rainfall (3B42), 3-hourly",
-            "data_provider": "CNR",
-            "indicator_type": [
-               "Precipitation"
-            ],
-            "region": "Global"
-         }
-      }
-   },
-{
-      "name": "3b42_rainfall_daily",
-      "options": {
-         "providerShortTag": "CNR"
-      },
-      "services": {
-         "wms": {
-            "url": "https://wci.earth2observe.eu/thredds/wms/cnr/3b42-rainfall-daily-agg.nc?",
-            "params": {
-               "GetCapabilities": {
-                  "SERVICE": "WMS",
-                  "request": "GetCapabilities",
-                  "version": "1.3.0"
-               }
-            }
-         },
-         "wcs": {
-            "url": "https://wci.earth2observe.eu/thredds/wcs/cnr/3b42-rainfall-daily-agg.nc?",
-            "params": {
-               "DescribeCoverage": {
-                  "SERVICE": "WCS",
-                  "request": "describeCoverage",
-                  "version": "1.0.0"
-               }
-            }
-         }
-      },
-      "indicators": {
-         "rfe": {
-            "Confidence": "Unknown",
-            "interval": "Daily",
-            "niceName": "Rainfall (3B42), daily",
-            "data_provider": "CNR",
-            "indicator_type": [
-               "Precipitation"
-            ],
-            "region": "Global"
-         }
-      }
-   },   
-   {
       "name": "cmorph_rainfall_daily",
       "options": {
          "providerShortTag": "CNR"
       },
       "services": {
          "wms": {
-            "url": "https://wci.earth2observe.eu/thredds/wms/cnr/cmorph-rainfall-daily-agg.nc?",
+            "url": "https://wci.earth2observe.eu/thredds/wms/cnr/cmorph-daily-rainfall-agg.nc?",
             "params": {
                "GetCapabilities": {
                   "SERVICE": "WMS",
@@ -96,7 +16,7 @@ layers = [
             }
          },
          "wcs": {
-            "url": "https://wci.earth2observe.eu/thredds/wcs/cnr/cmorph-rainfall-daily-agg.nc?",
+            "url": "https://wci.earth2observe.eu/thredds/wcs/cnr/cmorph-daily-rainfall-agg.nc?",
             "params": {
                "DescribeCoverage": {
                   "SERVICE": "WCS",
@@ -126,7 +46,7 @@ layers = [
       },
       "services": {
          "wms": {
-            "url": "https://wci.earth2observe.eu/thredds/wms/cnr/rfe-dekadal-agg.nc?",
+            "url": "https://wci.earth2observe.eu/thredds/wms/cnr/tamsat-rfe-dekadal-agg.nc?",
             "params": {
                "GetCapabilities": {
                   "SERVICE": "WMS",
@@ -136,7 +56,7 @@ layers = [
             }
          },
          "wcs": {
-            "url": "https://wci.earth2observe.eu/thredds/wcs/cnr/rfe-dekadal-agg.nc?",
+            "url": "https://wci.earth2observe.eu/thredds/wcs/cnr/tamsat-rfe-dekadal-agg.nc?",
             "params": {
                "DescribeCoverage": {
                   "SERVICE": "WCS",
@@ -150,7 +70,7 @@ layers = [
          "rfe": {
             "Confidence": "Unknown",
             "interval": "Dekadal",
-            "niceName": "Rainfall Estimate",
+            "niceName": "Rainfall Estimate - Africa",
             "data_provider": "CNR",
             "indicator_type": [
                "Precipitation"
@@ -190,20 +110,20 @@ layers = [
          "AET": {
             "Confidence": "Unknown",
             "interval": "Monthly",
-            "niceName": "Actual Evapotranspiration (monthly)",
+            "niceName": "Actual ET - New Zealand (monthly)",
             "data_provider": "Deltares",
             "indicator_type": [
-               "Pyhsics"
+               "Evapotranspiration"
             ],
             "region": "Australasia"
          },
          "Uncertainty": {
             "Confidence": "Unknown",
             "interval": "Monthly",
-            "niceName": "Actual Evapotranspiration uncertainty (monthly)",
+            "niceName": "Actual ET uncertainty - New Zealand (monthly)",
             "data_provider": "Deltares",
             "indicator_type": [
-               "Pyhsics"
+               "Evapotranspiration"
             ],
             "region": "Australasia"
          }
@@ -240,22 +160,142 @@ layers = [
          "PET": {
             "Confidence": "Unknown",
             "interval": "Monthly",
-            "niceName": "Potential Evapotranspiration (monthly)",
+            "niceName": "Potential ET - New Zealand (monthly)",
             "data_provider": "Deltares",
             "indicator_type": [
-               "Physics"
+               "Evapotranspiration"
             ],
             "region": "Australasia"
          },
          "Uncertainty": {
             "Confidence": "Unknown",
             "interval": "Monthly",
-            "niceName": "Potential Evapotranspiration uncertainty (monthly)",
+            "niceName": "Potential ET uncertainty - New Zealand (monthly)",
             "data_provider": "Deltares",
             "indicator_type": [
-               "Physics"
+               "Evapotranspiration"
             ],
             "region": "Australasia"
+         }
+      }
+   },
+   {
+      "name": "reference-et-hargreaves",
+      "options": {
+         "providerShortTag": "Deltares"
+      },
+      "services": {
+         "wms": {
+            "url": "https://vortices.npm.ac.uk/thredds/wms/deltares/reference-et/hargreaves-agg.nc?",
+            "params": {
+               "GetCapabilities": {
+                  "SERVICE": "WMS",
+                  "request": "GetCapabilities",
+                  "version": "1.3.0"
+               }
+            }
+         },
+         "wcs": {
+            "url": "https://vortices.npm.ac.uk/thredds/wcs/deltares/reference-et/hargreaves-agg.nc?",
+            "params": {
+               "DescribeCoverage": {
+                  "SERVICE": "WCS",
+                  "request": "describeCoverage",
+                  "version": "1.0.0"
+               }
+            }
+         }
+      },
+      "indicators": {
+         "HR": {
+            "Confidence": "Unknown",
+            "interval": "Monthly",
+            "niceName": "Reference Potential ET - Hargreaves (daily)",
+            "data_provider": "Deltares",
+            "indicator_type": [
+               "Evapotranspiration"
+            ],
+            "region": "Global"
+         }
+      }
+   },
+   {
+      "name": "reference-et-penmanmonteith",
+      "options": {
+         "providerShortTag": "Deltares"
+      },
+      "services": {
+         "wms": {
+            "url": "https://vortices.npm.ac.uk/thredds/wms/deltares/reference-et/penmanmonteith-agg.nc?",
+            "params": {
+               "GetCapabilities": {
+                  "SERVICE": "WMS",
+                  "request": "GetCapabilities",
+                  "version": "1.3.0"
+               }
+            }
+         },
+         "wcs": {
+            "url": "https://vortices.npm.ac.uk/thredds/wcs/deltares/reference-et/penmanmonteith-agg.nc?",
+            "params": {
+               "DescribeCoverage": {
+                  "SERVICE": "WCS",
+                  "request": "describeCoverage",
+                  "version": "1.0.0"
+               }
+            }
+         }
+      },
+      "indicators": {
+         "PM": {
+            "Confidence": "Unknown",
+            "interval": "Monthly",
+            "niceName": "Reference Potential ET - Penman Monteith (daily)",
+            "data_provider": "Deltares",
+            "indicator_type": [
+               "Evapotranspiration"
+            ],
+            "region": "Global"
+         }
+      }
+   },
+   {
+      "name": "reference-et-priestleytaylor",
+      "options": {
+         "providerShortTag": "Deltares"
+      },
+      "services": {
+         "wms": {
+            "url": "https://vortices.npm.ac.uk/thredds/wms/deltares/reference-et/priestleytaylor-agg.nc?",
+            "params": {
+               "GetCapabilities": {
+                  "SERVICE": "WMS",
+                  "request": "GetCapabilities",
+                  "version": "1.3.0"
+               }
+            }
+         },
+         "wcs": {
+            "url": "https://vortices.npm.ac.uk/thredds/wcs/deltares/reference-et/priestleytaylor-agg.nc?",
+            "params": {
+               "DescribeCoverage": {
+                  "SERVICE": "WCS",
+                  "request": "describeCoverage",
+                  "version": "1.0.0"
+               }
+            }
+         }
+      },
+      "indicators": {
+         "PT": {
+            "Confidence": "Unknown",
+            "interval": "Monthly",
+            "niceName": "Reference Potential ET - Priestley Taylor (daily)",
+            "data_provider": "Deltares",
+            "indicator_type": [
+               "Evapotranspiration"
+            ],
+            "region": "Global"
          }
       }
    },
@@ -585,7 +625,7 @@ layers = [
    {
       "name": "esa_cci_soil_moisture",
       "options": {
-         "providerShortTag": "TU Wien"
+         "providerShortTag": "TUWien"
       },
       "services": {
          "wms": {
@@ -616,7 +656,7 @@ layers = [
             "niceName": "Soil moisture",
             "data_provider": "Technische Universitat Wien",
             "indicator_type": [
-               "Physics"
+               "Sub-Surface Water"
             ],
             "region": "Global"
          },
@@ -626,7 +666,7 @@ layers = [
             "niceName": "Soil moisture uncertainty",
             "data_provider": "Technische Universitat Wien",
             "indicator_type": [
-               "Physics"
+               "Sub-Surface Water"
             ],
             "region": "Global"
          }
