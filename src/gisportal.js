@@ -376,6 +376,10 @@ gisportal.refreshDateCache = function() {
  * Sets up the map, plus its controls, layers, styling and events.
  */
 gisportal.mapInit = function() {
+    graticuleCtl1 = new OpenLayers.Control.Graticule({
+        numPoints: 2, 
+        labelled: true
+    });
    map = new OpenLayers.Map('map', {
       projection: gisportal.lonlat,
       displayProjection: gisportal.lonlat,
