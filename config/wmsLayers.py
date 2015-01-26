@@ -703,8 +703,8 @@ layers = [
          "Qh": {
             "Confidence": "Unknown",
             "interval": "monthly",
-            "niceName": "Sensible Heat Flux",
-            "data_provider": "ECMWF",
+            "niceName": "Sensible Heat Flux (monthly) WR3A",
+            "data_provider": "CSIRO",
             
             "model": "W3RA - Monthly (WRR1)",
             "region": "Global",
@@ -715,8 +715,8 @@ layers = [
          "LWnet": {
             "Confidence": "Unknown",
             "interval": "monthly",
-            "niceName": "Net Longwave Radiation",
-            "data_provider": "ECMWF",
+            "niceName": "Net Longwave Radiation (monthly) WR3A",
+            "data_provider": "CSIRO",
             
             "model": "W3RA - Monthly (WRR1)",
             "region": "Global",
@@ -727,8 +727,8 @@ layers = [
          "SnowDepth": {
             "Confidence": "Unknown",
             "interval": "monthly",
-            "niceName": "Depth of Snow Layer",
-            "data_provider": "ECMWF",
+            "niceName": "Depth of Snow Layer (monthly) WR3A",
+            "data_provider": "CSIRO",
             
             "model": "W3RA - Monthly (WRR1)",
             "region": "Global",
@@ -739,8 +739,8 @@ layers = [
          "Rainf": {
             "Confidence": "Unknown",
             "interval": "monthly",
-            "niceName": "Rainfall Rate",
-            "data_provider": "ECMWF",
+            "niceName": "Rainfall Rate (monthly) WR3A",
+            "data_provider": "CSIRO",
             
             "model": "W3RA - Monthly (WRR1)",
             "region": "Global",
@@ -751,8 +751,8 @@ layers = [
          "SWnet": {
             "Confidence": "Unknown",
             "interval": "monthly",
-            "niceName": "Net Shortwave Radiation",
-            "data_provider": "ECMWF",
+            "niceName": "Net Shortwave Radiation (monthly) WR3A",
+            "data_provider": "CSIRO",
             
             "model": "W3RA - Monthly (WRR1)",
             "region": "Global",
@@ -763,8 +763,8 @@ layers = [
          "SWE": {
             "Confidence": "Unknown",
             "interval": "monthly",
-            "niceName": "Snow Water Equivalent",
-            "data_provider": "ECMWF",
+            "niceName": "Snow Water Equivalent (monthly) WR3A",
+            "data_provider": "CSIRO",
             
             "model": "W3RA - Monthly (WRR1)",
             "region": "Global",
@@ -775,8 +775,8 @@ layers = [
          "TotMoist": {
             "Confidence": "Unknown",
             "interval": "monthly",
-            "niceName": "Total Soil Moisture",
-            "data_provider": "ECMWF",
+            "niceName": "Total Soil Moisture (monthly) WR3A",
+            "data_provider": "CSIRO",
             
             "model": "W3RA - Monthly (WRR1)",
             "region": "Global",
@@ -787,8 +787,8 @@ layers = [
          "Qsm": {
             "Confidence": "Unknown",
             "interval": "monthly",
-            "niceName": "Snowmelt",
-            "data_provider": "ECMWF",
+            "niceName": "Snowmelt (monthly) WR3A",
+            "data_provider": "CSIRO",
             
             "model": "W3RA - Monthly (WRR1)",
             "region": "Global",
@@ -799,8 +799,8 @@ layers = [
          "RivOut": {
             "Confidence": "Unknown",
             "interval": "monthly",
-            "niceName": "River Discharge",
-            "data_provider": "ECMWF",
+            "niceName": "River Discharge (monthly) WR3A",
+            "data_provider": "CSIRO",
             
             "model": "W3RA - Monthly (WRR1)",
             "region": "Global",
@@ -811,8 +811,8 @@ layers = [
          "TVeg": {
             "Confidence": "Unknown",
             "interval": "monthly",
-            "niceName": "Vegetation Transpiration",
-            "data_provider": "ECMWF",
+            "niceName": "Vegetation Transpiration (monthly) WR3A",
+            "data_provider": "CSIRO",
             
             "model": "W3RA - Monthly (WRR1)",
             "region": "Global",
@@ -823,8 +823,8 @@ layers = [
          "Albedo": {
             "Confidence": "Unknown",
             "interval": "monthly",
-            "niceName": "Surface Albedo",
-            "data_provider": "ECMWF",
+            "niceName": "Surface Albedo (monthly) WR3A",
+            "data_provider": "CSIRO",
             
             "model": "W3RA - Monthly (WRR1)",
             "region": "Global",
@@ -835,8 +835,8 @@ layers = [
          "Qsb": {
             "Confidence": "Unknown",
             "interval": "monthly",
-            "niceName": "Sub-Surface Runoff",
-            "data_provider": "ECMWF",
+            "niceName": "Sub-Surface Runoff (monthly) WR3A",
+            "data_provider": "CSIRO",
             
             "model": "W3RA - Monthly (WRR1)",
             "region": "Global",
@@ -847,8 +847,8 @@ layers = [
          "SurfMoist": {
             "Confidence": "Unknown",
             "interval": "monthly",
-            "niceName": "Surface Soil Moisture",
-            "data_provider": "ECMWF",
+            "niceName": "Surface Soil Moisture (monthly) WR3A",
+            "data_provider": "CSIRO",
             
             "model": "W3RA - Monthly (WRR1)",
             "region": "Global",
@@ -859,8 +859,8 @@ layers = [
          "Evap": {
             "Confidence": "Unknown",
             "interval": "monthly",
-            "niceName": "Total Evapotranspiration",
-            "data_provider": "ECMWF",
+            "niceName": "Total Evapotranspiration (monthly) WR3A",
+            "data_provider": "CSIRO",
             
             "model": "W3RA - Monthly (WRR1)",
             "region": "Global",
@@ -871,8 +871,8 @@ layers = [
          "Qs": {
             "Confidence": "Unknown",
             "interval": "monthly",
-            "niceName": "Surface Runoff",
-            "data_provider": "ECMWF",
+            "niceName": "Surface Runoff (monthly) WR3A",
+            "data_provider": "CSIRO",
             
             "model": "W3RA - Monthly (WRR1)",
             "region": "Global",
@@ -883,8 +883,8 @@ layers = [
          "AvgSurfT": {
             "Confidence": "Unknown",
             "interval": "monthly",
-            "niceName": "Average Surface Temperature",
-            "data_provider": "ECMWF",
+            "niceName": "Average Surface Temperature (monthly) WR3A",
+            "data_provider": "CSIRO",
             
             "model": "W3RA - Monthly (WRR1)",
             "region": "Global",
@@ -895,8 +895,8 @@ layers = [
          "ESoil": {
             "Confidence": "Unknown",
             "interval": "monthly",
-            "niceName": "Bar Soil Evaporation",
-            "data_provider": "ECMWF",
+            "niceName": "Bar Soil Evaporation (monthly) WR3A",
+            "data_provider": "CSIRO",
             
             "model": "W3RA - Monthly (WRR1)",
             "region": "Global",
@@ -907,8 +907,8 @@ layers = [
          "ECanop": {
             "Confidence": "Unknown",
             "interval": "monthly",
-            "niceName": "Interception Evaporation",
-            "data_provider": "ECMWF",
+            "niceName": "Interception Evaporation (monthly) WR3A",
+            "data_provider": "CSIRO",
             
             "model": "W3RA - Monthly (WRR1)",
             "region": "Global",
@@ -919,8 +919,8 @@ layers = [
          "SnowFrac": {
             "Confidence": "Unknown",
             "interval": "monthly",
-            "niceName": "Snow Cover Fraction",
-            "data_provider": "ECMWF",
+            "niceName": "Snow Cover Fraction (monthly) WR3A",
+            "data_provider": "CSIRO",
             
             "model": "W3RA - Monthly (WRR1)",
             "region": "Global",
@@ -931,8 +931,8 @@ layers = [
          "Precip": {
             "Confidence": "Unknown",
             "interval": "monthly",
-            "niceName": "Precipitation",
-            "data_provider": "ECMWF",
+            "niceName": "Precipitation (monthly) WR3A",
+            "data_provider": "CSIRO",
             
             "model": "W3RA - Monthly (WRR1)",
             "region": "Global",
@@ -943,8 +943,8 @@ layers = [
          "RootMoist": {
             "Confidence": "Unknown",
             "interval": "monthly",
-            "niceName": "Root Zone Soil Moisture",
-            "data_provider": "ECMWF",
+            "niceName": "Root Zone Soil Moisture (monthly) WR3A",
+            "data_provider": "CSIRO",
             
             "model": "W3RA - Monthly (WRR1)",
             "region": "Global",
@@ -955,8 +955,8 @@ layers = [
          "CanopInt": {
             "Confidence": "Unknown",
             "interval": "monthly",
-            "niceName": "Total Canopy Water Storage",
-            "data_provider": "ECMWF",
+            "niceName": "Total Canopy Water Storage (monthly) WR3A",
+            "data_provider": "CSIRO",
             
             "model": "W3RA - Monthly (WRR1)",
             "region": "Global",
@@ -967,8 +967,8 @@ layers = [
          "LAI": {
             "Confidence": "Unknown",
             "interval": "monthly",
-            "niceName": "Leaf Area Index",
-            "data_provider": "ECMWF",
+            "niceName": "Leaf Area Index (monthly) WR3A",
+            "data_provider": "CSIRO",
             
             "model": "W3RA - Monthly (WRR1)",
             "region": "Global",
@@ -979,8 +979,8 @@ layers = [
          "Qle": {
             "Confidence": "Unknown",
             "interval": "monthly",
-            "niceName": "Latent Heat Flux",
-            "data_provider": "ECMWF",
+            "niceName": "Latent Heat Flux (monthly) WR3A",
+            "data_provider": "CSIRO",
             
             "model": "W3RA - Monthly (WRR1)",
             "region": "Global",
@@ -991,8 +991,8 @@ layers = [
          "Runoff": {
             "Confidence": "Unknown",
             "interval": "monthly",
-            "niceName": "Total Runoff",
-            "data_provider": "ECMWF",
+            "niceName": "Total Runoff (monthly) WR3A",
+            "data_provider": "CSIRO",
             
             "model": "W3RA - Monthly (WRR1)",
             "region": "Global",
@@ -1033,8 +1033,8 @@ layers = [
          "Qh": {
             "Confidence": "Unknown",
             "interval": "monthly",
-            "niceName": "Sensible Heat Flux",
-            "data_provider": "ECMWF",
+            "niceName": "Sensible Heat Flux (daily) WR3A",
+            "data_provider": "CSIRO",
             
             "model": "W3RA - Daily (WRR1)",
             "region": "Global",
@@ -1045,8 +1045,8 @@ layers = [
          "LWnet": {
             "Confidence": "Unknown",
             "interval": "monthly",
-            "niceName": "Net Longwave Radiation",
-            "data_provider": "ECMWF",
+            "niceName": "Net Longwave Radiation (daily) WR3A",
+            "data_provider": "CSIRO",
             
             "model": "W3RA - Daily (WRR1)",
             "region": "Global",
@@ -1057,8 +1057,8 @@ layers = [
          "SnowDepth": {
             "Confidence": "Unknown",
             "interval": "monthly",
-            "niceName": "Depth of Snow Layer",
-            "data_provider": "ECMWF",
+            "niceName": "Depth of Snow Layer (daily) WR3A",
+            "data_provider": "CSIRO",
             
             "model": "W3RA - Daily (WRR1)",
             "region": "Global",
@@ -1069,8 +1069,8 @@ layers = [
          "Rainf": {
             "Confidence": "Unknown",
             "interval": "monthly",
-            "niceName": "Rainfall Rate",
-            "data_provider": "ECMWF",
+            "niceName": "Rainfall Rate (daily) WR3A",
+            "data_provider": "CSIRO",
             
             "model": "W3RA - Daily (WRR1)",
             "region": "Global",
@@ -1081,8 +1081,8 @@ layers = [
          "SWnet": {
             "Confidence": "Unknown",
             "interval": "monthly",
-            "niceName": "Net Shortwave Radiation",
-            "data_provider": "ECMWF",
+            "niceName": "Net Shortwave Radiation (daily) WR3A",
+            "data_provider": "CSIRO",
             
             "model": "W3RA - Daily (WRR1)",
             "region": "Global",
@@ -1093,8 +1093,8 @@ layers = [
          "SWE": {
             "Confidence": "Unknown",
             "interval": "monthly",
-            "niceName": "Snow Water Equivalent",
-            "data_provider": "ECMWF",
+            "niceName": "Snow Water Equivalent (daily) WR3A",
+            "data_provider": "CSIRO",
             
             "model": "W3RA - Daily (WRR1)",
             "region": "Global",
@@ -1105,8 +1105,8 @@ layers = [
          "TotMoist": {
             "Confidence": "Unknown",
             "interval": "monthly",
-            "niceName": "Total Soil Moisture",
-            "data_provider": "ECMWF",
+            "niceName": "Total Soil Moisture (daily) WR3A",
+            "data_provider": "CSIRO",
             
             "model": "W3RA - Daily (WRR1)",
             "region": "Global",
@@ -1117,8 +1117,8 @@ layers = [
          "Qsm": {
             "Confidence": "Unknown",
             "interval": "monthly",
-            "niceName": "Snowmelt",
-            "data_provider": "ECMWF",
+            "niceName": "Snowmelt (daily) WR3A",
+            "data_provider": "CSIRO",
             
             "model": "W3RA - Daily (WRR1)",
             "region": "Global",
@@ -1129,8 +1129,8 @@ layers = [
          "RivOut": {
             "Confidence": "Unknown",
             "interval": "monthly",
-            "niceName": "River Discharge",
-            "data_provider": "ECMWF",
+            "niceName": "River Discharge (daily) WR3A",
+            "data_provider": "CSIRO",
             
             "model": "W3RA - Daily (WRR1)",
             "region": "Global",
@@ -1141,8 +1141,8 @@ layers = [
          "TVeg": {
             "Confidence": "Unknown",
             "interval": "monthly",
-            "niceName": "Vegetation Transpiration",
-            "data_provider": "ECMWF",
+            "niceName": "Vegetation Transpiration (daily) WR3A",
+            "data_provider": "CSIRO",
             
             "model": "W3RA - Daily (WRR1)",
             "region": "Global",
@@ -1153,8 +1153,8 @@ layers = [
          "Albedo": {
             "Confidence": "Unknown",
             "interval": "monthly",
-            "niceName": "Surface Albedo",
-            "data_provider": "ECMWF",
+            "niceName": "Surface Albedo (daily) WR3A",
+            "data_provider": "CSIRO",
             
             "model": "W3RA - Daily (WRR1)",
             "region": "Global",
@@ -1165,8 +1165,8 @@ layers = [
          "Qsb": {
             "Confidence": "Unknown",
             "interval": "monthly",
-            "niceName": "Sub-Surface Runoff",
-            "data_provider": "ECMWF",
+            "niceName": "Sub-Surface Runoff (daily) WR3A",
+            "data_provider": "CSIRO",
             
             "model": "W3RA - Daily (WRR1)",
             "region": "Global",
@@ -1177,8 +1177,8 @@ layers = [
          "SurfMoist": {
             "Confidence": "Unknown",
             "interval": "monthly",
-            "niceName": "Surface Soil Moisture",
-            "data_provider": "ECMWF",
+            "niceName": "Surface Soil Moisture (daily) WR3A",
+            "data_provider": "CSIRO",
             
             "model": "W3RA - Daily (WRR1)",
             "region": "Global",
@@ -1189,8 +1189,8 @@ layers = [
          "Evap": {
             "Confidence": "Unknown",
             "interval": "monthly",
-            "niceName": "Total Evapotranspiration",
-            "data_provider": "ECMWF",
+            "niceName": "Total Evapotranspiration (daily) WR3A",
+            "data_provider": "CSIRO",
             
             "model": "W3RA - Daily (WRR1)",
             "region": "Global",
@@ -1201,8 +1201,8 @@ layers = [
          "Qs": {
             "Confidence": "Unknown",
             "interval": "monthly",
-            "niceName": "Surface Runoff",
-            "data_provider": "ECMWF",
+            "niceName": "Surface Runoff (daily) WR3A",
+            "data_provider": "CSIRO",
             
             "model": "W3RA - Daily (WRR1)",
             "region": "Global",
@@ -1213,8 +1213,8 @@ layers = [
          "AvgSurfT": {
             "Confidence": "Unknown",
             "interval": "monthly",
-            "niceName": "Average Surface Temperature",
-            "data_provider": "ECMWF",
+            "niceName": "Average Surface Temperature (daily) WR3A",
+            "data_provider": "CSIRO",
             
             "model": "W3RA - Daily (WRR1)",
             "region": "Global",
@@ -1225,8 +1225,8 @@ layers = [
          "ESoil": {
             "Confidence": "Unknown",
             "interval": "monthly",
-            "niceName": "Bare Soil Evaporation",
-            "data_provider": "ECMWF",
+            "niceName": "Bare Soil Evaporation (daily) WR3A",
+            "data_provider": "CSIRO",
             
             "model": "W3RA - Daily (WRR1)",
             "region": "Global",
@@ -1237,8 +1237,8 @@ layers = [
          "ECanop": {
             "Confidence": "Unknown",
             "interval": "monthly",
-            "niceName": "Interception Evaporation",
-            "data_provider": "ECMWF",
+            "niceName": "Interception Evaporation (daily) WR3A",
+            "data_provider": "CSIRO",
             
             "model": "W3RA - Daily (WRR1)",
             "region": "Global",
@@ -1249,8 +1249,8 @@ layers = [
          "SnowFrac": {
             "Confidence": "Unknown",
             "interval": "monthly",
-            "niceName": "Snow Cover Fraction",
-            "data_provider": "ECMWF",
+            "niceName": "Snow Cover Fraction (daily) WR3A",
+            "data_provider": "CSIRO",
             
             "model": "W3RA - Daily (WRR1)",
             "region": "Global",
@@ -1261,8 +1261,8 @@ layers = [
          "Precip": {
             "Confidence": "Unknown",
             "interval": "monthly",
-            "niceName": "Precipitation",
-            "data_provider": "ECMWF",
+            "niceName": "Precipitation (daily) WR3A",
+            "data_provider": "CSIRO",
             
             "model": "W3RA - Daily (WRR1)",
             "region": "Global",
@@ -1273,8 +1273,8 @@ layers = [
          "RootMoist": {
             "Confidence": "Unknown",
             "interval": "monthly",
-            "niceName": "Root Zone Soil Moisture",
-            "data_provider": "ECMWF",
+            "niceName": "Root Zone Soil Moisture (daily) WR3A",
+            "data_provider": "CSIRO",
             
             "model": "W3RA - Daily (WRR1)",
             "region": "Global",
@@ -1285,8 +1285,8 @@ layers = [
          "CanopInt": {
             "Confidence": "Unknown",
             "interval": "monthly",
-            "niceName": "Total Canopy Water Storage",
-            "data_provider": "ECMWF",
+            "niceName": "Total Canopy Water Storage (daily) WR3A",
+            "data_provider": "CSIRO",
             
             "model": "W3RA - Daily (WRR1)",
             "region": "Global",
@@ -1297,8 +1297,8 @@ layers = [
          "LAI": {
             "Confidence": "Unknown",
             "interval": "monthly",
-            "niceName": "Leaf Area Index",
-            "data_provider": "ECMWF",
+            "niceName": "Leaf Area Index (daily) WR3A",
+            "data_provider": "CSIRO",
             
             "model": "W3RA - Daily (WRR1)",
             "region": "Global",
@@ -1309,8 +1309,8 @@ layers = [
          "Qle": {
             "Confidence": "Unknown",
             "interval": "monthly",
-            "niceName": "Latent Heat Flux",
-            "data_provider": "ECMWF",
+            "niceName": "Latent Heat Flux (daily) WR3A",
+            "data_provider": "CSIRO",
             
             "model": "W3RA - Daily (WRR1)",
             "region": "Global",
@@ -1321,8 +1321,8 @@ layers = [
          "Runoff": {
             "Confidence": "Unknown",
             "interval": "monthly",
-            "niceName": "Total Runoff",
-            "data_provider": "ECMWF",
+            "niceName": "Total Runoff (daily) WR3A",
+            "data_provider": "CSIRO",
             
             "model": "W3RA - Daily (WRR1)",
             "region": "Global",
@@ -1364,8 +1364,8 @@ layers = [
          "Qh": {
             "Confidence": "Unknown",
             "interval": "monthly",
-            "niceName": "Sensible Heat Flux",
-            "data_provider": "ECMWF",
+            "niceName": "Sensible Heat Flux (monthly) WaterGAP3",
+            "data_provider": "Universitat Kassel",
             
             "model": "WaterGAP3 - Monthly (WRR1)",
             "region": "Global",
@@ -1376,8 +1376,8 @@ layers = [
          "LWnet": {
             "Confidence": "Unknown",
             "interval": "monthly",
-            "niceName": "Net Longwave Radiation",
-            "data_provider": "ECMWF",
+            "niceName": "Net Longwave Radiation (monthly) WaterGAP3",
+            "data_provider": "Universitat Kassel",
             
             "model": "WaterGAP3 - Monthly (WRR1)",
             "region": "Global",
@@ -1388,8 +1388,8 @@ layers = [
          "SnowDepth": {
             "Confidence": "Unknown",
             "interval": "monthly",
-            "niceName": "Depth of Snow Layer",
-            "data_provider": "ECMWF",
+            "niceName": "Depth of Snow Layer (monthly) WaterGAP3",
+            "data_provider": "Universitat Kassel",
             
             "model": "WaterGAP3 - Monthly (WRR1)",
             "region": "Global",
@@ -1400,8 +1400,8 @@ layers = [
          "Rainf": {
             "Confidence": "Unknown",
             "interval": "monthly",
-            "niceName": "Rainfall Rate",
-            "data_provider": "ECMWF",
+            "niceName": "Rainfall Rate (monthly) WaterGAP3",
+            "data_provider": "Universitat Kassel",
             
             "model": "WaterGAP3 - Monthly (WRR1)",
             "region": "Global",
@@ -1412,8 +1412,8 @@ layers = [
          "SWnet": {
             "Confidence": "Unknown",
             "interval": "monthly",
-            "niceName": "Net Shortwave Radiation",
-            "data_provider": "ECMWF",
+            "niceName": "Net Shortwave Radiation (monthly) WaterGAP3",
+            "data_provider": "Universitat Kassel",
             
             "model": "WaterGAP3 - Monthly (WRR1)",
             "region": "Global",
@@ -1424,8 +1424,8 @@ layers = [
          "SWE": {
             "Confidence": "Unknown",
             "interval": "monthly",
-            "niceName": "Snow Water Equivalent",
-            "data_provider": "ECMWF",
+            "niceName": "Snow Water Equivalent (monthly) WaterGAP3",
+            "data_provider": "Universitat Kassel",
             
             "model": "WaterGAP3 - Monthly (WRR1)",
             "region": "Global",
@@ -1436,8 +1436,8 @@ layers = [
          "TotMoist": {
             "Confidence": "Unknown",
             "interval": "monthly",
-            "niceName": "Total Soil Moisture",
-            "data_provider": "ECMWF",
+            "niceName": "Total Soil Moisture (monthly) WaterGAP3",
+            "data_provider": "Universitat Kassel",
             
             "model": "WaterGAP3 - Monthly (WRR1)",
             "region": "Global",
@@ -1448,8 +1448,8 @@ layers = [
          "Qsm": {
             "Confidence": "Unknown",
             "interval": "monthly",
-            "niceName": "Snowmelt",
-            "data_provider": "ECMWF",
+            "niceName": "Snowmelt (monthly) WaterGAP3",
+            "data_provider": "Universitat Kassel",
             
             "model": "WaterGAP3 - Monthly (WRR1)",
             "region": "Global",
@@ -1460,8 +1460,8 @@ layers = [
          "RivOut": {
             "Confidence": "Unknown",
             "interval": "monthly",
-            "niceName": "River Discharge",
-            "data_provider": "ECMWF",
+            "niceName": "River Discharge (monthly) WaterGAP3",
+            "data_provider": "Universitat Kassel",
             
             "model": "WaterGAP3 - Monthly (WRR1)",
             "region": "Global",
@@ -1472,8 +1472,8 @@ layers = [
          "TVeg": {
             "Confidence": "Unknown",
             "interval": "monthly",
-            "niceName": "Vegetation Transpiration",
-            "data_provider": "ECMWF",
+            "niceName": "Vegetation Transpiration (monthly) WaterGAP3",
+            "data_provider": "Universitat Kassel",
             
             "model": "WaterGAP3 - Monthly (WRR1)",
             "region": "Global",
@@ -1484,8 +1484,8 @@ layers = [
          "Albedo": {
             "Confidence": "Unknown",
             "interval": "monthly",
-            "niceName": "Surface Albedo",
-            "data_provider": "ECMWF",
+            "niceName": "Surface Albedo (monthly) WaterGAP3",
+            "data_provider": "Universitat Kassel",
             
             "model": "WaterGAP3 - Monthly (WRR1)",
             "region": "Global",
@@ -1496,8 +1496,8 @@ layers = [
          "Qsb": {
             "Confidence": "Unknown",
             "interval": "monthly",
-            "niceName": "Sub-Surface Runoff",
-            "data_provider": "ECMWF",
+            "niceName": "Sub-Surface Runoff (monthly) WaterGAP3",
+            "data_provider": "Universitat Kassel",
             
             "model": "WaterGAP3 - Monthly (WRR1)",
             "region": "Global",
@@ -1508,8 +1508,8 @@ layers = [
          "SurfMoist": {
             "Confidence": "Unknown",
             "interval": "monthly",
-            "niceName": "Surface Soil Moisture",
-            "data_provider": "ECMWF",
+            "niceName": "Surface Soil Moisture (monthly) WaterGAP3",
+            "data_provider": "Universitat Kassel",
             
             "model": "WaterGAP3 - Monthly (WRR1)",
             "region": "Global",
@@ -1520,8 +1520,8 @@ layers = [
          "Evap": {
             "Confidence": "Unknown",
             "interval": "monthly",
-            "niceName": "Total Evapotranspiration",
-            "data_provider": "ECMWF",
+            "niceName": "Total Evapotranspiration (monthly) WaterGAP3",
+            "data_provider": "Universitat Kassel",
             
             "model": "WaterGAP3 - Monthly (WRR1)",
             "region": "Global",
@@ -1532,8 +1532,8 @@ layers = [
          "Qs": {
             "Confidence": "Unknown",
             "interval": "monthly",
-            "niceName": "Surface Runoff",
-            "data_provider": "ECMWF",
+            "niceName": "Surface Runoff (monthly) WaterGAP3",
+            "data_provider": "Universitat Kassel",
             
             "model": "WaterGAP3 - Monthly (WRR1)",
             "region": "Global",
@@ -1544,8 +1544,8 @@ layers = [
          "AvgSurfT": {
             "Confidence": "Unknown",
             "interval": "monthly",
-            "niceName": "Average Surface Temperature",
-            "data_provider": "ECMWF",
+            "niceName": "Average Surface Temperature (monthly) WaterGAP3",
+            "data_provider": "Universitat Kassel",
             
             "model": "WaterGAP3 - Monthly (WRR1)",
             "region": "Global",
@@ -1556,8 +1556,8 @@ layers = [
          "ESoil": {
             "Confidence": "Unknown",
             "interval": "monthly",
-            "niceName": "Bar Soil Evaporation",
-            "data_provider": "ECMWF",
+            "niceName": "Bar Soil Evaporation (monthly) WaterGAP3",
+            "data_provider": "Universitat Kassel",
             
             "model": "WaterGAP3 - Monthly (WRR1)",
             "region": "Global",
@@ -1568,8 +1568,8 @@ layers = [
          "ECanop": {
             "Confidence": "Unknown",
             "interval": "monthly",
-            "niceName": "Interception Evaporation",
-            "data_provider": "ECMWF",
+            "niceName": "Interception Evaporation (monthly) WaterGAP3",
+            "data_provider": "Universitat Kassel",
             
             "model": "WaterGAP3 - Monthly (WRR1)",
             "region": "Global",
@@ -1580,8 +1580,8 @@ layers = [
          "SnowFrac": {
             "Confidence": "Unknown",
             "interval": "monthly",
-            "niceName": "Snow Cover Fraction",
-            "data_provider": "ECMWF",
+            "niceName": "Snow Cover Fraction (monthly) WaterGAP3",
+            "data_provider": "Universitat Kassel",
             
             "model": "WaterGAP3 - Monthly (WRR1)",
             "region": "Global",
@@ -1592,8 +1592,8 @@ layers = [
          "Precip": {
             "Confidence": "Unknown",
             "interval": "monthly",
-            "niceName": "Precipitation",
-            "data_provider": "ECMWF",
+            "niceName": "Precipitation (monthly) WaterGAP3",
+            "data_provider": "Universitat Kassel",
             
             "model": "WaterGAP3 - Monthly (WRR1)",
             "region": "Global",
@@ -1604,8 +1604,8 @@ layers = [
          "RootMoist": {
             "Confidence": "Unknown",
             "interval": "monthly",
-            "niceName": "Root Zone Soil Moisture",
-            "data_provider": "ECMWF",
+            "niceName": "Root Zone Soil Moisture (monthly) WaterGAP3",
+            "data_provider": "Universitat Kassel",
             
             "model": "WaterGAP3 - Monthly (WRR1)",
             "region": "Global",
@@ -1616,8 +1616,8 @@ layers = [
          "CanopInt": {
             "Confidence": "Unknown",
             "interval": "monthly",
-            "niceName": "Total Canopy Water Storage",
-            "data_provider": "ECMWF",
+            "niceName": "Total Canopy Water Storage (monthly) WaterGAP3",
+            "data_provider": "Universitat Kassel",
             
             "model": "WaterGAP3 - Monthly (WRR1)",
             "region": "Global",
@@ -1628,8 +1628,8 @@ layers = [
          "LAI": {
             "Confidence": "Unknown",
             "interval": "monthly",
-            "niceName": "Leaf Area Index",
-            "data_provider": "ECMWF",
+            "niceName": "Leaf Area Index (monthly) WaterGAP3",
+            "data_provider": "Universitat Kassel",
             
             "model": "WaterGAP3 - Monthly (WRR1)",
             "region": "Global",
@@ -1640,8 +1640,8 @@ layers = [
          "Qle": {
             "Confidence": "Unknown",
             "interval": "monthly",
-            "niceName": "Latent Heat Flux",
-            "data_provider": "ECMWF",
+            "niceName": "Latent Heat Flux (monthly) WaterGAP3",
+            "data_provider": "Universitat Kassel",
             
             "model": "WaterGAP3 - Monthly (WRR1)",
             "region": "Global",
@@ -1652,8 +1652,8 @@ layers = [
          "Runoff": {
             "Confidence": "Unknown",
             "interval": "monthly",
-            "niceName": "Total Runoff",
-            "data_provider": "ECMWF",
+            "niceName": "Total Runoff (monthly) WaterGAP3",
+            "data_provider": "Universitat Kassel",
             
             "model": "WaterGAP3 - Monthly (WRR1)",
             "region": "Global",
@@ -1666,7 +1666,7 @@ layers = [
    {
       "name": "univk_wrr1_daily",
       "options": {
-         "providerShortTag": "ECMWF"
+         "providerShortTag": "UniKassel"
       },
       "services": {
          "wms": {
@@ -1694,8 +1694,8 @@ layers = [
          "Qh": {
             "Confidence": "Unknown",
             "interval": "monthly",
-            "niceName": "Sensible Heat Flux",
-            "data_provider": "ECMWF",
+            "niceName": "Sensible Heat Flux (daily) WaterGAP3",
+            "data_provider": "Universitat Kassel",
             
             "model": "WaterGAP3 - Daily (WRR1)",
             "region": "Global",
@@ -1706,8 +1706,8 @@ layers = [
          "LWnet": {
             "Confidence": "Unknown",
             "interval": "monthly",
-            "niceName": "Net Longwave Radiation",
-            "data_provider": "ECMWF",
+            "niceName": "Net Longwave Radiation (daily) WaterGAP3",
+            "data_provider": "Universitat Kassel",
             
             "model": "WaterGAP3 - Daily (WRR1)",
             "region": "Global",
@@ -1718,8 +1718,8 @@ layers = [
          "SnowDepth": {
             "Confidence": "Unknown",
             "interval": "monthly",
-            "niceName": "Depth of Snow Layer",
-            "data_provider": "ECMWF",
+            "niceName": "Depth of Snow Layer (daily) WaterGAP3",
+            "data_provider": "Universitat Kassel",
             
             "model": "WaterGAP3 - Daily (WRR1)",
             "region": "Global",
@@ -1730,8 +1730,8 @@ layers = [
          "Rainf": {
             "Confidence": "Unknown",
             "interval": "monthly",
-            "niceName": "Rainfall Rate",
-            "data_provider": "ECMWF",
+            "niceName": "Rainfall Rate (daily) WaterGAP3",
+            "data_provider": "Universitat Kassel",
             
             "model": "WaterGAP3 - Daily (WRR1)",
             "region": "Global",
@@ -1742,8 +1742,8 @@ layers = [
          "SWnet": {
             "Confidence": "Unknown",
             "interval": "monthly",
-            "niceName": "Net Shortwave Radiation",
-            "data_provider": "ECMWF",
+            "niceName": "Net Shortwave Radiation (daily) WaterGAP3",
+            "data_provider": "Universitat Kassel",
             
             "model": "WaterGAP3 - Daily (WRR1)",
             "region": "Global",
@@ -1754,8 +1754,8 @@ layers = [
          "SWE": {
             "Confidence": "Unknown",
             "interval": "monthly",
-            "niceName": "Snow Water Equivalent",
-            "data_provider": "ECMWF",
+            "niceName": "Snow Water Equivalent (daily) WaterGAP3",
+            "data_provider": "Universitat Kassel",
             
             "model": "WaterGAP3 - Daily (WRR1)",
             "region": "Global",
@@ -1766,8 +1766,8 @@ layers = [
          "TotMoist": {
             "Confidence": "Unknown",
             "interval": "monthly",
-            "niceName": "Total Soil Moisture",
-            "data_provider": "ECMWF",
+            "niceName": "Total Soil Moisture (daily) WaterGAP3",
+            "data_provider": "Universitat Kassel",
             
             "model": "WaterGAP3 - Daily (WRR1)",
             "region": "Global",
@@ -1778,8 +1778,8 @@ layers = [
          "Qsm": {
             "Confidence": "Unknown",
             "interval": "monthly",
-            "niceName": "Snowmelt",
-            "data_provider": "ECMWF",
+            "niceName": "Snowmelt (daily) WaterGAP3",
+            "data_provider": "Universitat Kassel",
             
             "model": "WaterGAP3 - Daily (WRR1)",
             "region": "Global",
@@ -1790,8 +1790,8 @@ layers = [
          "RivOut": {
             "Confidence": "Unknown",
             "interval": "monthly",
-            "niceName": "River Discharge",
-            "data_provider": "ECMWF",
+            "niceName": "River Discharge (daily) WaterGAP3",
+            "data_provider": "Universitat Kassel",
             
             "model": "WaterGAP3 - Daily (WRR1)",
             "region": "Global",
@@ -1802,8 +1802,8 @@ layers = [
          "TVeg": {
             "Confidence": "Unknown",
             "interval": "monthly",
-            "niceName": "Vegetation Transpiration",
-            "data_provider": "ECMWF",
+            "niceName": "Vegetation Transpiration (daily) WaterGAP3",
+            "data_provider": "Universitat Kassel",
             
             "model": "WaterGAP3 - Daily (WRR1)",
             "region": "Global",
@@ -1814,8 +1814,8 @@ layers = [
          "Albedo": {
             "Confidence": "Unknown",
             "interval": "monthly",
-            "niceName": "Surface Albedo",
-            "data_provider": "ECMWF",
+            "niceName": "Surface Albedo (daily) WaterGAP3",
+            "data_provider": "Universitat Kassel",
             
             "model": "WaterGAP3 - Daily (WRR1)",
             "region": "Global",
@@ -1826,8 +1826,8 @@ layers = [
          "Qsb": {
             "Confidence": "Unknown",
             "interval": "monthly",
-            "niceName": "Sub-Surface Runoff",
-            "data_provider": "ECMWF",
+            "niceName": "Sub-Surface Runoff (daily) WaterGAP3",
+            "data_provider": "Universitat Kassel",
             
             "model": "WaterGAP3 - Daily (WRR1)",
             "region": "Global",
@@ -1838,8 +1838,8 @@ layers = [
          "SurfMoist": {
             "Confidence": "Unknown",
             "interval": "monthly",
-            "niceName": "Surface Soil Moisture",
-            "data_provider": "ECMWF",
+            "niceName": "Surface Soil Moisture (daily) WaterGAP3",
+            "data_provider": "Universitat Kassel",
             
             "model": "WaterGAP3 - Daily (WRR1)",
             "region": "Global",
@@ -1850,8 +1850,8 @@ layers = [
          "Evap": {
             "Confidence": "Unknown",
             "interval": "monthly",
-            "niceName": "Total Evapotranspiration",
-            "data_provider": "ECMWF",
+            "niceName": "Total Evapotranspiration (daily) WaterGAP3",
+            "data_provider": "Universitat Kassel",
             
             "model": "WaterGAP3 - Daily (WRR1)",
             "region": "Global",
@@ -1862,8 +1862,8 @@ layers = [
          "Qs": {
             "Confidence": "Unknown",
             "interval": "monthly",
-            "niceName": "Surface Runoff",
-            "data_provider": "ECMWF",
+            "niceName": "Surface Runoff (daily) WaterGAP3",
+            "data_provider": "Universitat Kassel",
             
             "model": "WaterGAP3 - Daily (WRR1)",
             "region": "Global",
@@ -1874,8 +1874,8 @@ layers = [
          "AvgSurfT": {
             "Confidence": "Unknown",
             "interval": "monthly",
-            "niceName": "Average Surface Temperature",
-            "data_provider": "ECMWF",
+            "niceName": "Average Surface Temperature (daily) WaterGAP3",
+            "data_provider": "Universitat Kassel",
             
             "model": "WaterGAP3 - Daily (WRR1)",
             "region": "Global",
@@ -1886,8 +1886,8 @@ layers = [
          "ESoil": {
             "Confidence": "Unknown",
             "interval": "monthly",
-            "niceName": "Bare Soil Evaporation",
-            "data_provider": "ECMWF",
+            "niceName": "Bare Soil Evaporation (daily) WaterGAP3",
+            "data_provider": "Universitat Kassel",
             
             "model": "WaterGAP3 - Daily (WRR1)",
             "region": "Global",
@@ -1898,8 +1898,8 @@ layers = [
          "ECanop": {
             "Confidence": "Unknown",
             "interval": "monthly",
-            "niceName": "Interception Evaporation",
-            "data_provider": "ECMWF",
+            "niceName": "Interception Evaporation (daily) WaterGAP3",
+            "data_provider": "Universitat Kassel",
             
             "model": "WaterGAP3 - Daily (WRR1)",
             "region": "Global",
@@ -1910,8 +1910,8 @@ layers = [
          "SnowFrac": {
             "Confidence": "Unknown",
             "interval": "monthly",
-            "niceName": "Snow Cover Fraction",
-            "data_provider": "ECMWF",
+            "niceName": "Snow Cover Fraction (daily) WaterGAP3",
+            "data_provider": "Universitat Kassel",
             
             "model": "WaterGAP3 - Daily (WRR1)",
             "region": "Global",
@@ -1922,8 +1922,8 @@ layers = [
          "Precip": {
             "Confidence": "Unknown",
             "interval": "monthly",
-            "niceName": "Precipitation",
-            "data_provider": "ECMWF",
+            "niceName": "Precipitation (daily) WaterGAP3",
+            "data_provider": "Universitat Kassel",
             
             "model": "WaterGAP3 - Daily (WRR1)",
             "region": "Global",
@@ -1934,8 +1934,8 @@ layers = [
          "RootMoist": {
             "Confidence": "Unknown",
             "interval": "monthly",
-            "niceName": "Root Zone Soil Moisture",
-            "data_provider": "ECMWF",
+            "niceName": "Root Zone Soil Moisture (daily) WaterGAP3",
+            "data_provider": "Universitat Kassel",
             
             "model": "WaterGAP3 - Daily (WRR1)",
             "region": "Global",
@@ -1946,8 +1946,8 @@ layers = [
          "CanopInt": {
             "Confidence": "Unknown",
             "interval": "monthly",
-            "niceName": "Total Canopy Water Storage",
-            "data_provider": "ECMWF",
+            "niceName": "Total Canopy Water Storage (daily) WaterGAP3",
+            "data_provider": "Universitat Kassel",
             
             "model": "WaterGAP3 - Daily (WRR1)",
             "region": "Global",
@@ -1958,8 +1958,8 @@ layers = [
          "LAI": {
             "Confidence": "Unknown",
             "interval": "monthly",
-            "niceName": "Leaf Area Index",
-            "data_provider": "ECMWF",
+            "niceName": "Leaf Area Index (daily) WaterGAP3",
+            "data_provider": "Universitat Kassel",
             
             "model": "WaterGAP3 - Daily (WRR1)",
             "region": "Global",
@@ -1970,8 +1970,8 @@ layers = [
          "Qle": {
             "Confidence": "Unknown",
             "interval": "monthly",
-            "niceName": "Latent Heat Flux",
-            "data_provider": "ECMWF",
+            "niceName": "Latent Heat Flux (daily) WaterGAP3",
+            "data_provider": "Universitat Kassel",
             
             "model": "WaterGAP3 - Daily (WRR1)",
             "region": "Global",
@@ -1982,8 +1982,8 @@ layers = [
          "Runoff": {
             "Confidence": "Unknown",
             "interval": "monthly",
-            "niceName": "Total Runoff",
-            "data_provider": "ECMWF",
+            "niceName": "Total Runoff (daily) WaterGAP3",
+            "data_provider": "Universitat Kassel",
             
             "model": "WaterGAP3 - Daily (WRR1)",
             "region": "Global",
@@ -2024,7 +2024,7 @@ layers = [
          "Qh": {
             "Confidence": "Unknown",
             "interval": "monthly",
-            "niceName": "Sensible Heat Flux",
+            "niceName": "Sensible Heat Flux (monthly) HTESSEL",
             "data_provider": "ECMWF",
             
             "model": "HTESSEL - Monthly (WRR1)",
@@ -2036,7 +2036,7 @@ layers = [
          "LWnet": {
             "Confidence": "Unknown",
             "interval": "monthly",
-            "niceName": "Net Longwave Radiation",
+            "niceName": "Net Longwave Radiation (monthly) HTESSEL",
             "data_provider": "ECMWF",
             
             "model": "HTESSEL - Monthly (WRR1)",
@@ -2048,7 +2048,7 @@ layers = [
          "SnowDepth": {
             "Confidence": "Unknown",
             "interval": "monthly",
-            "niceName": "Depth of Snow Layer",
+            "niceName": "Depth of Snow Layer (monthly) HTESSEL",
             "data_provider": "ECMWF",
             
             "model": "HTESSEL - Monthly (WRR1)",
@@ -2060,7 +2060,7 @@ layers = [
          "Rainf": {
             "Confidence": "Unknown",
             "interval": "monthly",
-            "niceName": "Rainfall Rate",
+            "niceName": "Rainfall Rate (monthly) HTESSEL",
             "data_provider": "ECMWF",
             
             "model": "HTESSEL - Monthly (WRR1)",
@@ -2072,7 +2072,7 @@ layers = [
          "SWnet": {
             "Confidence": "Unknown",
             "interval": "monthly",
-            "niceName": "Net Shortwave Radiation",
+            "niceName": "Net Shortwave Radiation (monthly) HTESSEL",
             "data_provider": "ECMWF",
             
             "model": "HTESSEL - Monthly (WRR1)",
@@ -2084,7 +2084,7 @@ layers = [
          "SWE": {
             "Confidence": "Unknown",
             "interval": "monthly",
-            "niceName": "Snow Water Equivalent",
+            "niceName": "Snow Water Equivalent (monthly) HTESSEL",
             "data_provider": "ECMWF",
             
             "model": "HTESSEL - Monthly (WRR1)",
@@ -2096,7 +2096,7 @@ layers = [
          "TotMoist": {
             "Confidence": "Unknown",
             "interval": "monthly",
-            "niceName": "Total Soil Moisture",
+            "niceName": "Total Soil Moisture (monthly) HTESSEL",
             "data_provider": "ECMWF",
             
             "model": "HTESSEL - Monthly (WRR1)",
@@ -2108,7 +2108,7 @@ layers = [
          "Qsm": {
             "Confidence": "Unknown",
             "interval": "monthly",
-            "niceName": "Snowmelt",
+            "niceName": "Snowmelt (monthly) HTESSEL",
             "data_provider": "ECMWF",
             
             "model": "HTESSEL - Monthly (WRR1)",
@@ -2120,7 +2120,7 @@ layers = [
          "RivOut": {
             "Confidence": "Unknown",
             "interval": "monthly",
-            "niceName": "River Discharge",
+            "niceName": "River Discharge (monthly) HTESSEL",
             "data_provider": "ECMWF",
             
             "model": "HTESSEL - Monthly (WRR1)",
@@ -2132,7 +2132,7 @@ layers = [
          "TVeg": {
             "Confidence": "Unknown",
             "interval": "monthly",
-            "niceName": "Vegetation Transpiration",
+            "niceName": "Vegetation Transpiration (monthly) HTESSEL",
             "data_provider": "ECMWF",
             
             "model": "HTESSEL - Monthly (WRR1)",
@@ -2144,7 +2144,7 @@ layers = [
          "Albedo": {
             "Confidence": "Unknown",
             "interval": "monthly",
-            "niceName": "Surface Albedo",
+            "niceName": "Surface Albedo (monthly) HTESSEL",
             "data_provider": "ECMWF",
             
             "model": "HTESSEL - Monthly (WRR1)",
@@ -2156,7 +2156,7 @@ layers = [
          "Qsb": {
             "Confidence": "Unknown",
             "interval": "monthly",
-            "niceName": "Sub-Surface Runoff",
+            "niceName": "Sub-Surface Runoff (monthly) HTESSEL",
             "data_provider": "ECMWF",
             
             "model": "HTESSEL - Monthly (WRR1)",
@@ -2168,7 +2168,7 @@ layers = [
          "SurfMoist": {
             "Confidence": "Unknown",
             "interval": "monthly",
-            "niceName": "Surface Soil Moisture",
+            "niceName": "Surface Soil Moisture (monthly) HTESSEL",
             "data_provider": "ECMWF",
             
             "model": "HTESSEL - Monthly (WRR1)",
@@ -2180,7 +2180,7 @@ layers = [
          "Evap": {
             "Confidence": "Unknown",
             "interval": "monthly",
-            "niceName": "Total Evapotranspiration",
+            "niceName": "Total Evapotranspiration (monthly) HTESSEL",
             "data_provider": "ECMWF",
             
             "model": "HTESSEL - Monthly (WRR1)",
@@ -2192,7 +2192,7 @@ layers = [
          "Qs": {
             "Confidence": "Unknown",
             "interval": "monthly",
-            "niceName": "Surface Runoff",
+            "niceName": "Surface Runoff (monthly) HTESSEL",
             "data_provider": "ECMWF",
             
             "model": "HTESSEL - Monthly (WRR1)",
@@ -2204,7 +2204,7 @@ layers = [
          "AvgSurfT": {
             "Confidence": "Unknown",
             "interval": "monthly",
-            "niceName": "Average Surface Temperature",
+            "niceName": "Average Surface Temperature (monthly) HTESSEL",
             "data_provider": "ECMWF",
             
             "model": "HTESSEL - Monthly (WRR1)",
@@ -2216,7 +2216,7 @@ layers = [
          "ESoil": {
             "Confidence": "Unknown",
             "interval": "monthly",
-            "niceName": "Bar Soil Evaporation",
+            "niceName": "Bar Soil Evaporation (monthly) HTESSEL",
             "data_provider": "ECMWF",
             
             "model": "HTESSEL - Monthly (WRR1)",
@@ -2228,7 +2228,7 @@ layers = [
          "ECanop": {
             "Confidence": "Unknown",
             "interval": "monthly",
-            "niceName": "Interception Evaporation",
+            "niceName": "Interception Evaporation (monthly) HTESSEL",
             "data_provider": "ECMWF",
             
             "model": "HTESSEL - Monthly (WRR1)",
@@ -2240,7 +2240,7 @@ layers = [
          "SnowFrac": {
             "Confidence": "Unknown",
             "interval": "monthly",
-            "niceName": "Snow Cover Fraction",
+            "niceName": "Snow Cover Fraction (monthly) HTESSEL",
             "data_provider": "ECMWF",
             
             "model": "HTESSEL - Monthly (WRR1)",
@@ -2252,7 +2252,7 @@ layers = [
          "Precip": {
             "Confidence": "Unknown",
             "interval": "monthly",
-            "niceName": "Precipitation",
+            "niceName": "Precipitation (monthly) HTESSEL",
             "data_provider": "ECMWF",
             
             "model": "HTESSEL - Monthly (WRR1)",
@@ -2264,7 +2264,7 @@ layers = [
          "RootMoist": {
             "Confidence": "Unknown",
             "interval": "monthly",
-            "niceName": "Root Zone Soil Moisture",
+            "niceName": "Root Zone Soil Moisture (monthly) HTESSEL",
             "data_provider": "ECMWF",
             
             "model": "HTESSEL - Monthly (WRR1)",
@@ -2276,7 +2276,7 @@ layers = [
          "CanopInt": {
             "Confidence": "Unknown",
             "interval": "monthly",
-            "niceName": "Total Canopy Water Storage",
+            "niceName": "Total Canopy Water Storage (monthly) HTESSEL",
             "data_provider": "ECMWF",
             
             "model": "HTESSEL - Monthly (WRR1)",
@@ -2288,7 +2288,7 @@ layers = [
          "LAI": {
             "Confidence": "Unknown",
             "interval": "monthly",
-            "niceName": "Leaf Area Index",
+            "niceName": "Leaf Area Index (monthly) HTESSEL",
             "data_provider": "ECMWF",
             
             "model": "HTESSEL - Monthly (WRR1)",
@@ -2300,7 +2300,7 @@ layers = [
          "Qle": {
             "Confidence": "Unknown",
             "interval": "monthly",
-            "niceName": "Latent Heat Flux",
+            "niceName": "Latent Heat Flux (monthly) HTESSEL",
             "data_provider": "ECMWF",
             
             "model": "HTESSEL - Monthly (WRR1)",
@@ -2312,7 +2312,7 @@ layers = [
          "Runoff": {
             "Confidence": "Unknown",
             "interval": "monthly",
-            "niceName": "Total Runoff",
+            "niceName": "Total Runoff (monthly) HTESSEL",
             "data_provider": "ECMWF",
             
             "model": "HTESSEL - Monthly (WRR1)",
@@ -2354,7 +2354,7 @@ layers = [
          "Qh": {
             "Confidence": "Unknown",
             "interval": "monthly",
-            "niceName": "Sensible Heat Flux",
+            "niceName": "Sensible Heat Flux (daily) HTESSEL",
             "data_provider": "ECMWF",
             
             "model": "HTESSEL - Daily (WRR1)",
@@ -2366,7 +2366,7 @@ layers = [
          "LWnet": {
             "Confidence": "Unknown",
             "interval": "monthly",
-            "niceName": "Net Longwave Radiation",
+            "niceName": "Net Longwave Radiation (daily) HTESSEL",
             "data_provider": "ECMWF",
             
             "model": "HTESSEL - Daily (WRR1)",
@@ -2378,7 +2378,7 @@ layers = [
          "SnowDepth": {
             "Confidence": "Unknown",
             "interval": "monthly",
-            "niceName": "Depth of Snow Layer",
+            "niceName": "Depth of Snow Layer (daily) HTESSEL",
             "data_provider": "ECMWF",
             
             "model": "HTESSEL - Daily (WRR1)",
@@ -2390,7 +2390,7 @@ layers = [
          "Rainf": {
             "Confidence": "Unknown",
             "interval": "monthly",
-            "niceName": "Rainfall Rate",
+            "niceName": "Rainfall Rate (daily) HTESSEL",
             "data_provider": "ECMWF",
             
             "model": "HTESSEL - Daily (WRR1)",
@@ -2402,7 +2402,7 @@ layers = [
          "SWnet": {
             "Confidence": "Unknown",
             "interval": "monthly",
-            "niceName": "Net Shortwave Radiation",
+            "niceName": "Net Shortwave Radiation (daily) HTESSEL",
             "data_provider": "ECMWF",
             
             "model": "HTESSEL - Daily (WRR1)",
@@ -2414,7 +2414,7 @@ layers = [
          "SWE": {
             "Confidence": "Unknown",
             "interval": "monthly",
-            "niceName": "Snow Water Equivalent",
+            "niceName": "Snow Water Equivalent (daily) HTESSEL",
             "data_provider": "ECMWF",
             
             "model": "HTESSEL - Daily (WRR1)",
@@ -2426,7 +2426,7 @@ layers = [
          "TotMoist": {
             "Confidence": "Unknown",
             "interval": "monthly",
-            "niceName": "Total Soil Moisture",
+            "niceName": "Total Soil Moisture (daily) HTESSEL",
             "data_provider": "ECMWF",
             
             "model": "HTESSEL - Daily (WRR1)",
@@ -2438,7 +2438,7 @@ layers = [
          "Qsm": {
             "Confidence": "Unknown",
             "interval": "monthly",
-            "niceName": "Snowmelt",
+            "niceName": "Snowmelt (daily) HTESSEL",
             "data_provider": "ECMWF",
             
             "model": "HTESSEL - Daily (WRR1)",
@@ -2450,7 +2450,7 @@ layers = [
          "RivOut": {
             "Confidence": "Unknown",
             "interval": "monthly",
-            "niceName": "River Discharge",
+            "niceName": "River Discharge (daily) HTESSEL",
             "data_provider": "ECMWF",
             
             "model": "HTESSEL - Daily (WRR1)",
@@ -2462,7 +2462,7 @@ layers = [
          "TVeg": {
             "Confidence": "Unknown",
             "interval": "monthly",
-            "niceName": "Vegetation Transpiration",
+            "niceName": "Vegetation Transpiration (daily) HTESSEL",
             "data_provider": "ECMWF",
             
             "model": "HTESSEL - Daily (WRR1)",
@@ -2474,7 +2474,7 @@ layers = [
          "Albedo": {
             "Confidence": "Unknown",
             "interval": "monthly",
-            "niceName": "Surface Albedo",
+            "niceName": "Surface Albedo (daily) HTESSEL",
             "data_provider": "ECMWF",
             
             "model": "HTESSEL - Daily (WRR1)",
@@ -2486,7 +2486,7 @@ layers = [
          "Qsb": {
             "Confidence": "Unknown",
             "interval": "monthly",
-            "niceName": "Sub-Surface Runoff",
+            "niceName": "Sub-Surface Runoff (daily) HTESSEL",
             "data_provider": "ECMWF",
             
             "model": "HTESSEL - Daily (WRR1)",
@@ -2498,7 +2498,7 @@ layers = [
          "SurfMoist": {
             "Confidence": "Unknown",
             "interval": "monthly",
-            "niceName": "Surface Soil Moisture",
+            "niceName": "Surface Soil Moisture (daily) HTESSEL",
             "data_provider": "ECMWF",
             
             "model": "HTESSEL - Daily (WRR1)",
@@ -2510,7 +2510,7 @@ layers = [
          "Evap": {
             "Confidence": "Unknown",
             "interval": "monthly",
-            "niceName": "Total Evapotranspiration",
+            "niceName": "Total Evapotranspiration (daily) HTESSEL",
             "data_provider": "ECMWF",
             
             "model": "HTESSEL - Daily (WRR1)",
@@ -2522,7 +2522,7 @@ layers = [
          "Qs": {
             "Confidence": "Unknown",
             "interval": "monthly",
-            "niceName": "Surface Runoff",
+            "niceName": "Surface Runoff (daily) HTESSEL",
             "data_provider": "ECMWF",
             
             "model": "HTESSEL - Daily (WRR1)",
@@ -2534,7 +2534,7 @@ layers = [
          "AvgSurfT": {
             "Confidence": "Unknown",
             "interval": "monthly",
-            "niceName": "Average Surface Temperature",
+            "niceName": "Average Surface Temperature (daily) HTESSEL",
             "data_provider": "ECMWF",
             
             "model": "HTESSEL - Daily (WRR1)",
@@ -2546,7 +2546,7 @@ layers = [
          "ESoil": {
             "Confidence": "Unknown",
             "interval": "monthly",
-            "niceName": "Bare Soil Evaporation",
+            "niceName": "Bare Soil Evaporation (daily) HTESSEL",
             "data_provider": "ECMWF",
             
             "model": "HTESSEL - Daily (WRR1)",
@@ -2558,7 +2558,7 @@ layers = [
          "ECanop": {
             "Confidence": "Unknown",
             "interval": "monthly",
-            "niceName": "Interception Evaporation",
+            "niceName": "Interception Evaporation (daily) HTESSEL",
             "data_provider": "ECMWF",
             
             "model": "HTESSEL - Daily (WRR1)",
@@ -2570,7 +2570,7 @@ layers = [
          "SnowFrac": {
             "Confidence": "Unknown",
             "interval": "monthly",
-            "niceName": "Snow Cover Fraction",
+            "niceName": "Snow Cover Fraction (daily) HTESSEL",
             "data_provider": "ECMWF",
             
             "model": "HTESSEL - Daily (WRR1)",
@@ -2582,7 +2582,7 @@ layers = [
          "Precip": {
             "Confidence": "Unknown",
             "interval": "monthly",
-            "niceName": "Precipitation",
+            "niceName": "Precipitation (daily) HTESSEL",
             "data_provider": "ECMWF",
             
             "model": "HTESSEL - Daily (WRR1)",
@@ -2594,7 +2594,7 @@ layers = [
          "RootMoist": {
             "Confidence": "Unknown",
             "interval": "monthly",
-            "niceName": "Root Zone Soil Moisture",
+            "niceName": "Root Zone Soil Moisture (daily) HTESSEL",
             "data_provider": "ECMWF",
             
             "model": "HTESSEL - Daily (WRR1)",
@@ -2606,7 +2606,7 @@ layers = [
          "CanopInt": {
             "Confidence": "Unknown",
             "interval": "monthly",
-            "niceName": "Total Canopy Water Storage",
+            "niceName": "Total Canopy Water Storage (daily) HTESSEL",
             "data_provider": "ECMWF",
             
             "model": "HTESSEL - Daily (WRR1)",
@@ -2618,7 +2618,7 @@ layers = [
          "LAI": {
             "Confidence": "Unknown",
             "interval": "monthly",
-            "niceName": "Leaf Area Index",
+            "niceName": "Leaf Area Index (daily) HTESSEL",
             "data_provider": "ECMWF",
             
             "model": "HTESSEL - Daily (WRR1)",
@@ -2630,7 +2630,7 @@ layers = [
          "Qle": {
             "Confidence": "Unknown",
             "interval": "monthly",
-            "niceName": "Latent Heat Flux",
+            "niceName": "Latent Heat Flux (daily) HTESSEL",
             "data_provider": "ECMWF",
             
             "model": "HTESSEL - Daily (WRR1)",
@@ -2642,7 +2642,7 @@ layers = [
          "Runoff": {
             "Confidence": "Unknown",
             "interval": "monthly",
-            "niceName": "Total Runoff",
+            "niceName": "Total Runoff (daily) HTESSEL",
             "data_provider": "ECMWF",
             
             "model": "HTESSEL - Daily (WRR1)",
@@ -2685,8 +2685,8 @@ layers = [
          "Qh": {
             "Confidence": "Unknown",
             "interval": "monthly",
-            "niceName": "Sensible Heat Flux",
-            "data_provider": "ECMWF",
+            "niceName": "Sensible Heat Flux (monthly) PCR-GLOBWB",
+            "data_provider": "UU",
             
             "model": "PCR-GLOBWB - Monthly (WRR1)",
             "region": "Global",
@@ -2697,8 +2697,8 @@ layers = [
          "LWnet": {
             "Confidence": "Unknown",
             "interval": "monthly",
-            "niceName": "Net Longwave Radiation",
-            "data_provider": "ECMWF",
+            "niceName": "Net Longwave Radiation (monthly) PCR-GLOBWB",
+            "data_provider": "UU",
             
             "model": "PCR-GLOBWB - Monthly (WRR1)",
             "region": "Global",
@@ -2709,8 +2709,8 @@ layers = [
          "SnowDepth": {
             "Confidence": "Unknown",
             "interval": "monthly",
-            "niceName": "Depth of Snow Layer",
-            "data_provider": "ECMWF",
+            "niceName": "Depth of Snow Layer (monthly) PCR-GLOBWB",
+            "data_provider": "UU",
             
             "model": "PCR-GLOBWB - Monthly (WRR1)",
             "region": "Global",
@@ -2721,8 +2721,8 @@ layers = [
          "Rainf": {
             "Confidence": "Unknown",
             "interval": "monthly",
-            "niceName": "Rainfall Rate",
-            "data_provider": "ECMWF",
+            "niceName": "Rainfall Rate (monthly) PCR-GLOBWB",
+            "data_provider": "UU",
             
             "model": "PCR-GLOBWB - Monthly (WRR1)",
             "region": "Global",
@@ -2733,8 +2733,8 @@ layers = [
          "SWnet": {
             "Confidence": "Unknown",
             "interval": "monthly",
-            "niceName": "Net Shortwave Radiation",
-            "data_provider": "ECMWF",
+            "niceName": "Net Shortwave Radiation (monthly) PCR-GLOBWB",
+            "data_provider": "UU",
             
             "model": "PCR-GLOBWB - Monthly (WRR1)",
             "region": "Global",
@@ -2745,8 +2745,8 @@ layers = [
          "SWE": {
             "Confidence": "Unknown",
             "interval": "monthly",
-            "niceName": "Snow Water Equivalent",
-            "data_provider": "ECMWF",
+            "niceName": "Snow Water Equivalent (monthly) PCR-GLOBWB",
+            "data_provider": "UU",
             
             "model": "PCR-GLOBWB - Monthly (WRR1)",
             "region": "Global",
@@ -2757,8 +2757,8 @@ layers = [
          "TotMoist": {
             "Confidence": "Unknown",
             "interval": "monthly",
-            "niceName": "Total Soil Moisture",
-            "data_provider": "ECMWF",
+            "niceName": "Total Soil Moisture (monthly) PCR-GLOBWB",
+            "data_provider": "UU",
             
             "model": "PCR-GLOBWB - Monthly (WRR1)",
             "region": "Global",
@@ -2769,8 +2769,8 @@ layers = [
          "Qsm": {
             "Confidence": "Unknown",
             "interval": "monthly",
-            "niceName": "Snowmelt",
-            "data_provider": "ECMWF",
+            "niceName": "Snowmelt (monthly) PCR-GLOBWB",
+            "data_provider": "UU",
             
             "model": "PCR-GLOBWB - Monthly (WRR1)",
             "region": "Global",
@@ -2781,8 +2781,8 @@ layers = [
          "RivOut": {
             "Confidence": "Unknown",
             "interval": "monthly",
-            "niceName": "River Discharge",
-            "data_provider": "ECMWF",
+            "niceName": "River Discharge (monthly) PCR-GLOBWB",
+            "data_provider": "UU",
             
             "model": "PCR-GLOBWB - Monthly (WRR1)",
             "region": "Global",
@@ -2793,8 +2793,8 @@ layers = [
          "TVeg": {
             "Confidence": "Unknown",
             "interval": "monthly",
-            "niceName": "Vegetation Transpiration",
-            "data_provider": "ECMWF",
+            "niceName": "Vegetation Transpiration (monthly) PCR-GLOBWB",
+            "data_provider": "UU",
             
             "model": "PCR-GLOBWB - Monthly (WRR1)",
             "region": "Global",
@@ -2805,8 +2805,8 @@ layers = [
          "Albedo": {
             "Confidence": "Unknown",
             "interval": "monthly",
-            "niceName": "Surface Albedo",
-            "data_provider": "ECMWF",
+            "niceName": "Surface Albedo (monthly) PCR-GLOBWB",
+            "data_provider": "UU",
             
             "model": "PCR-GLOBWB - Monthly (WRR1)",
             "region": "Global",
@@ -2817,8 +2817,8 @@ layers = [
          "Qsb": {
             "Confidence": "Unknown",
             "interval": "monthly",
-            "niceName": "Sub-Surface Runoff",
-            "data_provider": "ECMWF",
+            "niceName": "Sub-Surface Runoff (monthly) PCR-GLOBWB",
+            "data_provider": "UU",
             
             "model": "PCR-GLOBWB - Monthly (WRR1)",
             "region": "Global",
@@ -2829,8 +2829,8 @@ layers = [
          "SurfMoist": {
             "Confidence": "Unknown",
             "interval": "monthly",
-            "niceName": "Surface Soil Moisture",
-            "data_provider": "ECMWF",
+            "niceName": "Surface Soil Moisture (monthly) PCR-GLOBWB",
+            "data_provider": "UU",
             
             "model": "PCR-GLOBWB - Monthly (WRR1)",
             "region": "Global",
@@ -2841,8 +2841,8 @@ layers = [
          "Evap": {
             "Confidence": "Unknown",
             "interval": "monthly",
-            "niceName": "Total Evapotranspiration",
-            "data_provider": "ECMWF",
+            "niceName": "Total Evapotranspiration (monthly) PCR-GLOBWB",
+            "data_provider": "UU",
             
             "model": "PCR-GLOBWB - Monthly (WRR1)",
             "region": "Global",
@@ -2853,8 +2853,8 @@ layers = [
          "Qs": {
             "Confidence": "Unknown",
             "interval": "monthly",
-            "niceName": "Surface Runoff",
-            "data_provider": "ECMWF",
+            "niceName": "Surface Runoff (monthly) PCR-GLOBWB",
+            "data_provider": "UU",
             
             "model": "PCR-GLOBWB - Monthly (WRR1)",
             "region": "Global",
@@ -2865,8 +2865,8 @@ layers = [
          "AvgSurfT": {
             "Confidence": "Unknown",
             "interval": "monthly",
-            "niceName": "Average Surface Temperature",
-            "data_provider": "ECMWF",
+            "niceName": "Average Surface Temperature (monthly) PCR-GLOBWB",
+            "data_provider": "UU",
             
             "model": "PCR-GLOBWB - Monthly (WRR1)",
             "region": "Global",
@@ -2877,8 +2877,8 @@ layers = [
          "ESoil": {
             "Confidence": "Unknown",
             "interval": "monthly",
-            "niceName": "Bar Soil Evaporation",
-            "data_provider": "ECMWF",
+            "niceName": "Bar Soil Evaporation (monthly) PCR-GLOBWB",
+            "data_provider": "UU",
             
             "model": "PCR-GLOBWB - Monthly (WRR1)",
             "region": "Global",
@@ -2889,8 +2889,8 @@ layers = [
          "ECanop": {
             "Confidence": "Unknown",
             "interval": "monthly",
-            "niceName": "Interception Evaporation",
-            "data_provider": "ECMWF",
+            "niceName": "Interception Evaporation (monthly) PCR-GLOBWB",
+            "data_provider": "UU",
             
             "model": "PCR-GLOBWB - Monthly (WRR1)",
             "region": "Global",
@@ -2901,8 +2901,8 @@ layers = [
          "SnowFrac": {
             "Confidence": "Unknown",
             "interval": "monthly",
-            "niceName": "Snow Cover Fraction",
-            "data_provider": "ECMWF",
+            "niceName": "Snow Cover Fraction (monthly) PCR-GLOBWB",
+            "data_provider": "UU",
             
             "model": "PCR-GLOBWB - Monthly (WRR1)",
             "region": "Global",
@@ -2913,8 +2913,8 @@ layers = [
          "Precip": {
             "Confidence": "Unknown",
             "interval": "monthly",
-            "niceName": "Precipitation",
-            "data_provider": "ECMWF",
+            "niceName": "Precipitation (monthly) PCR-GLOBWB",
+            "data_provider": "UU",
             
             "model": "PCR-GLOBWB - Monthly (WRR1)",
             "region": "Global",
@@ -2925,8 +2925,8 @@ layers = [
          "RootMoist": {
             "Confidence": "Unknown",
             "interval": "monthly",
-            "niceName": "Root Zone Soil Moisture",
-            "data_provider": "ECMWF",
+            "niceName": "Root Zone Soil Moisture (monthly) PCR-GLOBWB",
+            "data_provider": "UU",
             
             "model": "PCR-GLOBWB - Monthly (WRR1)",
             "region": "Global",
@@ -2937,8 +2937,8 @@ layers = [
          "CanopInt": {
             "Confidence": "Unknown",
             "interval": "monthly",
-            "niceName": "Total Canopy Water Storage",
-            "data_provider": "ECMWF",
+            "niceName": "Total Canopy Water Storage (monthly) PCR-GLOBWB",
+            "data_provider": "UU",
             
             "model": "PCR-GLOBWB - Monthly (WRR1)",
             "region": "Global",
@@ -2949,8 +2949,8 @@ layers = [
          "LAI": {
             "Confidence": "Unknown",
             "interval": "monthly",
-            "niceName": "Leaf Area Index",
-            "data_provider": "ECMWF",
+            "niceName": "Leaf Area Index (monthly) PCR-GLOBWB",
+            "data_provider": "UU",
             
             "model": "PCR-GLOBWB - Monthly (WRR1)",
             "region": "Global",
@@ -2961,8 +2961,8 @@ layers = [
          "Qle": {
             "Confidence": "Unknown",
             "interval": "monthly",
-            "niceName": "Latent Heat Flux",
-            "data_provider": "ECMWF",
+            "niceName": "Latent Heat Flux (monthly) PCR-GLOBWB",
+            "data_provider": "UU",
             
             "model": "PCR-GLOBWB - Monthly (WRR1)",
             "region": "Global",
@@ -2973,8 +2973,8 @@ layers = [
          "Runoff": {
             "Confidence": "Unknown",
             "interval": "monthly",
-            "niceName": "Total Runoff",
-            "data_provider": "ECMWF",
+            "niceName": "Total Runoff (monthly) PCR-GLOBWB",
+            "data_provider": "UU",
             
             "model": "PCR-GLOBWB - Monthly (WRR1)",
             "region": "Global",
@@ -2987,7 +2987,7 @@ layers = [
    {
       "name": "uu_wrr1_daily",
       "options": {
-         "providerShortTag": "ECMWF"
+         "providerShortTag": "UU"
       },
       "services": {
          "wms": {
@@ -3015,8 +3015,8 @@ layers = [
          "Qh": {
             "Confidence": "Unknown",
             "interval": "monthly",
-            "niceName": "Sensible Heat Flux",
-            "data_provider": "ECMWF",
+            "niceName": "Sensible Heat Flux (daily) PCR-GLOBWB",
+            "data_provider": "UU",
             
             "model": "PCR-GLOBWB - Daily (WRR1)",
             "region": "Global",
@@ -3027,8 +3027,8 @@ layers = [
          "LWnet": {
             "Confidence": "Unknown",
             "interval": "monthly",
-            "niceName": "Net Longwave Radiation",
-            "data_provider": "ECMWF",
+            "niceName": "Net Longwave Radiation (daily) PCR-GLOBWB",
+            "data_provider": "UU",
             
             "model": "PCR-GLOBWB - Daily (WRR1)",
             "region": "Global",
@@ -3039,8 +3039,8 @@ layers = [
          "SnowDepth": {
             "Confidence": "Unknown",
             "interval": "monthly",
-            "niceName": "Depth of Snow Layer",
-            "data_provider": "ECMWF",
+            "niceName": "Depth of Snow Layer (daily) PCR-GLOBWB",
+            "data_provider": "UU",
             
             "model": "PCR-GLOBWB - Daily (WRR1)",
             "region": "Global",
@@ -3051,8 +3051,8 @@ layers = [
          "Rainf": {
             "Confidence": "Unknown",
             "interval": "monthly",
-            "niceName": "Rainfall Rate",
-            "data_provider": "ECMWF",
+            "niceName": "Rainfall Rate (daily) PCR-GLOBWB",
+            "data_provider": "UU",
             
             "model": "PCR-GLOBWB - Daily (WRR1)",
             "region": "Global",
@@ -3063,8 +3063,8 @@ layers = [
          "SWnet": {
             "Confidence": "Unknown",
             "interval": "monthly",
-            "niceName": "Net Shortwave Radiation",
-            "data_provider": "ECMWF",
+            "niceName": "Net Shortwave Radiation (daily) PCR-GLOBWB",
+            "data_provider": "UU",
             
             "model": "PCR-GLOBWB - Daily (WRR1)",
             "region": "Global",
@@ -3075,8 +3075,8 @@ layers = [
          "SWE": {
             "Confidence": "Unknown",
             "interval": "monthly",
-            "niceName": "Snow Water Equivalent",
-            "data_provider": "ECMWF",
+            "niceName": "Snow Water Equivalent (daily) PCR-GLOBWB",
+            "data_provider": "UU",
             
             "model": "PCR-GLOBWB - Daily (WRR1)",
             "region": "Global",
@@ -3087,8 +3087,8 @@ layers = [
          "TotMoist": {
             "Confidence": "Unknown",
             "interval": "monthly",
-            "niceName": "Total Soil Moisture",
-            "data_provider": "ECMWF",
+            "niceName": "Total Soil Moisture (daily) PCR-GLOBWB",
+            "data_provider": "UU",
             
             "model": "PCR-GLOBWB - Daily (WRR1)",
             "region": "Global",
@@ -3099,8 +3099,8 @@ layers = [
          "Qsm": {
             "Confidence": "Unknown",
             "interval": "monthly",
-            "niceName": "Snowmelt",
-            "data_provider": "ECMWF",
+            "niceName": "Snowmelt (daily) PCR-GLOBWB",
+            "data_provider": "UU",
             
             "model": "PCR-GLOBWB - Daily (WRR1)",
             "region": "Global",
@@ -3111,8 +3111,8 @@ layers = [
          "RivOut": {
             "Confidence": "Unknown",
             "interval": "monthly",
-            "niceName": "River Discharge",
-            "data_provider": "ECMWF",
+            "niceName": "River Discharge (daily) PCR-GLOBWB",
+            "data_provider": "UU",
             
             "model": "PCR-GLOBWB - Daily (WRR1)",
             "region": "Global",
@@ -3123,8 +3123,8 @@ layers = [
          "TVeg": {
             "Confidence": "Unknown",
             "interval": "monthly",
-            "niceName": "Vegetation Transpiration",
-            "data_provider": "ECMWF",
+            "niceName": "Vegetation Transpiration (daily) PCR-GLOBWB",
+            "data_provider": "UU",
             
             "model": "PCR-GLOBWB - Daily (WRR1)",
             "region": "Global",
@@ -3135,8 +3135,8 @@ layers = [
          "Albedo": {
             "Confidence": "Unknown",
             "interval": "monthly",
-            "niceName": "Surface Albedo",
-            "data_provider": "ECMWF",
+            "niceName": "Surface Albedo (daily) PCR-GLOBWB",
+            "data_provider": "UU",
             
             "model": "PCR-GLOBWB - Daily (WRR1)",
             "region": "Global",
@@ -3147,8 +3147,8 @@ layers = [
          "Qsb": {
             "Confidence": "Unknown",
             "interval": "monthly",
-            "niceName": "Sub-Surface Runoff",
-            "data_provider": "ECMWF",
+            "niceName": "Sub-Surface Runoff (daily) PCR-GLOBWB",
+            "data_provider": "UU",
             
             "model": "PCR-GLOBWB - Daily (WRR1)",
             "region": "Global",
@@ -3159,8 +3159,8 @@ layers = [
          "SurfMoist": {
             "Confidence": "Unknown",
             "interval": "monthly",
-            "niceName": "Surface Soil Moisture",
-            "data_provider": "ECMWF",
+            "niceName": "Surface Soil Moisture (daily) PCR-GLOBWB",
+            "data_provider": "UU",
             
             "model": "PCR-GLOBWB - Daily (WRR1)",
             "region": "Global",
@@ -3171,8 +3171,8 @@ layers = [
          "Evap": {
             "Confidence": "Unknown",
             "interval": "monthly",
-            "niceName": "Total Evapotranspiration",
-            "data_provider": "ECMWF",
+            "niceName": "Total Evapotranspiration (daily) PCR-GLOBWB",
+            "data_provider": "UU",
             
             "model": "PCR-GLOBWB - Daily (WRR1)",
             "region": "Global",
@@ -3183,8 +3183,8 @@ layers = [
          "Qs": {
             "Confidence": "Unknown",
             "interval": "monthly",
-            "niceName": "Surface Runoff",
-            "data_provider": "ECMWF",
+            "niceName": "Surface Runoff (daily) PCR-GLOBWB",
+            "data_provider": "UU",
             
             "model": "PCR-GLOBWB - Daily (WRR1)",
             "region": "Global",
@@ -3195,8 +3195,8 @@ layers = [
          "AvgSurfT": {
             "Confidence": "Unknown",
             "interval": "monthly",
-            "niceName": "Average Surface Temperature",
-            "data_provider": "ECMWF",
+            "niceName": "Average Surface Temperature (daily) PCR-GLOBWB",
+            "data_provider": "UU",
             
             "model": "PCR-GLOBWB - Daily (WRR1)",
             "region": "Global",
@@ -3207,8 +3207,8 @@ layers = [
          "ESoil": {
             "Confidence": "Unknown",
             "interval": "monthly",
-            "niceName": "Bare Soil Evaporation",
-            "data_provider": "ECMWF",
+            "niceName": "Bare Soil Evaporation (daily) PCR-GLOBWB",
+            "data_provider": "UU",
             
             "model": "PCR-GLOBWB - Daily (WRR1)",
             "region": "Global",
@@ -3219,8 +3219,8 @@ layers = [
          "ECanop": {
             "Confidence": "Unknown",
             "interval": "monthly",
-            "niceName": "Interception Evaporation",
-            "data_provider": "ECMWF",
+            "niceName": "Interception Evaporation (daily) PCR-GLOBWB",
+            "data_provider": "UU",
             
             "model": "PCR-GLOBWB - Daily (WRR1)",
             "region": "Global",
@@ -3231,8 +3231,8 @@ layers = [
          "SnowFrac": {
             "Confidence": "Unknown",
             "interval": "monthly",
-            "niceName": "Snow Cover Fraction",
-            "data_provider": "ECMWF",
+            "niceName": "Snow Cover Fraction (daily) PCR-GLOBWB",
+            "data_provider": "UU",
             
             "model": "PCR-GLOBWB - Daily (WRR1)",
             "region": "Global",
@@ -3243,8 +3243,8 @@ layers = [
          "Precip": {
             "Confidence": "Unknown",
             "interval": "monthly",
-            "niceName": "Precipitation",
-            "data_provider": "ECMWF",
+            "niceName": "Precipitation (daily) PCR-GLOBWB",
+            "data_provider": "UU",
             
             "model": "PCR-GLOBWB - Daily (WRR1)",
             "region": "Global",
@@ -3255,8 +3255,8 @@ layers = [
          "RootMoist": {
             "Confidence": "Unknown",
             "interval": "monthly",
-            "niceName": "Root Zone Soil Moisture",
-            "data_provider": "ECMWF",
+            "niceName": "Root Zone Soil Moisture (daily) PCR-GLOBWB",
+            "data_provider": "UU",
             
             "model": "PCR-GLOBWB - Daily (WRR1)",
             "region": "Global",
@@ -3267,8 +3267,8 @@ layers = [
          "CanopInt": {
             "Confidence": "Unknown",
             "interval": "monthly",
-            "niceName": "Total Canopy Water Storage",
-            "data_provider": "ECMWF",
+            "niceName": "Total Canopy Water Storage (daily) PCR-GLOBWB",
+            "data_provider": "UU",
             
             "model": "PCR-GLOBWB - Daily (WRR1)",
             "region": "Global",
@@ -3279,8 +3279,8 @@ layers = [
          "LAI": {
             "Confidence": "Unknown",
             "interval": "monthly",
-            "niceName": "Leaf Area Index",
-            "data_provider": "ECMWF",
+            "niceName": "Leaf Area Index (daily) PCR-GLOBWB",
+            "data_provider": "UU",
             
             "model": "PCR-GLOBWB - Daily (WRR1)",
             "region": "Global",
@@ -3291,8 +3291,8 @@ layers = [
          "Qle": {
             "Confidence": "Unknown",
             "interval": "monthly",
-            "niceName": "Latent Heat Flux",
-            "data_provider": "ECMWF",
+            "niceName": "Latent Heat Flux (daily) PCR-GLOBWB",
+            "data_provider": "UU",
             
             "model": "PCR-GLOBWB - Daily (WRR1)",
             "region": "Global",
@@ -3303,8 +3303,8 @@ layers = [
          "Runoff": {
             "Confidence": "Unknown",
             "interval": "monthly",
-            "niceName": "Total Runoff",
-            "data_provider": "ECMWF",
+            "niceName": "Total Runoff (daily) PCR-GLOBWB",
+            "data_provider": "UU",
             
             "model": "PCR-GLOBWB - Daily (WRR1)",
             "region": "Global",
