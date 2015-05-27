@@ -31,7 +31,7 @@ gisportal.stateLocation = gisportal.middlewarePath + '/state';
 gisportal.graphLocation = gisportal.middlewarePath + '/graph';
 
 // Define a proxy for the map to allow async javascript http protocol requests
-OpenLayers.ProxyHost = gisportal.middlewarePath + '/proxy?url=';   // Flask (Python) service OpenLayers proxy
+gisportal.ProxyHost = gisportal.middlewarePath + '/proxy?url=';   // Flask (Python) service OpenLayers proxy
 
 // Stores the data provided by the master cache file on the server. This 
 // includes layer names, titles, abstracts, etc.
@@ -73,30 +73,7 @@ gisportal.selectionTools = null;
 gisportal.timeline = null;
 
 // Predefined map coordinate systems
-gisportal.lonlat = new OpenLayers.Projection("EPSG:4326");
-
-// Quick regions array in the format "Name",W,S,E,N
-gisportal.quickRegion = [
-   ["World View", -150, -90, 150, 90],
-   ["European Seas", -23.44, 20.14, 39.88, 68.82],
-   ["Adriatic", 11.83, 39.00, 20.67, 45.80],
-   ["Baltic", 9.00, 51.08, 30.50, 67.62],
-   ["Biscay", -10, 43.00, 0, 49.00],
-   ["Black Sea", 27.30, 38.50, 42.00, 49.80],
-   ["English Channel", -5.00, 46.67, 4.30, 53.83],
-   ["Eastern Med.", 20.00, 29.35, 36.00, 41.65],
-   ["North Sea", -4.50, 50.20, 8.90, 60.50],
-   ["Western Med.", -6.00, 30.80, 16.50, 48.10],
-   ["Mediterranean", -6.00, 29.35, 36.00, 48.10]
-];
-
-gisportal.countryBorderLayers = {
-   "none" : { "id" : "0", "name" : "No Borders", "url": ""},
-   "countries_all_white" : { "id" : "countries_all_white", "name" : "White border lines", "url": "https://rsg.pml.ac.uk/geoserver/wms?"},
-   "countries_all_black": { "id" : "countries_all_black", "name" : "Black border lines", "url": "https://rsg.pml.ac.uk/geoserver/wms?"},
-   "countries_all_default": { "id" : "countries_all_default", "name" : "Blue border lines", "url": "https://rsg.pml.ac.uk/geoserver/wms?"},
-};
-
+gisportal.projection = 'EPSG:4326';
 
 /**
  * The OpenLayers map object
@@ -145,79 +122,6 @@ gisportal.loadLayers = function() {
 
 };
 
-
-/**
- * Create all the base layers for the map.
- */
-gisportal.createBaseLayers = function() {
-   
-   function createBaseLayer(name, url, opts) {
-      var layer = new OpenLayers.Layer.WMS(
-         name,
-         url,
-         opts,
-         { projection: gisportal.lonlat, wrapDateLine: true, transitionEffect: 'resize' }      
-      );
-      
-      layer.id = name;
-      layer.type = 'baseLayers';
-      layer.displayTitle = name;
-      layer.name = name;
-      
-      layer.events.on({
-         "loadstart": gisportal.loading.increment,
-         "loadend": gisportal.loading.decrement
-      })
-      map.addLayer(layer);
-      gisportal.baseLayers[name] = layer;
-   }
-   
-   createBaseLayer('GEBCO', 'https://www.gebco.net/data_and_products/gebco_web_services/web_map_service/mapserv?', { layers: 'gebco_08_grid' });
-   createBaseLayer('EOX', 'https://tiles.maps.eox.at/wms/?' , {layers : 'terrain-light'});
-   createBaseLayer('Metacarta Basic', 'http://vmap0.tiles.osgeo.org/wms/vmap0?', { layers: 'basic' });
-   createBaseLayer('Landsat', 'http://irs.gis-lab.info/?', { layers: 'landsat' });
-   createBaseLayer('Blue Marble', 'http://demonstrator.vegaspace.com/wmspub', {layers: "BlueMarble" });
-   
-   // Get and store the number of base layers
-   gisportal.numBaseLayers = map.getLayersBy('isBaseLayer', true).length;
-};
-
-/** Create  the country borders overlay
- *
- */
-gisportal.createCountryBorderLayer = function(layerName) {
-   // first remove the old country border layer if it exists
-   var old_layer = map.getLayersByName('country_borders');
-   if (old_layer.length > 0) {
-      old_layer[0].destroy();
-   }
-
-   if (layerName != '0') {
-      // then add the selected one
-      var layer = new OpenLayers.Layer.WMS(
-         'country_borders',
-         //'https://rsg.pml.ac.uk/geoserver/wms?',
-         gisportal.countryBorderLayers[layerName].url,
-         { layers: gisportal.countryBorderLayers[layerName].id, transparent: true },
-         { projection: gisportal.lonlat, wrapDateLine: true, transitionEffect: 'resize' }
-      );
-
-      layer.id = 'country_borders';
-      layer.controlID = 'country_borders';
-      layer.displayTitle = 'Country Borders';
-      layer.name = 'country_borders';
-      
-      map.addLayer(layer);   
-   }
- }
-
-gisportal.setCountryBordersToTopLayer = function() {
-   // if the country border layer is on the map move it to the top
-   var border_layer = map.getLayersByName('country_borders');
-   if (border_layer.length > 0) {
-      border_layer[0].setZIndex(2000);   
-   }
-}
 
 
 /** 
@@ -275,7 +179,8 @@ gisportal.createOpLayers = function() {
       while( gisportal.layers[layer.id + postfix ] !== void(0) )
          postfix++; // will convert the "" into a number
 
-      gisportal.layers[layer.id + postfix] = layer;
+      layer.id = layer.id + postfix;
+      gisportal.layers[layer.id] = layer;
 
    };
 
@@ -376,57 +281,43 @@ gisportal.refreshDateCache = function() {
  * Sets up the map, plus its controls, layers, styling and events.
  */
 gisportal.mapInit = function() {
-    graticuleCtl1 = new OpenLayers.Control.Graticule({
-        numPoints: 2, 
-        labelled: true
-    });
-   map = new OpenLayers.Map('map', {
-      projection: gisportal.lonlat,
-      displayProjection: gisportal.lonlat,
+
+   map = new ol.Map({
+      target: 'map',
       controls: [
-         new OpenLayers.Control.Zoom({
-            zoomInId: "mapZoomIn",
-            zoomOutId: "mapZoomOut"
-        })
-      ]
-   });
+         new ol.control.FullScreen({
+            label: $('<span class="icon-arrow-move-1"><span>').appendTo('body')
+         }),
+         new ol.control.Zoom({
+            zoomInLabel: $('<span class="icon-zoom-in"></span>').appendTo('body'),
+            zoomOutLabel: $('<span class="icon-zoom-out"></span>').appendTo('body')
+         })
+      ],
+      view: new ol.View({
+         projection: gisportal.projection,
+         center: [0, 0],
+         minZoom: 3,
+         maxZoom: 12,
+         resolution: 0.175,
+      }),
+      logo: false
+   })
 
-
+   map.addInteraction(new ol.interaction.Select({
+      condition: function(e) {
+         return e.originalEvent.type=='mousemove';
+      }
+   }));
+   
    // Get both master cache files from the server. These files tells the server
    // what layers to load for Operation (wms) and Reference (wcs) layers.
    gisportal.loadLayers();
 
-   // Create the base layers and then add them to the map
-   gisportal.createBaseLayers();
+   // Create the base layers, country borders layers and graticules; set defaults
+   gisportal.map_settings.init();         // map-settings.js
    
-   
-   // Create map controls identified by key values which can be activated and deactivated
-   gisportal.mapControls = {
-      zoomIn: new OpenLayers.Control.ZoomBox(
-         { out: false, alwaysZoom: true }
-      ),
-      zoomOut: new OpenLayers.Control.ZoomBox(
-         { out: true, alwaysZoom: true }
-      ),
-      pan: new OpenLayers.Control.Navigation(),
-      selector: new OpenLayers.Control.SelectFeature([], {
-         hover: false,
-         autoActive: true
-      })
-   };
-
-   // Add all the controls to the map
-   for (var key in gisportal.mapControls) {
-      var control = gisportal.mapControls[key];
-      map.addControl(control);
-   }
-
-   gisportal.quickRegions.setup();
+   // add vector layer for drawing area of interest polygons, and set up tools
    gisportal.selectionTools.init();
-
-   if(!map.getCenter())
-      map.zoomTo(3);
-
 
 };
 
@@ -440,12 +331,8 @@ gisportal.initWMSlayers = function(data, opts) {
       gisportal.cache.wmsLayers = data;
       // Create WMS layers from the data
       gisportal.createOpLayers();
-      
-      //var ows = new OpenLayers.Format.OWSContext();
-      //var doc = ows.write(map);
    }
 };
-
 
 
 /*===========================================================================*/
@@ -455,15 +342,6 @@ gisportal.initWMSlayers = function(data, opts) {
  * This is used to set the layer index to be the correct order 
  */
 gisportal.nonLayerDependent = function() {
-   // Keeps the vectorLayers at the top of the map
-   map.events.register("addlayer", map, function() { 
-       // Get and store the number of reference layers
-      var poiLayers = map.getLayersBy('type', 'poiLayer');
-
-      $.each(poiLayers, function(index, value) {
-         map.setLayerIndex(value, map.layers.length - 1);
-      });
-   });
    
    // Setup timeline, from timeline.js
    gisportal.timeline = new gisportal.TimeLine('timeline', {
@@ -508,25 +386,29 @@ gisportal.saveState = function(state) {
    state.map.layers = {}; 
    state.timeline = {}; 
 
-   // Get the current layers and any settings/options for them.
-   var keys = gisportal.selectedLayers;
-   for(var i = 0, len = keys.length; i < len; i++) {
-      var selectedIndicator = gisportal.selectedLayers[i];
+   // // Get the current layers and any settings/options for them.
+   // var keys = gisportal.selectedLayers;
+   // for(var i = 0, len = keys.length; i < len; i++) {
+   //    var selectedIndicator = gisportal.selectedLayers[i];
 
-      if (selectedIndicator)  {
-         var indicator = gisportal.layers[selectedIndicator];
-         state.map.layers[indicator.id] = {
-            'selected': indicator.selected,
-            'opacity': indicator.opacity !== null ? indicator.opacity : 1,
-            'style': indicator.style !== null ? indicator.style : '',
-            'minScaleVal': indicator.minScaleVal,
-            'maxScaleVal': indicator.maxScaleVal,
-            'openTab' : $('.indicator-header[data-id="' + indicator.id + '"] + ul .js-tab-trigger:checked').attr('id')
-         };    
-      }
-   }
+   //    if (selectedIndicator)  {
+   //       var indicator = gisportal.layers[selectedIndicator];
+   //       state.map.layers[indicator.id] = {
+   //          'selected': indicator.selected,
+   //          'opacity': indicator.opacity !== null ? indicator.opacity : 1,
+   //          'style': indicator.style !== null ? indicator.style : '',
+   //          'minScaleVal': indicator.minScaleVal,
+   //          'maxScaleVal': indicator.maxScaleVal,
+   //          'openTab' : $('.indicator-header[data-id="' + indicator.id + '"] + ul .js-tab-trigger:checked').attr('id')
+   //       };    
+   //    }
+   // }
    // outside of loop so it can be easily ordered 
-   state.selectedIndicators = gisportal.selectedLayers;
+   var layers = [];
+   $('.sortable-list .indicator-header').each(function() {
+      layers.unshift($(this).parent().data('id'));
+   })
+   state.selectedIndicators = layers;
    
    // Get currently selected date.
    if(!gisportal.utils.isNullorUndefined($('.js-current-date').val())) {
@@ -534,26 +416,27 @@ gisportal.saveState = function(state) {
    }
      
    // Get selection from the map
-   var layer = map.getLayersBy('controlID', 'poiLayer')[0];
-   if(layer.features.length > 0) {
-      var feature = layer.features[0];
-      state.map.feature = gisportal.featureToGeoJSON(feature);
+   var features = gisportal.vectorLayer.getSource().getFeatures();
+   var geoJsonFormat = new ol.format.GeoJSON;
+   var featureOptions = {
+      'dataProjection': gisportal.projection,
+      'featureProjection': gisportal.projection
    }
+   state.map.feature = geoJsonFormat.writeFeatures(features, featureOptions);   
    
    // Get zoom level
-   state.map.zoom = map.zoom;
+   state.map.zoom = map.getView().getZoom();
 
    // Get position
-   state.map.extent = map.getExtent();
-
-   // Get quick regions
-   state.map.regions = gisportal.quickRegion;
-   state.map.selectedRegion = $('#quickRegion option:selected').val();
+   state.map.centre = map.getView().getCenter();
 
    // Get timeline zoom
    state.timeline.minDate = gisportal.timeline.xScale.domain()[0];
    state.timeline.maxDate = gisportal.timeline.xScale.domain()[1];
 
+   state.map.baselayer = $('#select-basemap').data().ddslick.selectedData.value;
+   state.map.countryborders = $('#select-country-borders').data().ddslick.selectedData.value;
+   state.map.graticules = $('#select-graticules').data().ddslick.selectedData.value;
 
    return state;
 };
@@ -563,6 +446,7 @@ gisportal.saveState = function(state) {
  * @param {object} state - The saved state object
  */
 gisportal.loadState = function(state) {
+   
    gisportal.stateLoadStarted = true;
    $('.start').toggleClass('hidden', true);
    var state = state || {};
@@ -582,7 +466,8 @@ gisportal.loadState = function(state) {
       else indicator = gisportal.layers[keys[i]];
       if (indicator && !gisportal.selectedLayers[indicator.id]) {
          gisportal.configurePanel.close();
-//         console.log(indicator);
+         // this stops the map from auto zooming to the max extent of all loaded layers
+         indicator.preventAutoZoom = true;
 
          gisportal.refinePanel.foundIndicator(indicator.id);
         
@@ -590,24 +475,20 @@ gisportal.loadState = function(state) {
    }
    
    // Create the feature if there is one
-   indicator = {};
-   if(!gisportal.utils.isNullorUndefined(stateMap.feature)) {
-      var layer = map.getLayersBy('type', 'poiLayer')[0];
-      if (layer) layer.addFeatures(gisportal.geoJSONToFeature(stateMap.feature));
-    }
+   if (stateMap.feature) {    // Array.<ol.Feature>
+      var geoJsonFormat = new ol.format.GeoJSON;
+      var featureOptions = {
+         'dataProjection': gisportal.projection,
+         'featureProjection': gisportal.projection
+      };
+      var features = geoJsonFormat.readFeatures(stateMap.feature, featureOptions);
+      gisportal.vectorLayer.getSource().addFeatures(features);
+   }
    
-   // Load position
-   if (stateMap.extent)
-      map.zoomToExtent(new OpenLayers.Bounds([stateMap.extent.left,stateMap.extent.bottom, stateMap.extent.right, stateMap.extent.top]));
-
    // Load Quick Regions
    if (stateMap.regions) {
       gisportal.quickRegion = stateMap.regions;
       gisportal.quickRegions.setup();
-   }
-
-   if (stateMap.selectedRegion)  {
-      $('#quickRegion').val(stateMap.selectedRegion);
    }
 
    if (stateTimeline)  {
@@ -615,6 +496,24 @@ gisportal.loadState = function(state) {
       if (stateMap.date) gisportal.timeline.setDate(new Date(stateMap.date));
    }
 
+   if (stateMap.baselayer) {
+      gisportal.selectBaseLayer(stateMap.baselayer);
+      $('#select-basemap').val(stateMap.baselayer);
+   }
+
+   if (stateMap.countryborders) {
+      gisportal.selectCountryBorderLayer(stateMap.countryborders);
+      $('#select-country-borders').val(stateMap.countryborders);
+   }
+
+   if (stateMap.graticules) {
+      $('#select-graticules').val(stateMap.graticules);
+   }
+
+   // Load position & zoom
+   var view = map.getView();
+   view.setZoom(stateMap.zoom);
+   view.setCenter(stateMap.centre);
 
 };
 
@@ -623,8 +522,8 @@ gisportal.loadState = function(state) {
  * @param {object} feature - The feature
  */
 gisportal.featureToGeoJSON = function(feature) {
-   var geoJSON = new OpenLayers.Format.GeoJSON();
-   return geoJSON.write(feature);
+   var geoJSON = new ol.format.GeoJSON();
+   return geoJSON.writeFeature(feature);
 };
 
 /**
@@ -632,8 +531,8 @@ gisportal.featureToGeoJSON = function(feature) {
  * @param {string} geoJSONFeature - The GeoJSON
  */
 gisportal.geoJSONToFeature = function(geoJSONFeature) {
-   var geoJSON = new OpenLayers.Format.GeoJSON();
-   return geoJSON.read(geoJSONFeature); 
+   var geoJSON = new ol.format.GeoJSON();
+   return geoJSON.readFeature(geoJSONFeature); 
 };
 
 /**
@@ -753,7 +652,7 @@ gisportal.main = function() {
       gisportal.graphs.initDOM();           // graphing.js
       gisportal.analytics.initGA();         // analytics.js
       gisportal.panelSlideout.initDOM();    //panel-slideout.js
-      gisportal.map_settings.init();         // map-settings.js
+      
       //Set the global loading icon
       gisportal.loading.loadingElement= jQuery('.global-loading-icon')
       
@@ -785,11 +684,6 @@ gisportal.main = function() {
          console.log('Loading Default State...');
       }
 
-      // Replaces all .icon-svg with actual SVG elements,
-      // so that they can be styled with CSS
-      // which cannot be done with SVG in background-image
-      // or <img>
-      
    });
 };
 
@@ -822,22 +716,18 @@ gisportal.zoomOverall = function()  {
    if (Object.keys(gisportal.selectedLayers).length > 0)  {
 
       // minX, minY, maxX, maxY
-      var largestBounds = [ 
-         Number.MAX_VALUE,
-         Number.MAX_VALUE,
-         Number.MIN_VALUE,
-         Number.MIN_VALUE
-      ];
+      var largestBounds = [ 180, 90, -180, -90 ]
 
       for (var i = 0; i < gisportal.selectedLayers.length; i++)  {
          var layer = gisportal.layers[gisportal.selectedLayers[i]].boundingBox;
-         if (+layer.MinX < +largestBounds[0]) largestBounds[0] = layer.MinX; // left 
-         if (+layer.MinY < +largestBounds[1]) largestBounds[1] = layer.MinY; // bottom
-         if (+layer.MaxX > +largestBounds[2]) largestBounds[2] = layer.MaxX; // right 
-         if (+layer.MaxY > +largestBounds[3]) largestBounds[3] = layer.MaxY; // top
+         if (+layer.MinX < +largestBounds[0]) largestBounds[0] = parseFloat(layer.MinX); // left 
+         if (+layer.MinY < +largestBounds[1]) largestBounds[1] = parseFloat(layer.MinY); // bottom
+         if (+layer.MaxX > +largestBounds[2]) largestBounds[2] = parseFloat(layer.MaxX); // right 
+         if (+layer.MaxY > +largestBounds[3]) largestBounds[3] = parseFloat(layer.MaxY); // top
       }
 
-      map.zoomToExtent(new OpenLayers.Bounds(largestBounds));
+      // TODO: update the zoom to bounds for ol3
+      map.getView().fitExtent(largestBounds, map.getSize());
    }
 };
 
@@ -853,12 +743,12 @@ gisportal.initStart = function()  {
    var autoLoad = null;
    if( gisportal.config.skipWelcomePage == true )
       if( gisportal.config.autoResumeSavedState == true && gisportal.hasAutoSaveState() )
-         var autoLoad = function(){ gisportal.loadState( gisportal.getAutoSaveState() ); };
+         var autoLoad = function(){ gisportal.loadState( gisportal.getAutoSaveState() ); gisportal.launchMap();};
       else
          var autoLoad = function(){ gisportal.launchMap(); };
 
    else if( gisportal.config.autoResumeSavedState == true && gisportal.hasAutoSaveState() )
-      var autoLoad = function(){ gisportal.loadState( gisportal.getAutoSaveState() ); };
+      var autoLoad = function(){ gisportal.loadState( gisportal.getAutoSaveState() ); gisportal.launchMap();};
 
    if( autoLoad != null)
       return setTimeout(autoLoad, 1000);
