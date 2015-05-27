@@ -10,12 +10,13 @@
 \*------------------------------------*/
 
 gisportal.config = {
-   siteMode: "development", //(development|production)
+   siteMode: "production", //(development|production)
    browseCategories : {
       "indicator_type" : "Indicator Type",
       "data_provider" : "Data Provider",
       "data_type" : "Data Type",
-      "forcing_version" : "Forcing Version"
+      "forcing_version" : "Forcing Version",
+      "interval": "Interval",
       "region" : "Region"
    },
    browseMode : 'selectlist',                       // (tabs|selectlist) tabs (default) = original method of 3 tabs; selectlist = makes all available categories selectable from a drop down list
