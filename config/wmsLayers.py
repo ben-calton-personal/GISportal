@@ -35,6 +35,7 @@ layers = [
             "indicator_type": [
                "Precipitation"
             ],
+            "data_type" : "Earth Observation",
             "region": "Global"
          }
       }
@@ -75,6 +76,7 @@ layers = [
             "indicator_type": [
                "Precipitation"
             ],
+            "data_type" : "Earth Observation",
             "region": "Africa"
          }
       }
@@ -115,6 +117,7 @@ layers = [
             "indicator_type": [
                "Evapotranspiration"
             ],
+            "data_type" : "Earth Observation",
             "region": "Australasia"
          },
          "Uncertainty": {
@@ -125,6 +128,7 @@ layers = [
             "indicator_type": [
                "Evapotranspiration"
             ],
+            "data_type" : "Earth Observation",
             "region": "Australasia"
          }
       }
@@ -165,6 +169,7 @@ layers = [
             "indicator_type": [
                "Evapotranspiration"
             ],
+            "data_type" : "Earth Observation",
             "region": "Australasia"
          },
          "Uncertainty": {
@@ -175,6 +180,7 @@ layers = [
             "indicator_type": [
                "Evapotranspiration"
             ],
+            "data_type" : "Earth Observation",
             "region": "Australasia"
          }
       }
@@ -215,6 +221,7 @@ layers = [
             "indicator_type": [
                "Evapotranspiration"
             ],
+            "data_type" : "Ecosystem Model",
             "region": "Global"
          }
       }
@@ -255,6 +262,7 @@ layers = [
             "indicator_type": [
                "Evapotranspiration"
             ],
+            "data_type" : "Ecosystem Model",
             "region": "Global"
          }
       }
@@ -295,12 +303,13 @@ layers = [
             "indicator_type": [
                "Evapotranspiration"
             ],
+            "data_type" : "Ecosystem Model",
             "region": "Global"
          }
       }
    },
    {
-      "name": "ecmwf_forcing_lwdown",
+      "name": "ecmwf_forcing_lwdown_3h",
       "options": {
          "providerShortTag": "ECMWF"
       },
@@ -331,7 +340,9 @@ layers = [
             "Confidence": "Unknown",
             "interval": "3-hourly",
             "niceName": "Surface incident longwave radiation",
-            "data_provider": "ECMWF Forcing Data",
+            "data_provider": "ECMWF",
+            "data_type": "Ecosystem Model",
+            "forcing_version": "Version 0",
             "indicator_type": [
                "Radiation"
             ],
@@ -374,7 +385,9 @@ layers = [
             "Confidence": "Unknown",
             "interval": "3-hourly",
             "niceName": "Surface atmospheric pressure",
-            "data_provider": "ECMWF Forcing Data",
+            "data_provider": "ECMWF",
+            "data_type": "Ecosystem Model",
+            "forcing_version": "Version 0",
             "indicator_type": [
                "Meteorology"
             ],
@@ -414,7 +427,9 @@ layers = [
             "Confidence": "Unknown",
             "interval": "3-hourly",
             "niceName": "Near surface specific humidity",
-            "data_provider": "ECMWF Forcing Data",
+            "data_provider": "ECMWF",
+            "data_type": "Ecosystem Model",
+            "forcing_version": "Version 0",
             "indicator_type": [
                "Precipitation"
             ],
@@ -454,7 +469,9 @@ layers = [
             "Confidence": "Unknown",
             "interval": "3-hourly",
             "niceName": "Rainfall Rate",
-            "data_provider": "ECMWF Forcing Data",
+            "data_provider": "ECMWF",
+            "data_type": "Ecosystem Model",
+            "forcing_version": "Version 0",
             "indicator_type": [
                "Precipitation"
             ],
@@ -494,7 +511,9 @@ layers = [
             "Confidence": "Unknown",
             "interval": "3-hourly",
             "niceName": "Surface incident shortwave radiation",
-            "data_provider": "ECMWF Forcing Data",
+            "data_provider": "ECMWF",
+            "data_type": "Ecosystem Model",
+            "forcing_version": "Version 0",
             "indicator_type": [
                "Radiation"
             ],
@@ -534,7 +553,9 @@ layers = [
             "Confidence": "Unknown",
             "interval": "3-hourly",
             "niceName": "Snowfall rate",
-            "data_provider": "ECMWF Forcing Data",
+            "data_provider": "ECMWF",
+            "data_type": "Ecosystem Model",
+            "forcing_version": "Version 0",
             "indicator_type": [
                "Precipitation"
             ],
@@ -574,7 +595,9 @@ layers = [
             "Confidence": "Unknown",
             "interval": "3-hourly",
             "niceName": "Air Temperature",
-            "data_provider": "ECMWF Forcing Data",
+            "data_provider": "ECMWF",
+            "data_type": "Ecosystem Model",
+            "forcing_version": "Version 0",
             "indicator_type": [
                "Meteorology"
             ],
@@ -614,7 +637,348 @@ layers = [
             "Confidence": "Unknown",
             "interval": "3-hourly",
             "niceName": "Wind Speed",
-            "data_provider": "ECMWF Forcing Data",
+            "data_provider": "ECMWF",
+            "data_type": "Ecosystem Model",
+            "forcing_version": "Version 0",
+            "indicator_type": [
+               "Meteorology"
+            ],
+            "region": "Global"
+         }
+      }
+   },
+   {
+      "name": "ecmwf_forcing_lwdown_3h_daily",
+      "options": {
+         "providerShortTag": "ECMWF"
+      },
+      "services": {
+         "wms": {
+            "url": "https://wci.earth2observe.eu/thredds/wms/ecmwf/met_forcing_v0/lwdown_daily.nc?",
+            "params": {
+               "GetCapabilities": {
+                  "SERVICE": "WMS",
+                  "request": "GetCapabilities",
+                  "version": "1.3.0"
+               }
+            }
+         },
+         "wcs": {
+            "url": "https://wci.earth2observe.eu/thredds/wcs/ecmwf/met_forcing_v0/lwdown_daily.nc?",
+            "params": {
+               "DescribeCoverage": {
+                  "SERVICE": "WCS",
+                  "request": "describeCoverage",
+                  "version": "1.0.0"
+               }
+            }
+         }
+      },
+      "indicators": {
+         "LWdown": {
+            "Confidence": "Unknown",
+            "interval": "Daily",
+            "niceName": "Surface incident longwave radiation",
+            "data_provider": "ECMWF",
+            "data_type": "Ecosystem Model",
+            "forcing_version": "Version 0",
+            "indicator_type": [
+               "Radiation"
+            ],
+            "region": "Global"
+         }
+      }
+   },
+   {
+      "name": "ecmwf_forcing_psurf_daily",
+      "options": {
+         "providerShortTag": "ECMWF",
+         "license": "The Apache Software License",
+         "licenseUrl": "https://www.apache.org/licenses/LICENSE-2.0.html",
+         "allowDownload": "false"
+      },
+      "services": {
+         "wms": {
+            "url": "https://wci.earth2observe.eu/thredds/wms/ecmwf/met_forcing_v0/psurf_daily.nc?",
+            "params": {
+               "GetCapabilities": {
+                  "SERVICE": "WMS",
+                  "request": "GetCapabilities",
+                  "version": "1.3.0"
+               }
+            }
+         },
+         "wcs": {
+            "url": "https://wci.earth2observe.eu/thredds/wcs/ecmwf/met_forcing_v0/psurf_daily.nc?",
+            "params": {
+               "DescribeCoverage": {
+                  "SERVICE": "WCS",
+                  "request": "describeCoverage",
+                  "version": "1.0.0"
+               }
+            }
+         }
+      },
+      "indicators": {
+         "PSurf": {
+            "Confidence": "Unknown",
+            "interval": "Daily",
+            "niceName": "Surface atmospheric pressure",
+            "data_provider": "ECMWF",
+            "data_type": "Ecosystem Model",
+            "forcing_version": "Version 0",
+            "indicator_type": [
+               "Meteorology"
+            ],
+            "region": "Global"
+         }
+      }
+   },
+   {
+      "name": "ecmwf_forcing_qair_daily",
+      "options": {
+         "providerShortTag": "ECMWF"
+      },
+      "services": {
+         "wms": {
+            "url": "https://wci.earth2observe.eu/thredds/wms/ecmwf/met_forcing_v0/qair_daily.nc?",
+            "params": {
+               "GetCapabilities": {
+                  "SERVICE": "WMS",
+                  "request": "GetCapabilities",
+                  "version": "1.3.0"
+               }
+            }
+         },
+         "wcs": {
+            "url": "https://wci.earth2observe.eu/thredds/wcs/ecmwf/met_forcing_v0/qair_daily.nc?",
+            "params": {
+               "DescribeCoverage": {
+                  "SERVICE": "WCS",
+                  "request": "describeCoverage",
+                  "version": "1.0.0"
+               }
+            }
+         }
+      },
+      "indicators": {
+         "Qair": {
+            "Confidence": "Unknown",
+            "interval": "Daily",
+            "niceName": "Near surface specific humidity",
+            "data_provider": "ECMWF",
+            "data_type": "Ecosystem Model",
+            "forcing_version": "Version 0",
+            "indicator_type": [
+               "Precipitation"
+            ],
+            "region": "Global"
+         }
+      }
+   },
+   {
+      "name": "ecmwf_forcing_rainf_daily",
+      "options": {
+         "providerShortTag": "ECMWF"
+      },
+      "services": {
+         "wms": {
+            "url": "https://wci.earth2observe.eu/thredds/wms/ecmwf/met_forcing_v0/rainf_daily.nc?",
+            "params": {
+               "GetCapabilities": {
+                  "SERVICE": "WMS",
+                  "request": "GetCapabilities",
+                  "version": "1.3.0"
+               }
+            }
+         },
+         "wcs": {
+            "url": "https://wci.earth2observe.eu/thredds/wcs/ecmwf/met_forcing_v0/rainf_daily.nc?",
+            "params": {
+               "DescribeCoverage": {
+                  "SERVICE": "WCS",
+                  "request": "describeCoverage",
+                  "version": "1.0.0"
+               }
+            }
+         }
+      },
+      "indicators": {
+         "Rainf": {
+            "Confidence": "Unknown",
+            "interval": "Daily",
+            "niceName": "Rainfall Rate",
+            "data_provider": "ECMWF",
+            "data_type": "Ecosystem Model",
+            "forcing_version": "Version 0",
+            "indicator_type": [
+               "Precipitation"
+            ],
+            "region": "Global"
+         }
+      }
+   },
+   {
+      "name": "ecmwf_forcing_swdown_daily",
+      "options": {
+         "providerShortTag": "ECMWF"
+      },
+      "services": {
+         "wms": {
+            "url": "https://wci.earth2observe.eu/thredds/wms/ecmwf/met_forcing_v0/swdown_daily.nc?",
+            "params": {
+               "GetCapabilities": {
+                  "SERVICE": "WMS",
+                  "request": "GetCapabilities",
+                  "version": "1.3.0"
+               }
+            }
+         },
+         "wcs": {
+            "url": "https://wci.earth2observe.eu/thredds/wcs/ecmwf/met_forcing_v0/swdown_daily.nc?",
+            "params": {
+               "DescribeCoverage": {
+                  "SERVICE": "WCS",
+                  "request": "describeCoverage",
+                  "version": "1.0.0"
+               }
+            }
+         }
+      },
+      "indicators": {
+         "SWdown": {
+            "Confidence": "Unknown",
+            "interval": "Daily",
+            "niceName": "Surface incident shortwave radiation",
+            "data_provider": "ECMWF",
+            "data_type": "Ecosystem Model",
+            "forcing_version": "Version 0",
+            "indicator_type": [
+               "Radiation"
+            ],
+            "region": "Global"
+         }
+      }
+   },
+   {
+      "name": "ecmwf_forcing_snowf_daily",
+      "options": {
+         "providerShortTag": "ECMWF"
+      },
+      "services": {
+         "wms": {
+            "url": "https://wci.earth2observe.eu/thredds/wms/ecmwf/met_forcing_v0/snowf_daily.nc?",
+            "params": {
+               "GetCapabilities": {
+                  "SERVICE": "WMS",
+                  "request": "GetCapabilities",
+                  "version": "1.3.0"
+               }
+            }
+         },
+         "wcs": {
+            "url": "https://wci.earth2observe.eu/thredds/wcs/ecmwf/met_forcing_v0/snowf_daily.nc?",
+            "params": {
+               "DescribeCoverage": {
+                  "SERVICE": "WCS",
+                  "request": "describeCoverage",
+                  "version": "1.0.0"
+               }
+            }
+         }
+      },
+      "indicators": {
+         "Snowf": {
+            "Confidence": "Unknown",
+            "interval": "Daily",
+            "niceName": "Snowfall rate",
+            "data_provider": "ECMWF",
+            "data_type": "Ecosystem Model",
+            "forcing_version": "Version 0",
+            "indicator_type": [
+               "Precipitation"
+            ],
+            "region": "Global"
+         }
+      }
+   },
+   {
+      "name": "ecmwf_forcing_tair_daily",
+      "options": {
+         "providerShortTag": "ECMWF"
+      },
+      "services": {
+         "wms": {
+            "url": "https://wci.earth2observe.eu/thredds/wms/ecmwf/met_forcing_v0/tair_daily.nc?",
+            "params": {
+               "GetCapabilities": {
+                  "SERVICE": "WMS",
+                  "request": "GetCapabilities",
+                  "version": "1.3.0"
+               }
+            }
+         },
+         "wcs": {
+            "url": "https://wci.earth2observe.eu/thredds/wcs/ecmwf/met_forcing_v0/tair_daily.nc?",
+            "params": {
+               "DescribeCoverage": {
+                  "SERVICE": "WCS",
+                  "request": "describeCoverage",
+                  "version": "1.0.0"
+               }
+            }
+         }
+      },
+      "indicators": {
+         "Tair": {
+            "Confidence": "Unknown",
+            "interval": "Daily",
+            "niceName": "Air Temperature",
+            "data_provider": "ECMWF",
+            "data_type": "Ecosystem Model",
+            "forcing_version": "Version 0",
+            "indicator_type": [
+               "Meteorology"
+            ],
+            "region": "Global"
+         }
+      }
+   },
+   {
+      "name": "ecmwf_forcing_wind_daily",
+      "options": {
+         "providerShortTag": "ECMWF"
+      },
+      "services": {
+         "wms": {
+            "url": "https://wci.earth2observe.eu/thredds/wms/ecmwf/met_forcing_v0/wind_daily.nc?",
+            "params": {
+               "GetCapabilities": {
+                  "SERVICE": "WMS",
+                  "request": "GetCapabilities",
+                  "version": "1.3.0"
+               }
+            }
+         },
+         "wcs": {
+            "url": "https://wci.earth2observe.eu/thredds/wcs/ecmwf/met_forcing_v0/wind_daily.nc?",
+            "params": {
+               "DescribeCoverage": {
+                  "SERVICE": "WCS",
+                  "request": "describeCoverage",
+                  "version": "1.0.0"
+               }
+            }
+         }
+      },
+      "indicators": {
+         "Wind": {
+            "Confidence": "Unknown",
+            "interval": "Daily",
+            "niceName": "Wind Speed",
+            "data_provider": "ECMWF",
+            "data_type": "Ecosystem Model",
+            "forcing_version": "Version 0",
             "indicator_type": [
                "Meteorology"
             ],
@@ -651,24 +1015,994 @@ layers = [
       },
       "indicators": {
          "sm": {
-            "Confidence": "Unknown",
-            "interval": "daily",
+            "interval": "Daily",
             "niceName": "Soil moisture",
             "data_provider": "Technische Universitat Wien",
             "indicator_type": [
                "Sub-Surface Water"
             ],
+            "data_type": "Earth Observation",
             "region": "Global"
          },
          "sm_uncertainty": {
-            "Confidence": "Unknown",
-            "interval": "daily",
+            "interval": "Daily",
             "niceName": "Soil moisture uncertainty",
             "data_provider": "Technische Universitat Wien",
             "indicator_type": [
                "Sub-Surface Water"
             ],
+            "data_type": "Earth Observation",
             "region": "Global"
+         }
+      }
+   },
+   {
+      "name": "ceh_wrr1_monthly",
+      "options": {
+         "providerShortTag": "CEH"
+      },
+      "services": {
+         "wms": {
+            "url": "https://wci.earth2observe.eu/thredds/wms/ceh/wrr1-monthly-agg.nc?",
+            "params": {
+               "GetCapabilities": {
+                  "SERVICE": "WMS",
+                  "request": "GetCapabilities",
+                  "version": "1.3.0"
+               }
+            }
+         },
+         "wcs": {
+            "url": "https://wci.earth2observe.eu/thredds/wcs/ceh/wrr1-monthly-agg.nc?",
+            "params": {
+               "DescribeCoverage": {
+                  "SERVICE": "WCS",
+                  "request": "describeCoverage",
+                  "version": "1.0.0"
+               }
+            }
+         }
+      },
+      "indicators": {
+         "Precip": {
+            "niceName": "Total Precipitation",
+            "data_provider": "Centre for Ecology and Hydrology, UK",
+            "interval": "Monthly",            
+            "model": "JULES",
+            "data_type": "Ecosystem Model",
+            "forcing_version": "Version 0",
+            "region": "Global",
+            "indicator_type": [
+               "Water Resource Re-analysis v1",
+               "Water Balance Components",
+               "Precipitation"
+            ]
+         },
+         "Evap": {
+            "niceName": "Total Evapotranspiration",
+            "data_provider": "Centre for Ecology and Hydrology, UK",
+            "interval": "Monthly",            
+            "model": "JULES",
+            "data_type": "Ecosystem Model",
+            "forcing_version": "Version 0",
+            "region": "Global",
+            "indicator_type": [
+               "Water Resource Re-analysis v1",
+               "Water Balance Components",
+               "Evapotranspiration"
+            ]
+         },
+         "Runoff": {
+            "niceName": "Total Runoff",
+            "data_provider": "Centre for Ecology and Hydrology, UK",
+            "interval": "Monthly",            
+            "model": "JULES",
+            "data_type": "Ecosystem Model",
+            "forcing_version": "Version 0",
+            "region": "Global",
+            "indicator_type": [
+               "Water Resource Re-analysis v1",
+               "Water Balance Components",
+               "Surface Water"
+            ]
+         },
+         "Rainf": {
+            "niceName": "Rainfall",
+            "data_provider": "Centre for Ecology and Hydrology, UK",
+            "interval": "Monthly",            
+            "model": "JULES",
+            "data_type": "Ecosystem Model",
+            "forcing_version": "Version 0",
+            "region": "Global",
+            "indicator_type": [
+               "Water Resource Re-analysis v1",
+               "Water Balance Components",
+               "Meteorology",
+            ]
+         },
+         "Qs": {
+            "niceName": "Total Surface Runoff",
+            "data_provider": "Centre for Ecology and Hydrology, UK",
+            "interval": "Monthly",            
+            "model": "JULES",
+            "data_type": "Ecosystem Model",
+            "forcing_version": "Version 0",
+            "region": "Global",
+            "indicator_type": [
+               "Water Resource Re-analysis v1",
+               "Water Balance Components",
+               "Surface Water"
+            ]
+         },
+         "Qsb": {
+            "niceName": "Sub-Surface Runoff",
+            "data_provider": "Centre for Ecology and Hydrology, UK",
+            "interval": "Monthly",            
+            "model": "JULES",
+            "data_type": "Ecosystem Model",
+            "forcing_version": "Version 0",
+            "region": "Global",
+            "indicator_type": [
+               "Water Resource Re-analysis v1",
+               "Water Balance Components",
+               "Sub-Surface Water"
+            ]
+         },
+         "Qrec": {
+            "niceName": "Recharge",
+            "data_provider": "Centre for Ecology and Hydrology, UK",
+            "interval": "Monthly",            
+            "model": "JULES",
+            "data_type": "Ecosystem Model",
+            "forcing_version": "Version 0",
+            "region": "Global",
+            "indicator_type": [
+               "Water Resource Re-analysis v1",
+               "Water Balance Components",
+            ]
+         },
+         "Qsm": {
+            "niceName": "Snowmelt",
+            "data_provider": "Centre for Ecology and Hydrology, UK",
+            "interval": "Monthly",            
+            "model": "JULES",
+            "data_type": "Ecosystem Model",
+            "forcing_version": "Version 0",
+            "region": "Global",
+            "indicator_type": [
+               "Water Resource Re-analysis v1",
+               "Water Balance Components",
+               "Surface Water"
+            ]
+         },
+         "PotEvap": {
+            "niceName": "Potential Evapotranspiration",
+            "data_provider": "Centre for Ecology and Hydrology, UK",
+            "interval": "Monthly",            
+            "model": "JULES",
+            "data_type": "Ecosystem Model",
+            "forcing_version": "Version 0",
+            "region": "Global",
+            "indicator_type": [
+               "Water Resource Re-analysis v1",
+               "Water Balance Components",
+               "Evapotranspiration",
+            ]
+         },
+         "ECanop": {
+            "niceName": "Interception Evaporation",
+            "data_provider": "Centre for Ecology and Hydrology, UK",
+            "interval": "Monthly",            
+            "model": "JULES",
+            "data_type": "Ecosystem Model",
+            "forcing_version": "Version 0",
+            "region": "Global",
+            "indicator_type": [
+               "Water Resource Re-analysis v1",
+               "Water Balance Components",
+               "Evapotranspiration"
+            ]
+         },
+         "TVeg": {
+            "niceName": "Vegetation Transpiration",
+            "data_provider": "Centre for Ecology and Hydrology, UK",
+            "interval": "Monthly",            
+            "model": "JULES",
+            "data_type": "Ecosystem Model",
+            "forcing_version": "Version 0",
+            "region": "Global",
+            "indicator_type": [
+               "Water Resource Re-analysis v1",
+               "Water Balance Components",
+               "Evapotranspiration"
+            ]
+         },
+         "ESoil": {
+            "niceName": "Bare Soil Evaporation",
+            "data_provider": "Centre for Ecology and Hydrology, UK",
+            "interval": "Monthly",            
+            "model": "JULES",
+            "data_type": "Ecosystem Model",
+            "forcing_version": "Version 0",
+            "region": "Global",
+            "indicator_type": [
+               "Water Resource Re-analysis v1",
+               "Water Balance Components",
+               "Evapotranspiration"
+            ]
+         },
+         "EWater": {
+            "niceName": "Open Water Evaporation",
+            "data_provider": "Centre for Ecology and Hydrology, UK",
+            "interval": "Monthly",            
+            "model": "JULES",
+            "data_type": "Ecosystem Model",
+            "forcing_version": "Version 0",
+            "region": "Global",
+            "indicator_type": [
+               "Water Resource Re-analysis v1",
+               "Water Balance Components",
+               "Evapotranspiration"
+            ]
+         },
+         "RivOut": {
+            "niceName": "River Discharge",
+            "data_provider": "Centre for Ecology and Hydrology, UK",
+            "interval": "Monthly",            
+            "model": "JULES",
+            "data_type": "Ecosystem Model",
+            "forcing_version": "Version 0",
+            "region": "Global",
+            "indicator_type": [
+               "Water Resource Re-analysis v1",
+               "Water Balance Components",
+               "Surface Water"
+            ]
+         },
+         "Dis": {
+            "niceName": "Point River Discharge",
+            "data_provider": "Centre for Ecology and Hydrology, UK",
+            "interval": "Monthly",            
+            "model": "JULES",
+            "data_type": "Ecosystem Model",
+            "forcing_version": "Version 0",
+            "region": "Global",
+            "indicator_type": [
+               "Water Resource Re-analysis v1",
+               "Water Balance Components",
+               "Surface Water"
+            ]
+         },
+         "SWnet": {
+            "niceName": "Net Shortwave Radiation",
+            "data_provider": "Centre for Ecology and Hydrology, UK",
+            "interval": "Monthly",            
+            "model": "JULES",
+            "data_type": "Ecosystem Model",
+            "forcing_version": "Version 0",
+            "region": "Global",
+            "indicator_type": [
+               "Water Resource Re-analysis v1",
+               "Energy Balance Components",
+               "Radiation"
+            ]
+         },
+         "LWnet": {
+            "niceName": "Net Longwave Radiation",
+            "data_provider": "Centre for Ecology and Hydrology, UK",
+            "interval": "Monthly",            
+            "model": "JULES",
+            "data_type": "Ecosystem Model",
+            "forcing_version": "Version 0",
+            "region": "Global",
+            "indicator_type": [
+               "Water Resource Re-analysis v1",
+               "Energy Balance Components",
+               "Radiation"
+            ]
+         },
+         "Qle": {
+            "niceName": "Latent Heat Flux",
+            "data_provider": "Centre for Ecology and Hydrology, UK",
+            "interval": "Monthly",            
+            "model": "JULES",
+            "data_type": "Ecosystem Model",
+            "forcing_version": "Version 0",
+            "region": "Global",
+            "indicator_type": [
+               "Water Resource Re-analysis v1",
+               "Energy Balance Components",
+            ]
+         },
+         "Qh": {
+            "niceName": "Sensible Heat Flux",
+            "data_provider": "Centre for Ecology and Hydrology, UK",
+            "interval": "Monthly",            
+            "model": "JULES",
+            "data_type": "Ecosystem Model",
+            "forcing_version": "Version 0",
+            "region": "Global",
+            "indicator_type": [
+               "Water Resource Re-analysis v1",
+               "Energy Balance Components",
+            ]
+         },
+         "AvgSurfT": {
+            "niceName": "Average Surface Temperature",
+            "data_provider": "Centre for Ecology and Hydrology, UK",
+            "interval": "Monthly",            
+            "model": "JULES",
+            "data_type": "Ecosystem Model",
+            "forcing_version": "Version 0",
+            "region": "Global",
+            "indicator_type": [
+               "Water Resource Re-analysis v1",
+               "State Variables",
+               "Meteorology"
+            ]
+         },
+         "Albedo": {
+            "niceName": "Surface Albedo",
+            "data_provider": "Centre for Ecology and Hydrology, UK",
+            "interval": "Monthly",            
+            "model": "JULES",
+            "data_type": "Ecosystem Model",
+            "forcing_version": "Version 0",
+            "region": "Global",
+            "indicator_type": [
+               "Water Resource Re-analysis v1",
+               "State Variables",
+            ]
+         },
+         "LAI": {
+            "niceName": "Leaf Area Index",
+            "data_provider": "Centre for Ecology and Hydrology, UK",
+            "interval": "Monthly",            
+            "model": "JULES",
+            "data_type": "Ecosystem Model",
+            "forcing_version": "Version 0",
+            "region": "Global",
+            "indicator_type": [
+               "Water Resource Re-analysis v1",
+               "State Variables",
+            ]
+         },
+         "SWE": {
+            "niceName": "Snow Water Equivalent",
+            "data_provider": "Centre for Ecology and Hydrology, UK",
+            "interval": "Monthly",            
+            "model": "JULES",
+            "data_type": "Ecosystem Model",
+            "forcing_version": "Version 0",
+            "region": "Global",
+            "indicator_type": [
+               "Water Resource Re-analysis v1",
+               "State Variables",
+               "Surface Water"
+            ]
+         },
+         "CanopInt": {
+            "niceName": "Total Canopy water Storage",
+            "data_provider": "Centre for Ecology and Hydrology, UK",
+            "interval": "Monthly",            
+            "model": "JULES",
+            "data_type": "Ecosystem Model",
+            "forcing_version": "Version 0",
+            "region": "Global",
+            "indicator_type": [
+               "Water Resource Re-analysis v1",
+               "State Variables",
+            ]
+         },
+         "SWEVeg": {
+            "niceName": "SWE Intercepted by Vegetation",
+            "data_provider": "Centre for Ecology and Hydrology, UK",
+            "interval": "Monthly",            
+            "model": "JULES",
+            "data_type": "Ecosystem Model",
+            "forcing_version": "Version 0",
+            "region": "Global",
+            "indicator_type": [
+               "Water Resource Re-analysis v1",
+               "State Variables",
+            ]
+         },
+         "SurfStor": {
+            "niceName": "Surface Water Storage",
+            "data_provider": "Centre for Ecology and Hydrology, UK",
+            "interval": "Monthly",            
+            "model": "JULES",
+            "data_type": "Ecosystem Model",
+            "forcing_version": "Version 0",
+            "region": "Global",
+            "indicator_type": [
+               "Water Resource Re-analysis v1",
+               "State Variables",
+               "Surface Water"
+            ]
+         },
+         "WaterTableD": {
+            "niceName": "Water Table Depth",
+            "data_provider": "Centre for Ecology and Hydrology, UK",
+            "interval": "Monthly",            
+            "model": "JULES",
+            "data_type": "Ecosystem Model",
+            "forcing_version": "Version 0",
+            "region": "Global",
+            "indicator_type": [
+               "Water Resource Re-analysis v1",
+               "State Variables",
+               "Sub-Surface Water"
+            ]
+         },
+         "SnowFrac": {
+            "niceName": "Snow Covered Fraction",
+            "data_provider": "Centre for Ecology and Hydrology, UK",
+            "interval": "Monthly",            
+            "model": "JULES",
+            "data_type": "Ecosystem Model",
+            "forcing_version": "Version 0",
+            "region": "Global",
+            "indicator_type": [
+               "Water Resource Re-analysis v1",
+               "State Variables",
+               "Surface Water"
+            ]
+         },
+         "SnowDepth": {
+            "niceName": "Snow Depth",
+            "data_provider": "Centre for Ecology and Hydrology, UK",
+            "interval": "Monthly",            
+            "model": "JULES",
+            "data_type": "Ecosystem Model",
+            "forcing_version": "Version 0",
+            "region": "Global",
+            "indicator_type": [
+               "Water Resource Re-analysis v1",
+               "State Variables",
+               "Surface Water"
+            ]
+         },
+         "SurfMoist": {
+            "niceName": "Surface Soil Moisture",
+            "data_provider": "Centre for Ecology and Hydrology, UK",
+            "interval": "Monthly",            
+            "model": "JULES",
+            "data_type": "Ecosystem Model",
+            "forcing_version": "Version 0",
+            "region": "Global",
+            "indicator_type": [
+               "Water Resource Re-analysis v1",
+               "State Variables",
+               "Surface Water"
+            ]
+         },
+         "RootMoist": {
+            "niceName": "Root Zone Soil Moisture",
+            "data_provider": "Centre for Ecology and Hydrology, UK",
+            "interval": "Monthly",            
+            "model": "JULES",
+            "data_type": "Ecosystem Model",
+            "forcing_version": "Version 0",
+            "region": "Global",
+            "indicator_type": [
+               "Water Resource Re-analysis v1",
+               "State Variables",
+               "Sub-Surface Water"
+            ]
+         },
+         "TotMoist": {
+            "niceName": "Total Soil Moisture",
+            "data_provider": "Centre for Ecology and Hydrology, UK",
+            "interval": "Monthly",            
+            "model": "JULES",
+            "data_type": "Ecosystem Model",
+            "forcing_version": "Version 0",
+            "region": "Global",
+            "indicator_type": [
+               "Water Resource Re-analysis v1",
+               "State Variables",
+               "Sub-Surface Water"
+            ]
+         },
+         "GroundMoist": {
+            "niceName": "Ground Water",
+            "data_provider": "Centre for Ecology and Hydrology, UK",
+            "interval": "Monthly",            
+            "model": "JULES",
+            "data_type": "Ecosystem Model",
+            "forcing_version": "Version 0",
+            "region": "Global",
+            "indicator_type": [
+               "Water Resource Re-analysis v1",
+               "State Variables",
+               "Sub-Surface Water"
+            ]
+         }
+      }
+   },
+   {
+      "name": "ceh_wrr1_daily",
+      "options": {
+         "providerShortTag": "CEH"
+      },
+      "services": {
+         "wms": {
+            "url": "https://wci.earth2observe.eu/thredds/wms/ceh/wrr1-daily-agg.nc?",
+            "params": {
+               "GetCapabilities": {
+                  "SERVICE": "WMS",
+                  "request": "GetCapabilities",
+                  "version": "1.3.0"
+               }
+            }
+         },
+         "wcs": {
+            "url": "https://wci.earth2observe.eu/thredds/wcs/ceh/wrr1-daily-agg.nc?",
+            "params": {
+               "DescribeCoverage": {
+                  "SERVICE": "WCS",
+                  "request": "describeCoverage",
+                  "version": "1.0.0"
+               }
+            }
+         }
+      },
+      "indicators": {
+               "Precip": {
+            "niceName": "Total Precipitation",
+            "data_provider": "Centre for Ecology and Hydrology, UK",
+            "interval": "Daily",            
+            "model": "JULES",
+            "data_type": "Ecosystem Model",
+            "forcing_version": "Version 0",
+            "region": "Global",
+            "indicator_type": [
+               "Water Resource Re-analysis v1",
+               "Water Balance Components",
+               "Precipitation"
+            ]
+         },
+         "Evap": {
+            "niceName": "Total Evapotranspiration",
+            "data_provider": "Centre for Ecology and Hydrology, UK",
+            "interval": "Daily",            
+            "model": "JULES",
+            "data_type": "Ecosystem Model",
+            "forcing_version": "Version 0",
+            "region": "Global",
+            "indicator_type": [
+               "Water Resource Re-analysis v1",
+               "Water Balance Components",
+               "Evapotranspiration"
+            ]
+         },
+         "Runoff": {
+            "niceName": "Total Runoff",
+            "data_provider": "Centre for Ecology and Hydrology, UK",
+            "interval": "Daily",            
+            "model": "JULES",
+            "data_type": "Ecosystem Model",
+            "forcing_version": "Version 0",
+            "region": "Global",
+            "indicator_type": [
+               "Water Resource Re-analysis v1",
+               "Water Balance Components",
+               "Surface Water"
+            ]
+         },
+         "Rainf": {
+            "niceName": "Rainfall",
+            "data_provider": "Centre for Ecology and Hydrology, UK",
+            "interval": "Daily",            
+            "model": "JULES",
+            "data_type": "Ecosystem Model",
+            "forcing_version": "Version 0",
+            "region": "Global",
+            "indicator_type": [
+               "Water Resource Re-analysis v1",
+               "Water Balance Components",
+               "Meteorology",
+            ]
+         },
+         "Qs": {
+            "niceName": "Total Surface Runoff",
+            "data_provider": "Centre for Ecology and Hydrology, UK",
+            "interval": "Daily",            
+            "model": "JULES",
+            "data_type": "Ecosystem Model",
+            "forcing_version": "Version 0",
+            "region": "Global",
+            "indicator_type": [
+               "Water Resource Re-analysis v1",
+               "Water Balance Components",
+               "Surface Water"
+            ]
+         },
+         "Qsb": {
+            "niceName": "Sub-Surface Runoff",
+            "data_provider": "Centre for Ecology and Hydrology, UK",
+            "interval": "Daily",            
+            "model": "JULES",
+            "data_type": "Ecosystem Model",
+            "forcing_version": "Version 0",
+            "region": "Global",
+            "indicator_type": [
+               "Water Resource Re-analysis v1",
+               "Water Balance Components",
+               "Sub-Surface Water"
+            ]
+         },
+         "Qrec": {
+            "niceName": "Recharge",
+            "data_provider": "Centre for Ecology and Hydrology, UK",
+            "interval": "Daily",            
+            "model": "JULES",
+            "data_type": "Ecosystem Model",
+            "forcing_version": "Version 0",
+            "region": "Global",
+            "indicator_type": [
+               "Water Resource Re-analysis v1",
+               "Water Balance Components",
+            ]
+         },
+         "Qsm": {
+            "niceName": "Snowmelt",
+            "data_provider": "Centre for Ecology and Hydrology, UK",
+            "interval": "Daily",            
+            "model": "JULES",
+            "data_type": "Ecosystem Model",
+            "forcing_version": "Version 0",
+            "region": "Global",
+            "indicator_type": [
+               "Water Resource Re-analysis v1",
+               "Water Balance Components",
+               "Surface Water"
+            ]
+         },
+         "PotEvap": {
+            "niceName": "Potential Evapotranspiration",
+            "data_provider": "Centre for Ecology and Hydrology, UK",
+            "interval": "Daily",            
+            "model": "JULES",
+            "data_type": "Ecosystem Model",
+            "forcing_version": "Version 0",
+            "region": "Global",
+            "indicator_type": [
+               "Water Resource Re-analysis v1",
+               "Water Balance Components",
+               "Evapotranspiration",
+            ]
+         },
+         "ECanop": {
+            "niceName": "Interception Evaporation",
+            "data_provider": "Centre for Ecology and Hydrology, UK",
+            "interval": "Daily",            
+            "model": "JULES",
+            "data_type": "Ecosystem Model",
+            "forcing_version": "Version 0",
+            "region": "Global",
+            "indicator_type": [
+               "Water Resource Re-analysis v1",
+               "Water Balance Components",
+               "Evapotranspiration"
+            ]
+         },
+         "TVeg": {
+            "niceName": "Vegetation Transpiration",
+            "data_provider": "Centre for Ecology and Hydrology, UK",
+            "interval": "Daily",            
+            "model": "JULES",
+            "data_type": "Ecosystem Model",
+            "forcing_version": "Version 0",
+            "region": "Global",
+            "indicator_type": [
+               "Water Resource Re-analysis v1",
+               "Water Balance Components",
+               "Evapotranspiration"
+            ]
+         },
+         "ESoil": {
+            "niceName": "Bare Soil Evaporation",
+            "data_provider": "Centre for Ecology and Hydrology, UK",
+            "interval": "Daily",            
+            "model": "JULES",
+            "data_type": "Ecosystem Model",
+            "forcing_version": "Version 0",
+            "region": "Global",
+            "indicator_type": [
+               "Water Resource Re-analysis v1",
+               "Water Balance Components",
+               "Evapotranspiration"
+            ]
+         },
+         "EWater": {
+            "niceName": "Open Water Evaporation",
+            "data_provider": "Centre for Ecology and Hydrology, UK",
+            "interval": "Daily",            
+            "model": "JULES",
+            "data_type": "Ecosystem Model",
+            "forcing_version": "Version 0",
+            "region": "Global",
+            "indicator_type": [
+               "Water Resource Re-analysis v1",
+               "Water Balance Components",
+               "Evapotranspiration"
+            ]
+         },
+         "RivOut": {
+            "niceName": "River Discharge",
+            "data_provider": "Centre for Ecology and Hydrology, UK",
+            "interval": "Daily",            
+            "model": "JULES",
+            "data_type": "Ecosystem Model",
+            "forcing_version": "Version 0",
+            "region": "Global",
+            "indicator_type": [
+               "Water Resource Re-analysis v1",
+               "Water Balance Components",
+               "Surface Water"
+            ]
+         },
+         "Dis": {
+            "niceName": "Point River Discharge",
+            "data_provider": "Centre for Ecology and Hydrology, UK",
+            "interval": "Daily",            
+            "model": "JULES",
+            "data_type": "Ecosystem Model",
+            "forcing_version": "Version 0",
+            "region": "Global",
+            "indicator_type": [
+               "Water Resource Re-analysis v1",
+               "Water Balance Components",
+               "Surface Water"
+            ]
+         },
+         "SWnet": {
+            "niceName": "Net Shortwave Radiation",
+            "data_provider": "Centre for Ecology and Hydrology, UK",
+            "interval": "Daily",            
+            "model": "JULES",
+            "data_type": "Ecosystem Model",
+            "forcing_version": "Version 0",
+            "region": "Global",
+            "indicator_type": [
+               "Water Resource Re-analysis v1",
+               "Energy Balance Components",
+               "Radiation"
+            ]
+         },
+         "LWnet": {
+            "niceName": "Net Longwave Radiation",
+            "data_provider": "Centre for Ecology and Hydrology, UK",
+            "interval": "Daily",            
+            "model": "JULES",
+            "data_type": "Ecosystem Model",
+            "forcing_version": "Version 0",
+            "region": "Global",
+            "indicator_type": [
+               "Water Resource Re-analysis v1",
+               "Energy Balance Components",
+               "Radiation"
+            ]
+         },
+         "Qle": {
+            "niceName": "Latent Heat Flux",
+            "data_provider": "Centre for Ecology and Hydrology, UK",
+            "interval": "Daily",            
+            "model": "JULES",
+            "data_type": "Ecosystem Model",
+            "forcing_version": "Version 0",
+            "region": "Global",
+            "indicator_type": [
+               "Water Resource Re-analysis v1",
+               "Energy Balance Components",
+            ]
+         },
+         "Qh": {
+            "niceName": "Sensible Heat Flux",
+            "data_provider": "Centre for Ecology and Hydrology, UK",
+            "interval": "Daily",            
+            "model": "JULES",
+            "data_type": "Ecosystem Model",
+            "forcing_version": "Version 0",
+            "region": "Global",
+            "indicator_type": [
+               "Water Resource Re-analysis v1",
+               "Energy Balance Components",
+            ]
+         },
+         "AvgSurfT": {
+            "niceName": "Average Surface Temperature",
+            "data_provider": "Centre for Ecology and Hydrology, UK",
+            "interval": "Daily",            
+            "model": "JULES",
+            "data_type": "Ecosystem Model",
+            "forcing_version": "Version 0",
+            "region": "Global",
+            "indicator_type": [
+               "Water Resource Re-analysis v1",
+               "State Variables",
+               "Meteorology"
+            ]
+         },
+         "Albedo": {
+            "niceName": "Surface Albedo",
+            "data_provider": "Centre for Ecology and Hydrology, UK",
+            "interval": "Daily",            
+            "model": "JULES",
+            "data_type": "Ecosystem Model",
+            "forcing_version": "Version 0",
+            "region": "Global",
+            "indicator_type": [
+               "Water Resource Re-analysis v1",
+               "State Variables",
+            ]
+         },
+         "LAI": {
+            "niceName": "Leaf Area Index",
+            "data_provider": "Centre for Ecology and Hydrology, UK",
+            "interval": "Daily",            
+            "model": "JULES",
+            "data_type": "Ecosystem Model",
+            "forcing_version": "Version 0",
+            "region": "Global",
+            "indicator_type": [
+               "Water Resource Re-analysis v1",
+               "State Variables",
+            ]
+         },
+         "SWE": {
+            "niceName": "Snow Water Equivalent",
+            "data_provider": "Centre for Ecology and Hydrology, UK",
+            "interval": "Daily",            
+            "model": "JULES",
+            "data_type": "Ecosystem Model",
+            "forcing_version": "Version 0",
+            "region": "Global",
+            "indicator_type": [
+               "Water Resource Re-analysis v1",
+               "State Variables",
+               "Surface Water"
+            ]
+         },
+         "CanopInt": {
+            "niceName": "Total Canopy water Storage",
+            "data_provider": "Centre for Ecology and Hydrology, UK",
+            "interval": "Daily",            
+            "model": "JULES",
+            "data_type": "Ecosystem Model",
+            "forcing_version": "Version 0",
+            "region": "Global",
+            "indicator_type": [
+               "Water Resource Re-analysis v1",
+               "State Variables",
+            ]
+         },
+         "SWEVeg": {
+            "niceName": "SWE Intercepted by Vegetation",
+            "data_provider": "Centre for Ecology and Hydrology, UK",
+            "interval": "Daily",            
+            "model": "JULES",
+            "data_type": "Ecosystem Model",
+            "forcing_version": "Version 0",
+            "region": "Global",
+            "indicator_type": [
+               "Water Resource Re-analysis v1",
+               "State Variables",
+            ]
+         },
+         "SurfStor": {
+            "niceName": "Surface Water Storage",
+            "data_provider": "Centre for Ecology and Hydrology, UK",
+            "interval": "Daily",            
+            "model": "JULES",
+            "data_type": "Ecosystem Model",
+            "forcing_version": "Version 0",
+            "region": "Global",
+            "indicator_type": [
+               "Water Resource Re-analysis v1",
+               "State Variables",
+               "Surface Water"
+            ]
+         },
+         "WaterTableD": {
+            "niceName": "Water Table Depth",
+            "data_provider": "Centre for Ecology and Hydrology, UK",
+            "interval": "Daily",            
+            "model": "JULES",
+            "data_type": "Ecosystem Model",
+            "forcing_version": "Version 0",
+            "region": "Global",
+            "indicator_type": [
+               "Water Resource Re-analysis v1",
+               "State Variables",
+               "Sub-Surface Water"
+            ]
+         },
+         "SnowFrac": {
+            "niceName": "Snow Covered Fraction",
+            "data_provider": "Centre for Ecology and Hydrology, UK",
+            "interval": "Daily",            
+            "model": "JULES",
+            "data_type": "Ecosystem Model",
+            "forcing_version": "Version 0",
+            "region": "Global",
+            "indicator_type": [
+               "Water Resource Re-analysis v1",
+               "State Variables",
+               "Surface Water"
+            ]
+         },
+         "SnowDepth": {
+            "niceName": "Snow Depth",
+            "data_provider": "Centre for Ecology and Hydrology, UK",
+            "interval": "Daily",            
+            "model": "JULES",
+            "data_type": "Ecosystem Model",
+            "forcing_version": "Version 0",
+            "region": "Global",
+            "indicator_type": [
+               "Water Resource Re-analysis v1",
+               "State Variables",
+               "Surface Water"
+            ]
+         },
+         "SurfMoist": {
+            "niceName": "Surface Soil Moisture",
+            "data_provider": "Centre for Ecology and Hydrology, UK",
+            "interval": "Daily",            
+            "model": "JULES",
+            "data_type": "Ecosystem Model",
+            "forcing_version": "Version 0",
+            "region": "Global",
+            "indicator_type": [
+               "Water Resource Re-analysis v1",
+               "State Variables",
+               "Surface Water"
+            ]
+         },
+         "RootMoist": {
+            "niceName": "Root Zone Soil Moisture",
+            "data_provider": "Centre for Ecology and Hydrology, UK",
+            "interval": "Daily",            
+            "model": "JULES",
+            "data_type": "Ecosystem Model",
+            "forcing_version": "Version 0",
+            "region": "Global",
+            "indicator_type": [
+               "Water Resource Re-analysis v1",
+               "State Variables",
+               "Sub-Surface Water"
+            ]
+         },
+         "TotMoist": {
+            "niceName": "Total Soil Moisture",
+            "data_provider": "Centre for Ecology and Hydrology, UK",
+            "interval": "Daily",            
+            "model": "JULES",
+            "data_type": "Ecosystem Model",
+            "forcing_version": "Version 0",
+            "region": "Global",
+            "indicator_type": [
+               "Water Resource Re-analysis v1",
+               "State Variables",
+               "Sub-Surface Water"
+            ]
+         },
+         "GroundMoist": {
+            "niceName": "Ground Water",
+            "data_provider": "Centre for Ecology and Hydrology, UK",
+            "interval": "Daily",            
+            "model": "JULES",
+            "data_type": "Ecosystem Model",
+            "forcing_version": "Version 0",
+            "region": "Global",
+            "indicator_type": [
+               "Water Resource Re-analysis v1",
+               "State Variables",
+               "Sub-Surface Water"
+            ]
          }
       }
    },
@@ -700,306 +2034,7 @@ layers = [
          }
       },
       "indicators": {
-         "Qh": {
-            "Confidence": "Unknown",
-            "interval": "monthly",
-            "niceName": "Sensible Heat Flux",
-            "data_provider": "ECMWF",
-            
-            "model": "W3RA - Monthly (WRR1)",
-            "region": "Global",
-            "indicator_type": [
-               "Water Resource Re-analysis v1"
-            ]
-         },
-         "LWnet": {
-            "Confidence": "Unknown",
-            "interval": "monthly",
-            "niceName": "Net Longwave Radiation",
-            "data_provider": "ECMWF",
-            
-            "model": "W3RA - Monthly (WRR1)",
-            "region": "Global",
-            "indicator_type": [
-               "Water Resource Re-analysis v1"
-            ]
-         },
-         "SnowDepth": {
-            "Confidence": "Unknown",
-            "interval": "monthly",
-            "niceName": "Depth of Snow Layer",
-            "data_provider": "ECMWF",
-            
-            "model": "W3RA - Monthly (WRR1)",
-            "region": "Global",
-            "indicator_type": [
-               "Water Resource Re-analysis v1"
-            ]
-         },
-         "Rainf": {
-            "Confidence": "Unknown",
-            "interval": "monthly",
-            "niceName": "Rainfall Rate",
-            "data_provider": "ECMWF",
-            
-            "model": "W3RA - Monthly (WRR1)",
-            "region": "Global",
-            "indicator_type": [
-               "Water Resource Re-analysis v1"
-            ]
-         },
-         "SWnet": {
-            "Confidence": "Unknown",
-            "interval": "monthly",
-            "niceName": "Net Shortwave Radiation",
-            "data_provider": "ECMWF",
-            
-            "model": "W3RA - Monthly (WRR1)",
-            "region": "Global",
-            "indicator_type": [
-               "Water Resource Re-analysis v1"
-            ]
-         },
-         "SWE": {
-            "Confidence": "Unknown",
-            "interval": "monthly",
-            "niceName": "Snow Water Equivalent",
-            "data_provider": "ECMWF",
-            
-            "model": "W3RA - Monthly (WRR1)",
-            "region": "Global",
-            "indicator_type": [
-               "Water Resource Re-analysis v1"
-            ]
-         },
-         "TotMoist": {
-            "Confidence": "Unknown",
-            "interval": "monthly",
-            "niceName": "Total Soil Moisture",
-            "data_provider": "ECMWF",
-            
-            "model": "W3RA - Monthly (WRR1)",
-            "region": "Global",
-            "indicator_type": [
-               "Water Resource Re-analysis v1"
-            ]
-         },
-         "Qsm": {
-            "Confidence": "Unknown",
-            "interval": "monthly",
-            "niceName": "Snowmelt",
-            "data_provider": "ECMWF",
-            
-            "model": "W3RA - Monthly (WRR1)",
-            "region": "Global",
-            "indicator_type": [
-               "Water Resource Re-analysis v1"
-            ]
-         },
-         "RivOut": {
-            "Confidence": "Unknown",
-            "interval": "monthly",
-            "niceName": "River Discharge",
-            "data_provider": "ECMWF",
-            
-            "model": "W3RA - Monthly (WRR1)",
-            "region": "Global",
-            "indicator_type": [
-               "Water Resource Re-analysis v1"
-            ]
-         },
-         "TVeg": {
-            "Confidence": "Unknown",
-            "interval": "monthly",
-            "niceName": "Vegetation Transpiration",
-            "data_provider": "ECMWF",
-            
-            "model": "W3RA - Monthly (WRR1)",
-            "region": "Global",
-            "indicator_type": [
-               "Water Resource Re-analysis v1"
-            ]
-         },
-         "Albedo": {
-            "Confidence": "Unknown",
-            "interval": "monthly",
-            "niceName": "Surface Albedo",
-            "data_provider": "ECMWF",
-            
-            "model": "W3RA - Monthly (WRR1)",
-            "region": "Global",
-            "indicator_type": [
-               "Water Resource Re-analysis v1"
-            ]
-         },
-         "Qsb": {
-            "Confidence": "Unknown",
-            "interval": "monthly",
-            "niceName": "Sub-Surface Runoff",
-            "data_provider": "ECMWF",
-            
-            "model": "W3RA - Monthly (WRR1)",
-            "region": "Global",
-            "indicator_type": [
-               "Water Resource Re-analysis v1"
-            ]
-         },
-         "SurfMoist": {
-            "Confidence": "Unknown",
-            "interval": "monthly",
-            "niceName": "Surface Soil Moisture",
-            "data_provider": "ECMWF",
-            
-            "model": "W3RA - Monthly (WRR1)",
-            "region": "Global",
-            "indicator_type": [
-               "Water Resource Re-analysis v1"
-            ]
-         },
-         "Evap": {
-            "Confidence": "Unknown",
-            "interval": "monthly",
-            "niceName": "Total Evapotranspiration",
-            "data_provider": "ECMWF",
-            
-            "model": "W3RA - Monthly (WRR1)",
-            "region": "Global",
-            "indicator_type": [
-               "Water Resource Re-analysis v1"
-            ]
-         },
-         "Qs": {
-            "Confidence": "Unknown",
-            "interval": "monthly",
-            "niceName": "Surface Runoff",
-            "data_provider": "ECMWF",
-            
-            "model": "W3RA - Monthly (WRR1)",
-            "region": "Global",
-            "indicator_type": [
-               "Water Resource Re-analysis v1"
-            ]
-         },
-         "AvgSurfT": {
-            "Confidence": "Unknown",
-            "interval": "monthly",
-            "niceName": "Average Surface Temperature",
-            "data_provider": "ECMWF",
-            
-            "model": "W3RA - Monthly (WRR1)",
-            "region": "Global",
-            "indicator_type": [
-               "Water Resource Re-analysis v1"
-            ]
-         },
-         "ESoil": {
-            "Confidence": "Unknown",
-            "interval": "monthly",
-            "niceName": "Bar Soil Evaporation",
-            "data_provider": "ECMWF",
-            
-            "model": "W3RA - Monthly (WRR1)",
-            "region": "Global",
-            "indicator_type": [
-               "Water Resource Re-analysis v1"
-            ]
-         },
-         "ECanop": {
-            "Confidence": "Unknown",
-            "interval": "monthly",
-            "niceName": "Interception Evaporation",
-            "data_provider": "ECMWF",
-            
-            "model": "W3RA - Monthly (WRR1)",
-            "region": "Global",
-            "indicator_type": [
-               "Water Resource Re-analysis v1"
-            ]
-         },
-         "SnowFrac": {
-            "Confidence": "Unknown",
-            "interval": "monthly",
-            "niceName": "Snow Cover Fraction",
-            "data_provider": "ECMWF",
-            
-            "model": "W3RA - Monthly (WRR1)",
-            "region": "Global",
-            "indicator_type": [
-               "Water Resource Re-analysis v1"
-            ]
-         },
-         "Precip": {
-            "Confidence": "Unknown",
-            "interval": "monthly",
-            "niceName": "Precipitation",
-            "data_provider": "ECMWF",
-            
-            "model": "W3RA - Monthly (WRR1)",
-            "region": "Global",
-            "indicator_type": [
-               "Water Resource Re-analysis v1"
-            ]
-         },
-         "RootMoist": {
-            "Confidence": "Unknown",
-            "interval": "monthly",
-            "niceName": "Root Zone Soil Moisture",
-            "data_provider": "ECMWF",
-            
-            "model": "W3RA - Monthly (WRR1)",
-            "region": "Global",
-            "indicator_type": [
-               "Water Resource Re-analysis v1"
-            ]
-         },
-         "CanopInt": {
-            "Confidence": "Unknown",
-            "interval": "monthly",
-            "niceName": "Total Canopy Water Storage",
-            "data_provider": "ECMWF",
-            
-            "model": "W3RA - Monthly (WRR1)",
-            "region": "Global",
-            "indicator_type": [
-               "Water Resource Re-analysis v1"
-            ]
-         },
-         "LAI": {
-            "Confidence": "Unknown",
-            "interval": "monthly",
-            "niceName": "Leaf Area Index",
-            "data_provider": "ECMWF",
-            
-            "model": "W3RA - Monthly (WRR1)",
-            "region": "Global",
-            "indicator_type": [
-               "Water Resource Re-analysis v1"
-            ]
-         },
-         "Qle": {
-            "Confidence": "Unknown",
-            "interval": "monthly",
-            "niceName": "Latent Heat Flux",
-            "data_provider": "ECMWF",
-            
-            "model": "W3RA - Monthly (WRR1)",
-            "region": "Global",
-            "indicator_type": [
-               "Water Resource Re-analysis v1"
-            ]
-         },
-         "Runoff": {
-            "Confidence": "Unknown",
-            "interval": "monthly",
-            "niceName": "Total Runoff",
-            "data_provider": "ECMWF",
-            
-            "model": "W3RA - Monthly (WRR1)",
-            "region": "Global",
-            "indicator_type": [
-               "Water Resource Re-analysis v1"
-            ]
-         }
+      __HERE__
       }
    },
    {
@@ -1030,967 +2065,7 @@ layers = [
          }
       },
       "indicators": {
-         "Qh": {
-            "Confidence": "Unknown",
-            "interval": "monthly",
-            "niceName": "Sensible Heat Flux",
-            "data_provider": "ECMWF",
-            
-            "model": "W3RA - Daily (WRR1)",
-            "region": "Global",
-            "indicator_type": [
-               "Water Resource Re-analysis v1"
-            ]
-         },
-         "LWnet": {
-            "Confidence": "Unknown",
-            "interval": "monthly",
-            "niceName": "Net Longwave Radiation",
-            "data_provider": "ECMWF",
-            
-            "model": "W3RA - Daily (WRR1)",
-            "region": "Global",
-            "indicator_type": [
-               "Water Resource Re-analysis v1"
-            ]
-         },
-         "SnowDepth": {
-            "Confidence": "Unknown",
-            "interval": "monthly",
-            "niceName": "Depth of Snow Layer",
-            "data_provider": "ECMWF",
-            
-            "model": "W3RA - Daily (WRR1)",
-            "region": "Global",
-            "indicator_type": [
-               "Water Resource Re-analysis v1"
-            ]
-         },
-         "Rainf": {
-            "Confidence": "Unknown",
-            "interval": "monthly",
-            "niceName": "Rainfall Rate",
-            "data_provider": "ECMWF",
-            
-            "model": "W3RA - Daily (WRR1)",
-            "region": "Global",
-            "indicator_type": [
-               "Water Resource Re-analysis v1"
-            ]
-         },
-         "SWnet": {
-            "Confidence": "Unknown",
-            "interval": "monthly",
-            "niceName": "Net Shortwave Radiation",
-            "data_provider": "ECMWF",
-            
-            "model": "W3RA - Daily (WRR1)",
-            "region": "Global",
-            "indicator_type": [
-               "Water Resource Re-analysis v1"
-            ]
-         },
-         "SWE": {
-            "Confidence": "Unknown",
-            "interval": "monthly",
-            "niceName": "Snow Water Equivalent",
-            "data_provider": "ECMWF",
-            
-            "model": "W3RA - Daily (WRR1)",
-            "region": "Global",
-            "indicator_type": [
-               "Water Resource Re-analysis v1"
-            ]
-         },
-         "TotMoist": {
-            "Confidence": "Unknown",
-            "interval": "monthly",
-            "niceName": "Total Soil Moisture",
-            "data_provider": "ECMWF",
-            
-            "model": "W3RA - Daily (WRR1)",
-            "region": "Global",
-            "indicator_type": [
-               "Water Resource Re-analysis v1"
-            ]
-         },
-         "Qsm": {
-            "Confidence": "Unknown",
-            "interval": "monthly",
-            "niceName": "Snowmelt",
-            "data_provider": "ECMWF",
-            
-            "model": "W3RA - Daily (WRR1)",
-            "region": "Global",
-            "indicator_type": [
-               "Water Resource Re-analysis v1"
-            ]
-         },
-         "RivOut": {
-            "Confidence": "Unknown",
-            "interval": "monthly",
-            "niceName": "River Discharge",
-            "data_provider": "ECMWF",
-            
-            "model": "W3RA - Daily (WRR1)",
-            "region": "Global",
-            "indicator_type": [
-               "Water Resource Re-analysis v1"
-            ]
-         },
-         "TVeg": {
-            "Confidence": "Unknown",
-            "interval": "monthly",
-            "niceName": "Vegetation Transpiration",
-            "data_provider": "ECMWF",
-            
-            "model": "W3RA - Daily (WRR1)",
-            "region": "Global",
-            "indicator_type": [
-               "Water Resource Re-analysis v1"
-            ]
-         },
-         "Albedo": {
-            "Confidence": "Unknown",
-            "interval": "monthly",
-            "niceName": "Surface Albedo",
-            "data_provider": "ECMWF",
-            
-            "model": "W3RA - Daily (WRR1)",
-            "region": "Global",
-            "indicator_type": [
-               "Water Resource Re-analysis v1"
-            ]
-         },
-         "Qsb": {
-            "Confidence": "Unknown",
-            "interval": "monthly",
-            "niceName": "Sub-Surface Runoff",
-            "data_provider": "ECMWF",
-            
-            "model": "W3RA - Daily (WRR1)",
-            "region": "Global",
-            "indicator_type": [
-               "Water Resource Re-analysis v1"
-            ]
-         },
-         "SurfMoist": {
-            "Confidence": "Unknown",
-            "interval": "monthly",
-            "niceName": "Surface Soil Moisture",
-            "data_provider": "ECMWF",
-            
-            "model": "W3RA - Daily (WRR1)",
-            "region": "Global",
-            "indicator_type": [
-               "Water Resource Re-analysis v1"
-            ]
-         },
-         "Evap": {
-            "Confidence": "Unknown",
-            "interval": "monthly",
-            "niceName": "Total Evapotranspiration",
-            "data_provider": "ECMWF",
-            
-            "model": "W3RA - Daily (WRR1)",
-            "region": "Global",
-            "indicator_type": [
-               "Water Resource Re-analysis v1"
-            ]
-         },
-         "Qs": {
-            "Confidence": "Unknown",
-            "interval": "monthly",
-            "niceName": "Surface Runoff",
-            "data_provider": "ECMWF",
-            
-            "model": "W3RA - Daily (WRR1)",
-            "region": "Global",
-            "indicator_type": [
-               "Water Resource Re-analysis v1"
-            ]
-         },
-         "AvgSurfT": {
-            "Confidence": "Unknown",
-            "interval": "monthly",
-            "niceName": "Average Surface Temperature",
-            "data_provider": "ECMWF",
-            
-            "model": "W3RA - Daily (WRR1)",
-            "region": "Global",
-            "indicator_type": [
-               "Water Resource Re-analysis v1"
-            ]
-         },
-         "ESoil": {
-            "Confidence": "Unknown",
-            "interval": "monthly",
-            "niceName": "Bare Soil Evaporation",
-            "data_provider": "ECMWF",
-            
-            "model": "W3RA - Daily (WRR1)",
-            "region": "Global",
-            "indicator_type": [
-               "Water Resource Re-analysis v1"
-            ]
-         },
-         "ECanop": {
-            "Confidence": "Unknown",
-            "interval": "monthly",
-            "niceName": "Interception Evaporation",
-            "data_provider": "ECMWF",
-            
-            "model": "W3RA - Daily (WRR1)",
-            "region": "Global",
-            "indicator_type": [
-               "Water Resource Re-analysis v1"
-            ]
-         },
-         "SnowFrac": {
-            "Confidence": "Unknown",
-            "interval": "monthly",
-            "niceName": "Snow Cover Fraction",
-            "data_provider": "ECMWF",
-            
-            "model": "W3RA - Daily (WRR1)",
-            "region": "Global",
-            "indicator_type": [
-               "Water Resource Re-analysis v1"
-            ]
-         },
-         "Precip": {
-            "Confidence": "Unknown",
-            "interval": "monthly",
-            "niceName": "Precipitation",
-            "data_provider": "ECMWF",
-            
-            "model": "W3RA - Daily (WRR1)",
-            "region": "Global",
-            "indicator_type": [
-               "Water Resource Re-analysis v1"
-            ]
-         },
-         "RootMoist": {
-            "Confidence": "Unknown",
-            "interval": "monthly",
-            "niceName": "Root Zone Soil Moisture",
-            "data_provider": "ECMWF",
-            
-            "model": "W3RA - Daily (WRR1)",
-            "region": "Global",
-            "indicator_type": [
-               "Water Resource Re-analysis v1"
-            ]
-         },
-         "CanopInt": {
-            "Confidence": "Unknown",
-            "interval": "monthly",
-            "niceName": "Total Canopy Water Storage",
-            "data_provider": "ECMWF",
-            
-            "model": "W3RA - Daily (WRR1)",
-            "region": "Global",
-            "indicator_type": [
-               "Water Resource Re-analysis v1"
-            ]
-         },
-         "LAI": {
-            "Confidence": "Unknown",
-            "interval": "monthly",
-            "niceName": "Leaf Area Index",
-            "data_provider": "ECMWF",
-            
-            "model": "W3RA - Daily (WRR1)",
-            "region": "Global",
-            "indicator_type": [
-               "Water Resource Re-analysis v1"
-            ]
-         },
-         "Qle": {
-            "Confidence": "Unknown",
-            "interval": "monthly",
-            "niceName": "Latent Heat Flux",
-            "data_provider": "ECMWF",
-            
-            "model": "W3RA - Daily (WRR1)",
-            "region": "Global",
-            "indicator_type": [
-               "Water Resource Re-analysis v1"
-            ]
-         },
-         "Runoff": {
-            "Confidence": "Unknown",
-            "interval": "monthly",
-            "niceName": "Total Runoff",
-            "data_provider": "ECMWF",
-            
-            "model": "W3RA - Daily (WRR1)",
-            "region": "Global",
-            "indicator_type": [
-               "Water Resource Re-analysis v1"
-            ]
-         }
-      }
-   },
-
-   {
-      "name": "univk_wrr1_monthly",
-      "options": {
-         "providerShortTag": "UniKassel"
-      },
-      "services": {
-         "wms": {
-            "url": "https://wci.earth2observe.eu/thredds/wms/univk/wrr1-monthly-agg.nc?",
-            "params": {
-               "GetCapabilities": {
-                  "SERVICE": "WMS",
-                  "request": "GetCapabilities",
-                  "version": "1.3.0"
-               }
-            }
-         },
-         "wcs": {
-            "url": "https://wci.earth2observe.eu/thredds/wcs/univk/wrr1-monthly-agg.nc?",
-            "params": {
-               "DescribeCoverage": {
-                  "SERVICE": "WCS",
-                  "request": "describeCoverage",
-                  "version": "1.0.0"
-               }
-            }
-         }
-      },
-      "indicators": {
-         "Qh": {
-            "Confidence": "Unknown",
-            "interval": "monthly",
-            "niceName": "Sensible Heat Flux",
-            "data_provider": "ECMWF",
-            
-            "model": "WaterGAP3 - Monthly (WRR1)",
-            "region": "Global",
-            "indicator_type": [
-               "Water Resource Re-analysis v1"
-            ]
-         },
-         "LWnet": {
-            "Confidence": "Unknown",
-            "interval": "monthly",
-            "niceName": "Net Longwave Radiation",
-            "data_provider": "ECMWF",
-            
-            "model": "WaterGAP3 - Monthly (WRR1)",
-            "region": "Global",
-            "indicator_type": [
-               "Water Resource Re-analysis v1"
-            ]
-         },
-         "SnowDepth": {
-            "Confidence": "Unknown",
-            "interval": "monthly",
-            "niceName": "Depth of Snow Layer",
-            "data_provider": "ECMWF",
-            
-            "model": "WaterGAP3 - Monthly (WRR1)",
-            "region": "Global",
-            "indicator_type": [
-               "Water Resource Re-analysis v1"
-            ]
-         },
-         "Rainf": {
-            "Confidence": "Unknown",
-            "interval": "monthly",
-            "niceName": "Rainfall Rate",
-            "data_provider": "ECMWF",
-            
-            "model": "WaterGAP3 - Monthly (WRR1)",
-            "region": "Global",
-            "indicator_type": [
-               "Water Resource Re-analysis v1"
-            ]
-         },
-         "SWnet": {
-            "Confidence": "Unknown",
-            "interval": "monthly",
-            "niceName": "Net Shortwave Radiation",
-            "data_provider": "ECMWF",
-            
-            "model": "WaterGAP3 - Monthly (WRR1)",
-            "region": "Global",
-            "indicator_type": [
-               "Water Resource Re-analysis v1"
-            ]
-         },
-         "SWE": {
-            "Confidence": "Unknown",
-            "interval": "monthly",
-            "niceName": "Snow Water Equivalent",
-            "data_provider": "ECMWF",
-            
-            "model": "WaterGAP3 - Monthly (WRR1)",
-            "region": "Global",
-            "indicator_type": [
-               "Water Resource Re-analysis v1"
-            ]
-         },
-         "TotMoist": {
-            "Confidence": "Unknown",
-            "interval": "monthly",
-            "niceName": "Total Soil Moisture",
-            "data_provider": "ECMWF",
-            
-            "model": "WaterGAP3 - Monthly (WRR1)",
-            "region": "Global",
-            "indicator_type": [
-               "Water Resource Re-analysis v1"
-            ]
-         },
-         "Qsm": {
-            "Confidence": "Unknown",
-            "interval": "monthly",
-            "niceName": "Snowmelt",
-            "data_provider": "ECMWF",
-            
-            "model": "WaterGAP3 - Monthly (WRR1)",
-            "region": "Global",
-            "indicator_type": [
-               "Water Resource Re-analysis v1"
-            ]
-         },
-         "RivOut": {
-            "Confidence": "Unknown",
-            "interval": "monthly",
-            "niceName": "River Discharge",
-            "data_provider": "ECMWF",
-            
-            "model": "WaterGAP3 - Monthly (WRR1)",
-            "region": "Global",
-            "indicator_type": [
-               "Water Resource Re-analysis v1"
-            ]
-         },
-         "TVeg": {
-            "Confidence": "Unknown",
-            "interval": "monthly",
-            "niceName": "Vegetation Transpiration",
-            "data_provider": "ECMWF",
-            
-            "model": "WaterGAP3 - Monthly (WRR1)",
-            "region": "Global",
-            "indicator_type": [
-               "Water Resource Re-analysis v1"
-            ]
-         },
-         "Albedo": {
-            "Confidence": "Unknown",
-            "interval": "monthly",
-            "niceName": "Surface Albedo",
-            "data_provider": "ECMWF",
-            
-            "model": "WaterGAP3 - Monthly (WRR1)",
-            "region": "Global",
-            "indicator_type": [
-               "Water Resource Re-analysis v1"
-            ]
-         },
-         "Qsb": {
-            "Confidence": "Unknown",
-            "interval": "monthly",
-            "niceName": "Sub-Surface Runoff",
-            "data_provider": "ECMWF",
-            
-            "model": "WaterGAP3 - Monthly (WRR1)",
-            "region": "Global",
-            "indicator_type": [
-               "Water Resource Re-analysis v1"
-            ]
-         },
-         "SurfMoist": {
-            "Confidence": "Unknown",
-            "interval": "monthly",
-            "niceName": "Surface Soil Moisture",
-            "data_provider": "ECMWF",
-            
-            "model": "WaterGAP3 - Monthly (WRR1)",
-            "region": "Global",
-            "indicator_type": [
-               "Water Resource Re-analysis v1"
-            ]
-         },
-         "Evap": {
-            "Confidence": "Unknown",
-            "interval": "monthly",
-            "niceName": "Total Evapotranspiration",
-            "data_provider": "ECMWF",
-            
-            "model": "WaterGAP3 - Monthly (WRR1)",
-            "region": "Global",
-            "indicator_type": [
-               "Water Resource Re-analysis v1"
-            ]
-         },
-         "Qs": {
-            "Confidence": "Unknown",
-            "interval": "monthly",
-            "niceName": "Surface Runoff",
-            "data_provider": "ECMWF",
-            
-            "model": "WaterGAP3 - Monthly (WRR1)",
-            "region": "Global",
-            "indicator_type": [
-               "Water Resource Re-analysis v1"
-            ]
-         },
-         "AvgSurfT": {
-            "Confidence": "Unknown",
-            "interval": "monthly",
-            "niceName": "Average Surface Temperature",
-            "data_provider": "ECMWF",
-            
-            "model": "WaterGAP3 - Monthly (WRR1)",
-            "region": "Global",
-            "indicator_type": [
-               "Water Resource Re-analysis v1"
-            ]
-         },
-         "ESoil": {
-            "Confidence": "Unknown",
-            "interval": "monthly",
-            "niceName": "Bar Soil Evaporation",
-            "data_provider": "ECMWF",
-            
-            "model": "WaterGAP3 - Monthly (WRR1)",
-            "region": "Global",
-            "indicator_type": [
-               "Water Resource Re-analysis v1"
-            ]
-         },
-         "ECanop": {
-            "Confidence": "Unknown",
-            "interval": "monthly",
-            "niceName": "Interception Evaporation",
-            "data_provider": "ECMWF",
-            
-            "model": "WaterGAP3 - Monthly (WRR1)",
-            "region": "Global",
-            "indicator_type": [
-               "Water Resource Re-analysis v1"
-            ]
-         },
-         "SnowFrac": {
-            "Confidence": "Unknown",
-            "interval": "monthly",
-            "niceName": "Snow Cover Fraction",
-            "data_provider": "ECMWF",
-            
-            "model": "WaterGAP3 - Monthly (WRR1)",
-            "region": "Global",
-            "indicator_type": [
-               "Water Resource Re-analysis v1"
-            ]
-         },
-         "Precip": {
-            "Confidence": "Unknown",
-            "interval": "monthly",
-            "niceName": "Precipitation",
-            "data_provider": "ECMWF",
-            
-            "model": "WaterGAP3 - Monthly (WRR1)",
-            "region": "Global",
-            "indicator_type": [
-               "Water Resource Re-analysis v1"
-            ]
-         },
-         "RootMoist": {
-            "Confidence": "Unknown",
-            "interval": "monthly",
-            "niceName": "Root Zone Soil Moisture",
-            "data_provider": "ECMWF",
-            
-            "model": "WaterGAP3 - Monthly (WRR1)",
-            "region": "Global",
-            "indicator_type": [
-               "Water Resource Re-analysis v1"
-            ]
-         },
-         "CanopInt": {
-            "Confidence": "Unknown",
-            "interval": "monthly",
-            "niceName": "Total Canopy Water Storage",
-            "data_provider": "ECMWF",
-            
-            "model": "WaterGAP3 - Monthly (WRR1)",
-            "region": "Global",
-            "indicator_type": [
-               "Water Resource Re-analysis v1"
-            ]
-         },
-         "LAI": {
-            "Confidence": "Unknown",
-            "interval": "monthly",
-            "niceName": "Leaf Area Index",
-            "data_provider": "ECMWF",
-            
-            "model": "WaterGAP3 - Monthly (WRR1)",
-            "region": "Global",
-            "indicator_type": [
-               "Water Resource Re-analysis v1"
-            ]
-         },
-         "Qle": {
-            "Confidence": "Unknown",
-            "interval": "monthly",
-            "niceName": "Latent Heat Flux",
-            "data_provider": "ECMWF",
-            
-            "model": "WaterGAP3 - Monthly (WRR1)",
-            "region": "Global",
-            "indicator_type": [
-               "Water Resource Re-analysis v1"
-            ]
-         },
-         "Runoff": {
-            "Confidence": "Unknown",
-            "interval": "monthly",
-            "niceName": "Total Runoff",
-            "data_provider": "ECMWF",
-            
-            "model": "WaterGAP3 - Monthly (WRR1)",
-            "region": "Global",
-            "indicator_type": [
-               "Water Resource Re-analysis v1"
-            ]
-         }
-      }
-   },
-   {
-      "name": "univk_wrr1_daily",
-      "options": {
-         "providerShortTag": "ECMWF"
-      },
-      "services": {
-         "wms": {
-            "url": "https://wci.earth2observe.eu/thredds/wms/univk/wrr1-daily-agg.nc?",
-            "params": {
-               "GetCapabilities": {
-                  "SERVICE": "WMS",
-                  "request": "GetCapabilities",
-                  "version": "1.3.0"
-               }
-            }
-         },
-         "wcs": {
-            "url": "https://wci.earth2observe.eu/thredds/wcs/univk/wrr1-daily-agg.nc?",
-            "params": {
-               "DescribeCoverage": {
-                  "SERVICE": "WCS",
-                  "request": "describeCoverage",
-                  "version": "1.0.0"
-               }
-            }
-         }
-      },
-      "indicators": {
-         "Qh": {
-            "Confidence": "Unknown",
-            "interval": "monthly",
-            "niceName": "Sensible Heat Flux",
-            "data_provider": "ECMWF",
-            
-            "model": "WaterGAP3 - Daily (WRR1)",
-            "region": "Global",
-            "indicator_type": [
-               "Water Resource Re-analysis v1"
-            ]
-         },
-         "LWnet": {
-            "Confidence": "Unknown",
-            "interval": "monthly",
-            "niceName": "Net Longwave Radiation",
-            "data_provider": "ECMWF",
-            
-            "model": "WaterGAP3 - Daily (WRR1)",
-            "region": "Global",
-            "indicator_type": [
-               "Water Resource Re-analysis v1"
-            ]
-         },
-         "SnowDepth": {
-            "Confidence": "Unknown",
-            "interval": "monthly",
-            "niceName": "Depth of Snow Layer",
-            "data_provider": "ECMWF",
-            
-            "model": "WaterGAP3 - Daily (WRR1)",
-            "region": "Global",
-            "indicator_type": [
-               "Water Resource Re-analysis v1"
-            ]
-         },
-         "Rainf": {
-            "Confidence": "Unknown",
-            "interval": "monthly",
-            "niceName": "Rainfall Rate",
-            "data_provider": "ECMWF",
-            
-            "model": "WaterGAP3 - Daily (WRR1)",
-            "region": "Global",
-            "indicator_type": [
-               "Water Resource Re-analysis v1"
-            ]
-         },
-         "SWnet": {
-            "Confidence": "Unknown",
-            "interval": "monthly",
-            "niceName": "Net Shortwave Radiation",
-            "data_provider": "ECMWF",
-            
-            "model": "WaterGAP3 - Daily (WRR1)",
-            "region": "Global",
-            "indicator_type": [
-               "Water Resource Re-analysis v1"
-            ]
-         },
-         "SWE": {
-            "Confidence": "Unknown",
-            "interval": "monthly",
-            "niceName": "Snow Water Equivalent",
-            "data_provider": "ECMWF",
-            
-            "model": "WaterGAP3 - Daily (WRR1)",
-            "region": "Global",
-            "indicator_type": [
-               "Water Resource Re-analysis v1"
-            ]
-         },
-         "TotMoist": {
-            "Confidence": "Unknown",
-            "interval": "monthly",
-            "niceName": "Total Soil Moisture",
-            "data_provider": "ECMWF",
-            
-            "model": "WaterGAP3 - Daily (WRR1)",
-            "region": "Global",
-            "indicator_type": [
-               "Water Resource Re-analysis v1"
-            ]
-         },
-         "Qsm": {
-            "Confidence": "Unknown",
-            "interval": "monthly",
-            "niceName": "Snowmelt",
-            "data_provider": "ECMWF",
-            
-            "model": "WaterGAP3 - Daily (WRR1)",
-            "region": "Global",
-            "indicator_type": [
-               "Water Resource Re-analysis v1"
-            ]
-         },
-         "RivOut": {
-            "Confidence": "Unknown",
-            "interval": "monthly",
-            "niceName": "River Discharge",
-            "data_provider": "ECMWF",
-            
-            "model": "WaterGAP3 - Daily (WRR1)",
-            "region": "Global",
-            "indicator_type": [
-               "Water Resource Re-analysis v1"
-            ]
-         },
-         "TVeg": {
-            "Confidence": "Unknown",
-            "interval": "monthly",
-            "niceName": "Vegetation Transpiration",
-            "data_provider": "ECMWF",
-            
-            "model": "WaterGAP3 - Daily (WRR1)",
-            "region": "Global",
-            "indicator_type": [
-               "Water Resource Re-analysis v1"
-            ]
-         },
-         "Albedo": {
-            "Confidence": "Unknown",
-            "interval": "monthly",
-            "niceName": "Surface Albedo",
-            "data_provider": "ECMWF",
-            
-            "model": "WaterGAP3 - Daily (WRR1)",
-            "region": "Global",
-            "indicator_type": [
-               "Water Resource Re-analysis v1"
-            ]
-         },
-         "Qsb": {
-            "Confidence": "Unknown",
-            "interval": "monthly",
-            "niceName": "Sub-Surface Runoff",
-            "data_provider": "ECMWF",
-            
-            "model": "WaterGAP3 - Daily (WRR1)",
-            "region": "Global",
-            "indicator_type": [
-               "Water Resource Re-analysis v1"
-            ]
-         },
-         "SurfMoist": {
-            "Confidence": "Unknown",
-            "interval": "monthly",
-            "niceName": "Surface Soil Moisture",
-            "data_provider": "ECMWF",
-            
-            "model": "WaterGAP3 - Daily (WRR1)",
-            "region": "Global",
-            "indicator_type": [
-               "Water Resource Re-analysis v1"
-            ]
-         },
-         "Evap": {
-            "Confidence": "Unknown",
-            "interval": "monthly",
-            "niceName": "Total Evapotranspiration",
-            "data_provider": "ECMWF",
-            
-            "model": "WaterGAP3 - Daily (WRR1)",
-            "region": "Global",
-            "indicator_type": [
-               "Water Resource Re-analysis v1"
-            ]
-         },
-         "Qs": {
-            "Confidence": "Unknown",
-            "interval": "monthly",
-            "niceName": "Surface Runoff",
-            "data_provider": "ECMWF",
-            
-            "model": "WaterGAP3 - Daily (WRR1)",
-            "region": "Global",
-            "indicator_type": [
-               "Water Resource Re-analysis v1"
-            ]
-         },
-         "AvgSurfT": {
-            "Confidence": "Unknown",
-            "interval": "monthly",
-            "niceName": "Average Surface Temperature",
-            "data_provider": "ECMWF",
-            
-            "model": "WaterGAP3 - Daily (WRR1)",
-            "region": "Global",
-            "indicator_type": [
-               "Water Resource Re-analysis v1"
-            ]
-         },
-         "ESoil": {
-            "Confidence": "Unknown",
-            "interval": "monthly",
-            "niceName": "Bare Soil Evaporation",
-            "data_provider": "ECMWF",
-            
-            "model": "WaterGAP3 - Daily (WRR1)",
-            "region": "Global",
-            "indicator_type": [
-               "Water Resource Re-analysis v1"
-            ]
-         },
-         "ECanop": {
-            "Confidence": "Unknown",
-            "interval": "monthly",
-            "niceName": "Interception Evaporation",
-            "data_provider": "ECMWF",
-            
-            "model": "WaterGAP3 - Daily (WRR1)",
-            "region": "Global",
-            "indicator_type": [
-               "Water Resource Re-analysis v1"
-            ]
-         },
-         "SnowFrac": {
-            "Confidence": "Unknown",
-            "interval": "monthly",
-            "niceName": "Snow Cover Fraction",
-            "data_provider": "ECMWF",
-            
-            "model": "WaterGAP3 - Daily (WRR1)",
-            "region": "Global",
-            "indicator_type": [
-               "Water Resource Re-analysis v1"
-            ]
-         },
-         "Precip": {
-            "Confidence": "Unknown",
-            "interval": "monthly",
-            "niceName": "Precipitation",
-            "data_provider": "ECMWF",
-            
-            "model": "WaterGAP3 - Daily (WRR1)",
-            "region": "Global",
-            "indicator_type": [
-               "Water Resource Re-analysis v1"
-            ]
-         },
-         "RootMoist": {
-            "Confidence": "Unknown",
-            "interval": "monthly",
-            "niceName": "Root Zone Soil Moisture",
-            "data_provider": "ECMWF",
-            
-            "model": "WaterGAP3 - Daily (WRR1)",
-            "region": "Global",
-            "indicator_type": [
-               "Water Resource Re-analysis v1"
-            ]
-         },
-         "CanopInt": {
-            "Confidence": "Unknown",
-            "interval": "monthly",
-            "niceName": "Total Canopy Water Storage",
-            "data_provider": "ECMWF",
-            
-            "model": "WaterGAP3 - Daily (WRR1)",
-            "region": "Global",
-            "indicator_type": [
-               "Water Resource Re-analysis v1"
-            ]
-         },
-         "LAI": {
-            "Confidence": "Unknown",
-            "interval": "monthly",
-            "niceName": "Leaf Area Index",
-            "data_provider": "ECMWF",
-            
-            "model": "WaterGAP3 - Daily (WRR1)",
-            "region": "Global",
-            "indicator_type": [
-               "Water Resource Re-analysis v1"
-            ]
-         },
-         "Qle": {
-            "Confidence": "Unknown",
-            "interval": "monthly",
-            "niceName": "Latent Heat Flux",
-            "data_provider": "ECMWF",
-            
-            "model": "WaterGAP3 - Daily (WRR1)",
-            "region": "Global",
-            "indicator_type": [
-               "Water Resource Re-analysis v1"
-            ]
-         },
-         "Runoff": {
-            "Confidence": "Unknown",
-            "interval": "monthly",
-            "niceName": "Total Runoff",
-            "data_provider": "ECMWF",
-            
-            "model": "WaterGAP3 - Daily (WRR1)",
-            "region": "Global",
-            "indicator_type": [
-               "Water Resource Re-analysis v1"
-            ]
-         }
+      __HERE__
       }
    },
    {
@@ -2021,306 +2096,7 @@ layers = [
          }
       },
       "indicators": {
-         "Qh": {
-            "Confidence": "Unknown",
-            "interval": "monthly",
-            "niceName": "Sensible Heat Flux",
-            "data_provider": "ECMWF",
-            
-            "model": "HTESSEL - Monthly (WRR1)",
-            "region": "Global",
-            "indicator_type": [
-               "Water Resource Re-analysis v1"
-            ]
-         },
-         "LWnet": {
-            "Confidence": "Unknown",
-            "interval": "monthly",
-            "niceName": "Net Longwave Radiation",
-            "data_provider": "ECMWF",
-            
-            "model": "HTESSEL - Monthly (WRR1)",
-            "region": "Global",
-            "indicator_type": [
-               "Water Resource Re-analysis v1"
-            ]
-         },
-         "SnowDepth": {
-            "Confidence": "Unknown",
-            "interval": "monthly",
-            "niceName": "Depth of Snow Layer",
-            "data_provider": "ECMWF",
-            
-            "model": "HTESSEL - Monthly (WRR1)",
-            "region": "Global",
-            "indicator_type": [
-               "Water Resource Re-analysis v1"
-            ]
-         },
-         "Rainf": {
-            "Confidence": "Unknown",
-            "interval": "monthly",
-            "niceName": "Rainfall Rate",
-            "data_provider": "ECMWF",
-            
-            "model": "HTESSEL - Monthly (WRR1)",
-            "region": "Global",
-            "indicator_type": [
-               "Water Resource Re-analysis v1"
-            ]
-         },
-         "SWnet": {
-            "Confidence": "Unknown",
-            "interval": "monthly",
-            "niceName": "Net Shortwave Radiation",
-            "data_provider": "ECMWF",
-            
-            "model": "HTESSEL - Monthly (WRR1)",
-            "region": "Global",
-            "indicator_type": [
-               "Water Resource Re-analysis v1"
-            ]
-         },
-         "SWE": {
-            "Confidence": "Unknown",
-            "interval": "monthly",
-            "niceName": "Snow Water Equivalent",
-            "data_provider": "ECMWF",
-            
-            "model": "HTESSEL - Monthly (WRR1)",
-            "region": "Global",
-            "indicator_type": [
-               "Water Resource Re-analysis v1"
-            ]
-         },
-         "TotMoist": {
-            "Confidence": "Unknown",
-            "interval": "monthly",
-            "niceName": "Total Soil Moisture",
-            "data_provider": "ECMWF",
-            
-            "model": "HTESSEL - Monthly (WRR1)",
-            "region": "Global",
-            "indicator_type": [
-               "Water Resource Re-analysis v1"
-            ]
-         },
-         "Qsm": {
-            "Confidence": "Unknown",
-            "interval": "monthly",
-            "niceName": "Snowmelt",
-            "data_provider": "ECMWF",
-            
-            "model": "HTESSEL - Monthly (WRR1)",
-            "region": "Global",
-            "indicator_type": [
-               "Water Resource Re-analysis v1"
-            ]
-         },
-         "RivOut": {
-            "Confidence": "Unknown",
-            "interval": "monthly",
-            "niceName": "River Discharge",
-            "data_provider": "ECMWF",
-            
-            "model": "HTESSEL - Monthly (WRR1)",
-            "region": "Global",
-            "indicator_type": [
-               "Water Resource Re-analysis v1"
-            ]
-         },
-         "TVeg": {
-            "Confidence": "Unknown",
-            "interval": "monthly",
-            "niceName": "Vegetation Transpiration",
-            "data_provider": "ECMWF",
-            
-            "model": "HTESSEL - Monthly (WRR1)",
-            "region": "Global",
-            "indicator_type": [
-               "Water Resource Re-analysis v1"
-            ]
-         },
-         "Albedo": {
-            "Confidence": "Unknown",
-            "interval": "monthly",
-            "niceName": "Surface Albedo",
-            "data_provider": "ECMWF",
-            
-            "model": "HTESSEL - Monthly (WRR1)",
-            "region": "Global",
-            "indicator_type": [
-               "Water Resource Re-analysis v1"
-            ]
-         },
-         "Qsb": {
-            "Confidence": "Unknown",
-            "interval": "monthly",
-            "niceName": "Sub-Surface Runoff",
-            "data_provider": "ECMWF",
-            
-            "model": "HTESSEL - Monthly (WRR1)",
-            "region": "Global",
-            "indicator_type": [
-               "Water Resource Re-analysis v1"
-            ]
-         },
-         "SurfMoist": {
-            "Confidence": "Unknown",
-            "interval": "monthly",
-            "niceName": "Surface Soil Moisture",
-            "data_provider": "ECMWF",
-            
-            "model": "HTESSEL - Monthly (WRR1)",
-            "region": "Global",
-            "indicator_type": [
-               "Water Resource Re-analysis v1"
-            ]
-         },
-         "Evap": {
-            "Confidence": "Unknown",
-            "interval": "monthly",
-            "niceName": "Total Evapotranspiration",
-            "data_provider": "ECMWF",
-            
-            "model": "HTESSEL - Monthly (WRR1)",
-            "region": "Global",
-            "indicator_type": [
-               "Water Resource Re-analysis v1"
-            ]
-         },
-         "Qs": {
-            "Confidence": "Unknown",
-            "interval": "monthly",
-            "niceName": "Surface Runoff",
-            "data_provider": "ECMWF",
-            
-            "model": "HTESSEL - Monthly (WRR1)",
-            "region": "Global",
-            "indicator_type": [
-               "Water Resource Re-analysis v1"
-            ]
-         },
-         "AvgSurfT": {
-            "Confidence": "Unknown",
-            "interval": "monthly",
-            "niceName": "Average Surface Temperature",
-            "data_provider": "ECMWF",
-            
-            "model": "HTESSEL - Monthly (WRR1)",
-            "region": "Global",
-            "indicator_type": [
-               "Water Resource Re-analysis v1"
-            ]
-         },
-         "ESoil": {
-            "Confidence": "Unknown",
-            "interval": "monthly",
-            "niceName": "Bar Soil Evaporation",
-            "data_provider": "ECMWF",
-            
-            "model": "HTESSEL - Monthly (WRR1)",
-            "region": "Global",
-            "indicator_type": [
-               "Water Resource Re-analysis v1"
-            ]
-         },
-         "ECanop": {
-            "Confidence": "Unknown",
-            "interval": "monthly",
-            "niceName": "Interception Evaporation",
-            "data_provider": "ECMWF",
-            
-            "model": "HTESSEL - Monthly (WRR1)",
-            "region": "Global",
-            "indicator_type": [
-               "Water Resource Re-analysis v1"
-            ]
-         },
-         "SnowFrac": {
-            "Confidence": "Unknown",
-            "interval": "monthly",
-            "niceName": "Snow Cover Fraction",
-            "data_provider": "ECMWF",
-            
-            "model": "HTESSEL - Monthly (WRR1)",
-            "region": "Global",
-            "indicator_type": [
-               "Water Resource Re-analysis v1"
-            ]
-         },
-         "Precip": {
-            "Confidence": "Unknown",
-            "interval": "monthly",
-            "niceName": "Precipitation",
-            "data_provider": "ECMWF",
-            
-            "model": "HTESSEL - Monthly (WRR1)",
-            "region": "Global",
-            "indicator_type": [
-               "Water Resource Re-analysis v1"
-            ]
-         },
-         "RootMoist": {
-            "Confidence": "Unknown",
-            "interval": "monthly",
-            "niceName": "Root Zone Soil Moisture",
-            "data_provider": "ECMWF",
-            
-            "model": "HTESSEL - Monthly (WRR1)",
-            "region": "Global",
-            "indicator_type": [
-               "Water Resource Re-analysis v1"
-            ]
-         },
-         "CanopInt": {
-            "Confidence": "Unknown",
-            "interval": "monthly",
-            "niceName": "Total Canopy Water Storage",
-            "data_provider": "ECMWF",
-            
-            "model": "HTESSEL - Monthly (WRR1)",
-            "region": "Global",
-            "indicator_type": [
-               "Water Resource Re-analysis v1"
-            ]
-         },
-         "LAI": {
-            "Confidence": "Unknown",
-            "interval": "monthly",
-            "niceName": "Leaf Area Index",
-            "data_provider": "ECMWF",
-            
-            "model": "HTESSEL - Monthly (WRR1)",
-            "region": "Global",
-            "indicator_type": [
-               "Water Resource Re-analysis v1"
-            ]
-         },
-         "Qle": {
-            "Confidence": "Unknown",
-            "interval": "monthly",
-            "niceName": "Latent Heat Flux",
-            "data_provider": "ECMWF",
-            
-            "model": "HTESSEL - Monthly (WRR1)",
-            "region": "Global",
-            "indicator_type": [
-               "Water Resource Re-analysis v1"
-            ]
-         },
-         "Runoff": {
-            "Confidence": "Unknown",
-            "interval": "monthly",
-            "niceName": "Total Runoff",
-            "data_provider": "ECMWF",
-            
-            "model": "HTESSEL - Monthly (WRR1)",
-            "region": "Global",
-            "indicator_type": [
-               "Water Resource Re-analysis v1"
-            ]
-         }
+      __HERE__
       }
    },
    {
@@ -2351,309 +2127,319 @@ layers = [
          }
       },
       "indicators": {
-         "Qh": {
-            "Confidence": "Unknown",
-            "interval": "monthly",
-            "niceName": "Sensible Heat Flux",
-            "data_provider": "ECMWF",
-            
-            "model": "HTESSEL - Daily (WRR1)",
-            "region": "Global",
-            "indicator_type": [
-               "Water Resource Re-analysis v1"
-            ]
-         },
-         "LWnet": {
-            "Confidence": "Unknown",
-            "interval": "monthly",
-            "niceName": "Net Longwave Radiation",
-            "data_provider": "ECMWF",
-            
-            "model": "HTESSEL - Daily (WRR1)",
-            "region": "Global",
-            "indicator_type": [
-               "Water Resource Re-analysis v1"
-            ]
-         },
-         "SnowDepth": {
-            "Confidence": "Unknown",
-            "interval": "monthly",
-            "niceName": "Depth of Snow Layer",
-            "data_provider": "ECMWF",
-            
-            "model": "HTESSEL - Daily (WRR1)",
-            "region": "Global",
-            "indicator_type": [
-               "Water Resource Re-analysis v1"
-            ]
-         },
-         "Rainf": {
-            "Confidence": "Unknown",
-            "interval": "monthly",
-            "niceName": "Rainfall Rate",
-            "data_provider": "ECMWF",
-            
-            "model": "HTESSEL - Daily (WRR1)",
-            "region": "Global",
-            "indicator_type": [
-               "Water Resource Re-analysis v1"
-            ]
-         },
-         "SWnet": {
-            "Confidence": "Unknown",
-            "interval": "monthly",
-            "niceName": "Net Shortwave Radiation",
-            "data_provider": "ECMWF",
-            
-            "model": "HTESSEL - Daily (WRR1)",
-            "region": "Global",
-            "indicator_type": [
-               "Water Resource Re-analysis v1"
-            ]
-         },
-         "SWE": {
-            "Confidence": "Unknown",
-            "interval": "monthly",
-            "niceName": "Snow Water Equivalent",
-            "data_provider": "ECMWF",
-            
-            "model": "HTESSEL - Daily (WRR1)",
-            "region": "Global",
-            "indicator_type": [
-               "Water Resource Re-analysis v1"
-            ]
-         },
-         "TotMoist": {
-            "Confidence": "Unknown",
-            "interval": "monthly",
-            "niceName": "Total Soil Moisture",
-            "data_provider": "ECMWF",
-            
-            "model": "HTESSEL - Daily (WRR1)",
-            "region": "Global",
-            "indicator_type": [
-               "Water Resource Re-analysis v1"
-            ]
-         },
-         "Qsm": {
-            "Confidence": "Unknown",
-            "interval": "monthly",
-            "niceName": "Snowmelt",
-            "data_provider": "ECMWF",
-            
-            "model": "HTESSEL - Daily (WRR1)",
-            "region": "Global",
-            "indicator_type": [
-               "Water Resource Re-analysis v1"
-            ]
-         },
-         "RivOut": {
-            "Confidence": "Unknown",
-            "interval": "monthly",
-            "niceName": "River Discharge",
-            "data_provider": "ECMWF",
-            
-            "model": "HTESSEL - Daily (WRR1)",
-            "region": "Global",
-            "indicator_type": [
-               "Water Resource Re-analysis v1"
-            ]
-         },
-         "TVeg": {
-            "Confidence": "Unknown",
-            "interval": "monthly",
-            "niceName": "Vegetation Transpiration",
-            "data_provider": "ECMWF",
-            
-            "model": "HTESSEL - Daily (WRR1)",
-            "region": "Global",
-            "indicator_type": [
-               "Water Resource Re-analysis v1"
-            ]
-         },
-         "Albedo": {
-            "Confidence": "Unknown",
-            "interval": "monthly",
-            "niceName": "Surface Albedo",
-            "data_provider": "ECMWF",
-            
-            "model": "HTESSEL - Daily (WRR1)",
-            "region": "Global",
-            "indicator_type": [
-               "Water Resource Re-analysis v1"
-            ]
-         },
-         "Qsb": {
-            "Confidence": "Unknown",
-            "interval": "monthly",
-            "niceName": "Sub-Surface Runoff",
-            "data_provider": "ECMWF",
-            
-            "model": "HTESSEL - Daily (WRR1)",
-            "region": "Global",
-            "indicator_type": [
-               "Water Resource Re-analysis v1"
-            ]
-         },
-         "SurfMoist": {
-            "Confidence": "Unknown",
-            "interval": "monthly",
-            "niceName": "Surface Soil Moisture",
-            "data_provider": "ECMWF",
-            
-            "model": "HTESSEL - Daily (WRR1)",
-            "region": "Global",
-            "indicator_type": [
-               "Water Resource Re-analysis v1"
-            ]
-         },
-         "Evap": {
-            "Confidence": "Unknown",
-            "interval": "monthly",
-            "niceName": "Total Evapotranspiration",
-            "data_provider": "ECMWF",
-            
-            "model": "HTESSEL - Daily (WRR1)",
-            "region": "Global",
-            "indicator_type": [
-               "Water Resource Re-analysis v1"
-            ]
-         },
-         "Qs": {
-            "Confidence": "Unknown",
-            "interval": "monthly",
-            "niceName": "Surface Runoff",
-            "data_provider": "ECMWF",
-            
-            "model": "HTESSEL - Daily (WRR1)",
-            "region": "Global",
-            "indicator_type": [
-               "Water Resource Re-analysis v1"
-            ]
-         },
-         "AvgSurfT": {
-            "Confidence": "Unknown",
-            "interval": "monthly",
-            "niceName": "Average Surface Temperature",
-            "data_provider": "ECMWF",
-            
-            "model": "HTESSEL - Daily (WRR1)",
-            "region": "Global",
-            "indicator_type": [
-               "Water Resource Re-analysis v1"
-            ]
-         },
-         "ESoil": {
-            "Confidence": "Unknown",
-            "interval": "monthly",
-            "niceName": "Bare Soil Evaporation",
-            "data_provider": "ECMWF",
-            
-            "model": "HTESSEL - Daily (WRR1)",
-            "region": "Global",
-            "indicator_type": [
-               "Water Resource Re-analysis v1"
-            ]
-         },
-         "ECanop": {
-            "Confidence": "Unknown",
-            "interval": "monthly",
-            "niceName": "Interception Evaporation",
-            "data_provider": "ECMWF",
-            
-            "model": "HTESSEL - Daily (WRR1)",
-            "region": "Global",
-            "indicator_type": [
-               "Water Resource Re-analysis v1"
-            ]
-         },
-         "SnowFrac": {
-            "Confidence": "Unknown",
-            "interval": "monthly",
-            "niceName": "Snow Cover Fraction",
-            "data_provider": "ECMWF",
-            
-            "model": "HTESSEL - Daily (WRR1)",
-            "region": "Global",
-            "indicator_type": [
-               "Water Resource Re-analysis v1"
-            ]
-         },
-         "Precip": {
-            "Confidence": "Unknown",
-            "interval": "monthly",
-            "niceName": "Precipitation",
-            "data_provider": "ECMWF",
-            
-            "model": "HTESSEL - Daily (WRR1)",
-            "region": "Global",
-            "indicator_type": [
-               "Water Resource Re-analysis v1"
-            ]
-         },
-         "RootMoist": {
-            "Confidence": "Unknown",
-            "interval": "monthly",
-            "niceName": "Root Zone Soil Moisture",
-            "data_provider": "ECMWF",
-            
-            "model": "HTESSEL - Daily (WRR1)",
-            "region": "Global",
-            "indicator_type": [
-               "Water Resource Re-analysis v1"
-            ]
-         },
-         "CanopInt": {
-            "Confidence": "Unknown",
-            "interval": "monthly",
-            "niceName": "Total Canopy Water Storage",
-            "data_provider": "ECMWF",
-            
-            "model": "HTESSEL - Daily (WRR1)",
-            "region": "Global",
-            "indicator_type": [
-               "Water Resource Re-analysis v1"
-            ]
-         },
-         "LAI": {
-            "Confidence": "Unknown",
-            "interval": "monthly",
-            "niceName": "Leaf Area Index",
-            "data_provider": "ECMWF",
-            
-            "model": "HTESSEL - Daily (WRR1)",
-            "region": "Global",
-            "indicator_type": [
-               "Water Resource Re-analysis v1"
-            ]
-         },
-         "Qle": {
-            "Confidence": "Unknown",
-            "interval": "monthly",
-            "niceName": "Latent Heat Flux",
-            "data_provider": "ECMWF",
-            
-            "model": "HTESSEL - Daily (WRR1)",
-            "region": "Global",
-            "indicator_type": [
-               "Water Resource Re-analysis v1"
-            ]
-         },
-         "Runoff": {
-            "Confidence": "Unknown",
-            "interval": "monthly",
-            "niceName": "Total Runoff",
-            "data_provider": "ECMWF",
-            
-            "model": "HTESSEL - Daily (WRR1)",
-            "region": "Global",
-            "indicator_type": [
-               "Water Resource Re-analysis v1"
-            ]
-         }
+      __HERE__
       }
    },
-
+   {
+      "name": "eth_wrr1_monthly",
+      "options": {
+         "providerShortTag": "ETH"
+      },
+      "services": {
+         "wms": {
+            "url": "https://wci.earth2observe.eu/thredds/wms/eth/wrr1-monthly-agg.nc?",
+            "params": {
+               "GetCapabilities": {
+                  "SERVICE": "WMS",
+                  "request": "GetCapabilities",
+                  "version": "1.3.0"
+               }
+            }
+         },
+         "wcs": {
+            "url": "https://wci.earth2observe.eu/thredds/wcs/eth/wrr1-monthly-agg.nc?",
+            "params": {
+               "DescribeCoverage": {
+                  "SERVICE": "WCS",
+                  "request": "describeCoverage",
+                  "version": "1.0.0"
+               }
+            }
+         }
+      },
+      "indicators": {
+      __HERE__
+      }
+   },
+   {
+      "name": "eth_wrr1_daily",
+      "options": {
+         "providerShortTag": "ETH"
+      },
+      "services": {
+         "wms": {
+            "url": "https://wci.earth2observe.eu/thredds/wms/eth/wrr1-daily-agg.nc?",
+            "params": {
+               "GetCapabilities": {
+                  "SERVICE": "WMS",
+                  "request": "GetCapabilities",
+                  "version": "1.3.0"
+               }
+            }
+         },
+         "wcs": {
+            "url": "https://wci.earth2observe.eu/thredds/wcs/eth/wrr1-daily-agg.nc?",
+            "params": {
+               "DescribeCoverage": {
+                  "SERVICE": "WCS",
+                  "request": "describeCoverage",
+                  "version": "1.0.0"
+               }
+            }
+         }
+      },
+      "indicators": {
+      __HERE__
+      }
+   },
+   {
+      "name": "eth_wrr1_exp1_monthly",
+      "options": {
+         "providerShortTag": "ETH"
+      },
+      "services": {
+         "wms": {
+            "url": "https://wci.earth2observe.eu/thredds/wms/eth/wrr1-exp1-monthly-agg.nc?",
+            "params": {
+               "GetCapabilities": {
+                  "SERVICE": "WMS",
+                  "request": "GetCapabilities",
+                  "version": "1.3.0"
+               }
+            }
+         },
+         "wcs": {
+            "url": "https://wci.earth2observe.eu/thredds/wcs/eth/wrr1-exp1-monthly-agg.nc?",
+            "params": {
+               "DescribeCoverage": {
+                  "SERVICE": "WCS",
+                  "request": "describeCoverage",
+                  "version": "1.0.0"
+               }
+            }
+         }
+      },
+      "indicators": {
+      __HERE__
+      }
+   },
+   {
+      "name": "eth_wrr1_exp1_daily",
+      "options": {
+         "providerShortTag": "ETH"
+      },
+      "services": {
+         "wms": {
+            "url": "https://wci.earth2observe.eu/thredds/wms/eth/wrr1-exp1-daily-agg.nc?",
+            "params": {
+               "GetCapabilities": {
+                  "SERVICE": "WMS",
+                  "request": "GetCapabilities",
+                  "version": "1.3.0"
+               }
+            }
+         },
+         "wcs": {
+            "url": "https://wci.earth2observe.eu/thredds/wcs/eth/wrr1-exp1-daily-agg.nc?",
+            "params": {
+               "DescribeCoverage": {
+                  "SERVICE": "WCS",
+                  "request": "describeCoverage",
+                  "version": "1.0.0"
+               }
+            }
+         }
+      },
+      "indicators": {
+      __HERE__
+      }
+   },
+   {
+      "name": "univk_wrr1_monthly",
+      "options": {
+         "providerShortTag": "UniKassel"
+      },
+      "services": {
+         "wms": {
+            "url": "https://wci.earth2observe.eu/thredds/wms/univk/wrr1-monthly-agg.nc?",
+            "params": {
+               "GetCapabilities": {
+                  "SERVICE": "WMS",
+                  "request": "GetCapabilities",
+                  "version": "1.3.0"
+               }
+            }
+         },
+         "wcs": {
+            "url": "https://wci.earth2observe.eu/thredds/wcs/univk/wrr1-monthly-agg.nc?",
+            "params": {
+               "DescribeCoverage": {
+                  "SERVICE": "WCS",
+                  "request": "describeCoverage",
+                  "version": "1.0.0"
+               }
+            }
+         }
+      },
+      "indicators": {
+      __HERE__
+      }
+   },
+   {
+      "name": "univk_wrr1_daily",
+      "options": {
+         "providerShortTag": "UniKassel"
+      },
+      "services": {
+         "wms": {
+            "url": "https://wci.earth2observe.eu/thredds/wms/univk/wrr1-daily-agg.nc?",
+            "params": {
+               "GetCapabilities": {
+                  "SERVICE": "WMS",
+                  "request": "GetCapabilities",
+                  "version": "1.3.0"
+               }
+            }
+         },
+         "wcs": {
+            "url": "https://wci.earth2observe.eu/thredds/wcs/univk/wrr1-daily-agg.nc?",
+            "params": {
+               "DescribeCoverage": {
+                  "SERVICE": "WCS",
+                  "request": "describeCoverage",
+                  "version": "1.0.0"
+               }
+            }
+         }
+      },
+      "indicators": {
+      __HERE__
+      }
+   },
+   {
+      "name": "metfr_wrr1_monthly",
+      "options": {
+         "providerShortTag": "METFR"
+      },
+      "services": {
+         "wms": {
+            "url": "https://wci.earth2observe.eu/thredds/wms/metfr/wrr1-monthly-agg.nc?",
+            "params": {
+               "GetCapabilities": {
+                  "SERVICE": "WMS",
+                  "request": "GetCapabilities",
+                  "version": "1.3.0"
+               }
+            }
+         },
+         "wcs": {
+            "url": "https://wci.earth2observe.eu/thredds/wcs/metfr/wrr1-monthly-agg.nc?",
+            "params": {
+               "DescribeCoverage": {
+                  "SERVICE": "WCS",
+                  "request": "describeCoverage",
+                  "version": "1.0.0"
+               }
+            }
+         }
+      },
+      "indicators": {
+      __HERE__
+      }
+   },
+   {
+      "name": "metfr_wrr1_daily",
+      "options": {
+         "providerShortTag": "METFR"
+      },
+      "services": {
+         "wms": {
+            "url": "https://wci.earth2observe.eu/thredds/wms/metfr/wrr1-daily-agg.nc?",
+            "params": {
+               "GetCapabilities": {
+                  "SERVICE": "WMS",
+                  "request": "GetCapabilities",
+                  "version": "1.3.0"
+               }
+            }
+         },
+         "wcs": {
+            "url": "https://wci.earth2observe.eu/thredds/wcs/metfr/wrr1-daily-agg.nc?",
+            "params": {
+               "DescribeCoverage": {
+                  "SERVICE": "WCS",
+                  "request": "describeCoverage",
+                  "version": "1.0.0"
+               }
+            }
+         }
+      },
+      "indicators": {
+      __HERE__
+      }
+   },
+   {
+      "name": "univk_wrr1_monthly",
+      "options": {
+         "providerShortTag": "UniKassel"
+      },
+      "services": {
+         "wms": {
+            "url": "https://wci.earth2observe.eu/thredds/wms/univk/wrr1-monthly-agg.nc?",
+            "params": {
+               "GetCapabilities": {
+                  "SERVICE": "WMS",
+                  "request": "GetCapabilities",
+                  "version": "1.3.0"
+               }
+            }
+         },
+         "wcs": {
+            "url": "https://wci.earth2observe.eu/thredds/wcs/univk/wrr1-monthly-agg.nc?",
+            "params": {
+               "DescribeCoverage": {
+                  "SERVICE": "WCS",
+                  "request": "describeCoverage",
+                  "version": "1.0.0"
+               }
+            }
+         }
+      },
+      "indicators": {
+      __HERE__
+      }
+   },
+   {
+      "name": "univk_wrr1_daily",
+      "options": {
+         "providerShortTag": "UniKassel"
+      },
+      "services": {
+         "wms": {
+            "url": "https://wci.earth2observe.eu/thredds/wms/univk/wrr1-daily-agg.nc?",
+            "params": {
+               "GetCapabilities": {
+                  "SERVICE": "WMS",
+                  "request": "GetCapabilities",
+                  "version": "1.3.0"
+               }
+            }
+         },
+         "wcs": {
+            "url": "https://wci.earth2observe.eu/thredds/wcs/univk/wrr1-daily-agg.nc?",
+            "params": {
+               "DescribeCoverage": {
+                  "SERVICE": "WCS",
+                  "request": "describeCoverage",
+                  "version": "1.0.0"
+               }
+            }
+         }
+      },
+      "indicators": {
+      __HERE__
+      }
+   }
    {
       "name": "uu_wrr1_monthly",
       "options": {
@@ -2682,312 +2468,13 @@ layers = [
          }
       },
       "indicators": {
-         "Qh": {
-            "Confidence": "Unknown",
-            "interval": "monthly",
-            "niceName": "Sensible Heat Flux",
-            "data_provider": "ECMWF",
-            
-            "model": "PCR-GLOBWB - Monthly (WRR1)",
-            "region": "Global",
-            "indicator_type": [
-               "Water Resource Re-analysis v1"
-            ]
-         },
-         "LWnet": {
-            "Confidence": "Unknown",
-            "interval": "monthly",
-            "niceName": "Net Longwave Radiation",
-            "data_provider": "ECMWF",
-            
-            "model": "PCR-GLOBWB - Monthly (WRR1)",
-            "region": "Global",
-            "indicator_type": [
-               "Water Resource Re-analysis v1"
-            ]
-         },
-         "SnowDepth": {
-            "Confidence": "Unknown",
-            "interval": "monthly",
-            "niceName": "Depth of Snow Layer",
-            "data_provider": "ECMWF",
-            
-            "model": "PCR-GLOBWB - Monthly (WRR1)",
-            "region": "Global",
-            "indicator_type": [
-               "Water Resource Re-analysis v1"
-            ]
-         },
-         "Rainf": {
-            "Confidence": "Unknown",
-            "interval": "monthly",
-            "niceName": "Rainfall Rate",
-            "data_provider": "ECMWF",
-            
-            "model": "PCR-GLOBWB - Monthly (WRR1)",
-            "region": "Global",
-            "indicator_type": [
-               "Water Resource Re-analysis v1"
-            ]
-         },
-         "SWnet": {
-            "Confidence": "Unknown",
-            "interval": "monthly",
-            "niceName": "Net Shortwave Radiation",
-            "data_provider": "ECMWF",
-            
-            "model": "PCR-GLOBWB - Monthly (WRR1)",
-            "region": "Global",
-            "indicator_type": [
-               "Water Resource Re-analysis v1"
-            ]
-         },
-         "SWE": {
-            "Confidence": "Unknown",
-            "interval": "monthly",
-            "niceName": "Snow Water Equivalent",
-            "data_provider": "ECMWF",
-            
-            "model": "PCR-GLOBWB - Monthly (WRR1)",
-            "region": "Global",
-            "indicator_type": [
-               "Water Resource Re-analysis v1"
-            ]
-         },
-         "TotMoist": {
-            "Confidence": "Unknown",
-            "interval": "monthly",
-            "niceName": "Total Soil Moisture",
-            "data_provider": "ECMWF",
-            
-            "model": "PCR-GLOBWB - Monthly (WRR1)",
-            "region": "Global",
-            "indicator_type": [
-               "Water Resource Re-analysis v1"
-            ]
-         },
-         "Qsm": {
-            "Confidence": "Unknown",
-            "interval": "monthly",
-            "niceName": "Snowmelt",
-            "data_provider": "ECMWF",
-            
-            "model": "PCR-GLOBWB - Monthly (WRR1)",
-            "region": "Global",
-            "indicator_type": [
-               "Water Resource Re-analysis v1"
-            ]
-         },
-         "RivOut": {
-            "Confidence": "Unknown",
-            "interval": "monthly",
-            "niceName": "River Discharge",
-            "data_provider": "ECMWF",
-            
-            "model": "PCR-GLOBWB - Monthly (WRR1)",
-            "region": "Global",
-            "indicator_type": [
-               "Water Resource Re-analysis v1"
-            ]
-         },
-         "TVeg": {
-            "Confidence": "Unknown",
-            "interval": "monthly",
-            "niceName": "Vegetation Transpiration",
-            "data_provider": "ECMWF",
-            
-            "model": "PCR-GLOBWB - Monthly (WRR1)",
-            "region": "Global",
-            "indicator_type": [
-               "Water Resource Re-analysis v1"
-            ]
-         },
-         "Albedo": {
-            "Confidence": "Unknown",
-            "interval": "monthly",
-            "niceName": "Surface Albedo",
-            "data_provider": "ECMWF",
-            
-            "model": "PCR-GLOBWB - Monthly (WRR1)",
-            "region": "Global",
-            "indicator_type": [
-               "Water Resource Re-analysis v1"
-            ]
-         },
-         "Qsb": {
-            "Confidence": "Unknown",
-            "interval": "monthly",
-            "niceName": "Sub-Surface Runoff",
-            "data_provider": "ECMWF",
-            
-            "model": "PCR-GLOBWB - Monthly (WRR1)",
-            "region": "Global",
-            "indicator_type": [
-               "Water Resource Re-analysis v1"
-            ]
-         },
-         "SurfMoist": {
-            "Confidence": "Unknown",
-            "interval": "monthly",
-            "niceName": "Surface Soil Moisture",
-            "data_provider": "ECMWF",
-            
-            "model": "PCR-GLOBWB - Monthly (WRR1)",
-            "region": "Global",
-            "indicator_type": [
-               "Water Resource Re-analysis v1"
-            ]
-         },
-         "Evap": {
-            "Confidence": "Unknown",
-            "interval": "monthly",
-            "niceName": "Total Evapotranspiration",
-            "data_provider": "ECMWF",
-            
-            "model": "PCR-GLOBWB - Monthly (WRR1)",
-            "region": "Global",
-            "indicator_type": [
-               "Water Resource Re-analysis v1"
-            ]
-         },
-         "Qs": {
-            "Confidence": "Unknown",
-            "interval": "monthly",
-            "niceName": "Surface Runoff",
-            "data_provider": "ECMWF",
-            
-            "model": "PCR-GLOBWB - Monthly (WRR1)",
-            "region": "Global",
-            "indicator_type": [
-               "Water Resource Re-analysis v1"
-            ]
-         },
-         "AvgSurfT": {
-            "Confidence": "Unknown",
-            "interval": "monthly",
-            "niceName": "Average Surface Temperature",
-            "data_provider": "ECMWF",
-            
-            "model": "PCR-GLOBWB - Monthly (WRR1)",
-            "region": "Global",
-            "indicator_type": [
-               "Water Resource Re-analysis v1"
-            ]
-         },
-         "ESoil": {
-            "Confidence": "Unknown",
-            "interval": "monthly",
-            "niceName": "Bar Soil Evaporation",
-            "data_provider": "ECMWF",
-            
-            "model": "PCR-GLOBWB - Monthly (WRR1)",
-            "region": "Global",
-            "indicator_type": [
-               "Water Resource Re-analysis v1"
-            ]
-         },
-         "ECanop": {
-            "Confidence": "Unknown",
-            "interval": "monthly",
-            "niceName": "Interception Evaporation",
-            "data_provider": "ECMWF",
-            
-            "model": "PCR-GLOBWB - Monthly (WRR1)",
-            "region": "Global",
-            "indicator_type": [
-               "Water Resource Re-analysis v1"
-            ]
-         },
-         "SnowFrac": {
-            "Confidence": "Unknown",
-            "interval": "monthly",
-            "niceName": "Snow Cover Fraction",
-            "data_provider": "ECMWF",
-            
-            "model": "PCR-GLOBWB - Monthly (WRR1)",
-            "region": "Global",
-            "indicator_type": [
-               "Water Resource Re-analysis v1"
-            ]
-         },
-         "Precip": {
-            "Confidence": "Unknown",
-            "interval": "monthly",
-            "niceName": "Precipitation",
-            "data_provider": "ECMWF",
-            
-            "model": "PCR-GLOBWB - Monthly (WRR1)",
-            "region": "Global",
-            "indicator_type": [
-               "Water Resource Re-analysis v1"
-            ]
-         },
-         "RootMoist": {
-            "Confidence": "Unknown",
-            "interval": "monthly",
-            "niceName": "Root Zone Soil Moisture",
-            "data_provider": "ECMWF",
-            
-            "model": "PCR-GLOBWB - Monthly (WRR1)",
-            "region": "Global",
-            "indicator_type": [
-               "Water Resource Re-analysis v1"
-            ]
-         },
-         "CanopInt": {
-            "Confidence": "Unknown",
-            "interval": "monthly",
-            "niceName": "Total Canopy Water Storage",
-            "data_provider": "ECMWF",
-            
-            "model": "PCR-GLOBWB - Monthly (WRR1)",
-            "region": "Global",
-            "indicator_type": [
-               "Water Resource Re-analysis v1"
-            ]
-         },
-         "LAI": {
-            "Confidence": "Unknown",
-            "interval": "monthly",
-            "niceName": "Leaf Area Index",
-            "data_provider": "ECMWF",
-            
-            "model": "PCR-GLOBWB - Monthly (WRR1)",
-            "region": "Global",
-            "indicator_type": [
-               "Water Resource Re-analysis v1"
-            ]
-         },
-         "Qle": {
-            "Confidence": "Unknown",
-            "interval": "monthly",
-            "niceName": "Latent Heat Flux",
-            "data_provider": "ECMWF",
-            
-            "model": "PCR-GLOBWB - Monthly (WRR1)",
-            "region": "Global",
-            "indicator_type": [
-               "Water Resource Re-analysis v1"
-            ]
-         },
-         "Runoff": {
-            "Confidence": "Unknown",
-            "interval": "monthly",
-            "niceName": "Total Runoff",
-            "data_provider": "ECMWF",
-            
-            "model": "PCR-GLOBWB - Monthly (WRR1)",
-            "region": "Global",
-            "indicator_type": [
-               "Water Resource Re-analysis v1"
-            ]
-         }
+      __HERE__
       }
    },
    {
       "name": "uu_wrr1_daily",
       "options": {
-         "providerShortTag": "ECMWF"
+         "providerShortTag": "UU"
       },
       "services": {
          "wms": {
@@ -3012,306 +2499,7 @@ layers = [
          }
       },
       "indicators": {
-         "Qh": {
-            "Confidence": "Unknown",
-            "interval": "monthly",
-            "niceName": "Sensible Heat Flux",
-            "data_provider": "ECMWF",
-            
-            "model": "PCR-GLOBWB - Daily (WRR1)",
-            "region": "Global",
-            "indicator_type": [
-               "Water Resource Re-analysis v1"
-            ]
-         },
-         "LWnet": {
-            "Confidence": "Unknown",
-            "interval": "monthly",
-            "niceName": "Net Longwave Radiation",
-            "data_provider": "ECMWF",
-            
-            "model": "PCR-GLOBWB - Daily (WRR1)",
-            "region": "Global",
-            "indicator_type": [
-               "Water Resource Re-analysis v1"
-            ]
-         },
-         "SnowDepth": {
-            "Confidence": "Unknown",
-            "interval": "monthly",
-            "niceName": "Depth of Snow Layer",
-            "data_provider": "ECMWF",
-            
-            "model": "PCR-GLOBWB - Daily (WRR1)",
-            "region": "Global",
-            "indicator_type": [
-               "Water Resource Re-analysis v1"
-            ]
-         },
-         "Rainf": {
-            "Confidence": "Unknown",
-            "interval": "monthly",
-            "niceName": "Rainfall Rate",
-            "data_provider": "ECMWF",
-            
-            "model": "PCR-GLOBWB - Daily (WRR1)",
-            "region": "Global",
-            "indicator_type": [
-               "Water Resource Re-analysis v1"
-            ]
-         },
-         "SWnet": {
-            "Confidence": "Unknown",
-            "interval": "monthly",
-            "niceName": "Net Shortwave Radiation",
-            "data_provider": "ECMWF",
-            
-            "model": "PCR-GLOBWB - Daily (WRR1)",
-            "region": "Global",
-            "indicator_type": [
-               "Water Resource Re-analysis v1"
-            ]
-         },
-         "SWE": {
-            "Confidence": "Unknown",
-            "interval": "monthly",
-            "niceName": "Snow Water Equivalent",
-            "data_provider": "ECMWF",
-            
-            "model": "PCR-GLOBWB - Daily (WRR1)",
-            "region": "Global",
-            "indicator_type": [
-               "Water Resource Re-analysis v1"
-            ]
-         },
-         "TotMoist": {
-            "Confidence": "Unknown",
-            "interval": "monthly",
-            "niceName": "Total Soil Moisture",
-            "data_provider": "ECMWF",
-            
-            "model": "PCR-GLOBWB - Daily (WRR1)",
-            "region": "Global",
-            "indicator_type": [
-               "Water Resource Re-analysis v1"
-            ]
-         },
-         "Qsm": {
-            "Confidence": "Unknown",
-            "interval": "monthly",
-            "niceName": "Snowmelt",
-            "data_provider": "ECMWF",
-            
-            "model": "PCR-GLOBWB - Daily (WRR1)",
-            "region": "Global",
-            "indicator_type": [
-               "Water Resource Re-analysis v1"
-            ]
-         },
-         "RivOut": {
-            "Confidence": "Unknown",
-            "interval": "monthly",
-            "niceName": "River Discharge",
-            "data_provider": "ECMWF",
-            
-            "model": "PCR-GLOBWB - Daily (WRR1)",
-            "region": "Global",
-            "indicator_type": [
-               "Water Resource Re-analysis v1"
-            ]
-         },
-         "TVeg": {
-            "Confidence": "Unknown",
-            "interval": "monthly",
-            "niceName": "Vegetation Transpiration",
-            "data_provider": "ECMWF",
-            
-            "model": "PCR-GLOBWB - Daily (WRR1)",
-            "region": "Global",
-            "indicator_type": [
-               "Water Resource Re-analysis v1"
-            ]
-         },
-         "Albedo": {
-            "Confidence": "Unknown",
-            "interval": "monthly",
-            "niceName": "Surface Albedo",
-            "data_provider": "ECMWF",
-            
-            "model": "PCR-GLOBWB - Daily (WRR1)",
-            "region": "Global",
-            "indicator_type": [
-               "Water Resource Re-analysis v1"
-            ]
-         },
-         "Qsb": {
-            "Confidence": "Unknown",
-            "interval": "monthly",
-            "niceName": "Sub-Surface Runoff",
-            "data_provider": "ECMWF",
-            
-            "model": "PCR-GLOBWB - Daily (WRR1)",
-            "region": "Global",
-            "indicator_type": [
-               "Water Resource Re-analysis v1"
-            ]
-         },
-         "SurfMoist": {
-            "Confidence": "Unknown",
-            "interval": "monthly",
-            "niceName": "Surface Soil Moisture",
-            "data_provider": "ECMWF",
-            
-            "model": "PCR-GLOBWB - Daily (WRR1)",
-            "region": "Global",
-            "indicator_type": [
-               "Water Resource Re-analysis v1"
-            ]
-         },
-         "Evap": {
-            "Confidence": "Unknown",
-            "interval": "monthly",
-            "niceName": "Total Evapotranspiration",
-            "data_provider": "ECMWF",
-            
-            "model": "PCR-GLOBWB - Daily (WRR1)",
-            "region": "Global",
-            "indicator_type": [
-               "Water Resource Re-analysis v1"
-            ]
-         },
-         "Qs": {
-            "Confidence": "Unknown",
-            "interval": "monthly",
-            "niceName": "Surface Runoff",
-            "data_provider": "ECMWF",
-            
-            "model": "PCR-GLOBWB - Daily (WRR1)",
-            "region": "Global",
-            "indicator_type": [
-               "Water Resource Re-analysis v1"
-            ]
-         },
-         "AvgSurfT": {
-            "Confidence": "Unknown",
-            "interval": "monthly",
-            "niceName": "Average Surface Temperature",
-            "data_provider": "ECMWF",
-            
-            "model": "PCR-GLOBWB - Daily (WRR1)",
-            "region": "Global",
-            "indicator_type": [
-               "Water Resource Re-analysis v1"
-            ]
-         },
-         "ESoil": {
-            "Confidence": "Unknown",
-            "interval": "monthly",
-            "niceName": "Bare Soil Evaporation",
-            "data_provider": "ECMWF",
-            
-            "model": "PCR-GLOBWB - Daily (WRR1)",
-            "region": "Global",
-            "indicator_type": [
-               "Water Resource Re-analysis v1"
-            ]
-         },
-         "ECanop": {
-            "Confidence": "Unknown",
-            "interval": "monthly",
-            "niceName": "Interception Evaporation",
-            "data_provider": "ECMWF",
-            
-            "model": "PCR-GLOBWB - Daily (WRR1)",
-            "region": "Global",
-            "indicator_type": [
-               "Water Resource Re-analysis v1"
-            ]
-         },
-         "SnowFrac": {
-            "Confidence": "Unknown",
-            "interval": "monthly",
-            "niceName": "Snow Cover Fraction",
-            "data_provider": "ECMWF",
-            
-            "model": "PCR-GLOBWB - Daily (WRR1)",
-            "region": "Global",
-            "indicator_type": [
-               "Water Resource Re-analysis v1"
-            ]
-         },
-         "Precip": {
-            "Confidence": "Unknown",
-            "interval": "monthly",
-            "niceName": "Precipitation",
-            "data_provider": "ECMWF",
-            
-            "model": "PCR-GLOBWB - Daily (WRR1)",
-            "region": "Global",
-            "indicator_type": [
-               "Water Resource Re-analysis v1"
-            ]
-         },
-         "RootMoist": {
-            "Confidence": "Unknown",
-            "interval": "monthly",
-            "niceName": "Root Zone Soil Moisture",
-            "data_provider": "ECMWF",
-            
-            "model": "PCR-GLOBWB - Daily (WRR1)",
-            "region": "Global",
-            "indicator_type": [
-               "Water Resource Re-analysis v1"
-            ]
-         },
-         "CanopInt": {
-            "Confidence": "Unknown",
-            "interval": "monthly",
-            "niceName": "Total Canopy Water Storage",
-            "data_provider": "ECMWF",
-            
-            "model": "PCR-GLOBWB - Daily (WRR1)",
-            "region": "Global",
-            "indicator_type": [
-               "Water Resource Re-analysis v1"
-            ]
-         },
-         "LAI": {
-            "Confidence": "Unknown",
-            "interval": "monthly",
-            "niceName": "Leaf Area Index",
-            "data_provider": "ECMWF",
-            
-            "model": "PCR-GLOBWB - Daily (WRR1)",
-            "region": "Global",
-            "indicator_type": [
-               "Water Resource Re-analysis v1"
-            ]
-         },
-         "Qle": {
-            "Confidence": "Unknown",
-            "interval": "monthly",
-            "niceName": "Latent Heat Flux",
-            "data_provider": "ECMWF",
-            
-            "model": "PCR-GLOBWB - Daily (WRR1)",
-            "region": "Global",
-            "indicator_type": [
-               "Water Resource Re-analysis v1"
-            ]
-         },
-         "Runoff": {
-            "Confidence": "Unknown",
-            "interval": "monthly",
-            "niceName": "Total Runoff",
-            "data_provider": "ECMWF",
-            
-            "model": "PCR-GLOBWB - Daily (WRR1)",
-            "region": "Global",
-            "indicator_type": [
-               "Water Resource Re-analysis v1"
-            ]
-         }
+      __HERE__
       }
    }
 
