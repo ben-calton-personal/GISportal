@@ -19,5 +19,14 @@ providers ={
   },
   "CSIRO": {
     "website": "http://www.csiro.au/"
+  },
+  "CEH": {
+    "website": "http://www.ceh.ac.uk/"
+  },
+  "ETH": {
+    "website": "http://www.ethz.ch/"
+  },
+  "METFR": {
+    "website": "http://www.meteofrance.com/"
   }
 }

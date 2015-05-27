@@ -41,12 +41,12 @@ def updateCaches(createCache, dirtyCaches, serverList, cachePath, masterCachePat
          try:
             url = server['services']['wms']['url'] + urllib.urlencode(server['services']['wms']['params']['GetCapabilities'])
             print 'Getting: ' + url
-            resp = urllib2.urlopen(url, timeout=30)
+            resp = urllib2.urlopen(url, timeout=90)
             newCapabilitiesXML = resp.read()
             
             url = server['services']['wcs']['url'] + urllib.urlencode(server['services']['wcs']['params']['DescribeCoverage'])
             print 'Getting: ' + url
-            resp = urllib2.urlopen(url, timeout=30)
+            resp = urllib2.urlopen(url, timeout=90)
             newCoverageXML = resp.read()
             
          except urllib2.URLError as e:
@@ -91,7 +91,7 @@ def updateCaches(createCache, dirtyCaches, serverList, cachePath, masterCachePat
    print "Checking for dirty caches..."        
    for dirtyServer in dirtyCachesCopy:  
       print "server name: " + dirtyServer['name']  
-      regenerateCache(dirtyServer, dirtyCaches, createCache)
+      #regenerateCache(dirtyServer, dirtyCaches, createCache)
    print "Dirty caches regenerated"     
          
    if change:
@@ -126,7 +126,7 @@ def regenerateCache(dirtyServer, dirtyCaches, createCache):
       if i < 10:
          try:
             url = dirtyServer['services']['wms']['url'] + urllib.urlencode(dirtyServer['services']['wms']['params']['GetCapabilities'])
-            resp = urllib2.urlopen(url, timeout=30)
+            resp = urllib2.urlopen(url, timeout=90)
             newXML = resp.read()
             createCache(dirtyServer, newXML)
             if dirtyServer not in dirtyCaches:
