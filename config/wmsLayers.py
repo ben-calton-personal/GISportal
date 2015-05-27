@@ -6,7 +6,7 @@ layers = [
       },
       "services": {
          "wms": {
-            "url": "https://wci.earth2observe.eu/thredds/wms/cnr/cmorph-daily-rainfall-agg.nc?",
+            "url": "https://vortices.npm.ac.uk/thredds/wms/cnr/cmorph-daily-rainfall-agg.nc?",
             "params": {
                "GetCapabilities": {
                   "SERVICE": "WMS",
@@ -16,7 +16,7 @@ layers = [
             }
          },
          "wcs": {
-            "url": "https://wci.earth2observe.eu/thredds/wcs/cnr/cmorph-daily-rainfall-agg.nc?",
+            "url": "https://vortices.npm.ac.uk/thredds/wcs/cnr/cmorph-daily-rainfall-agg.nc?",
             "params": {
                "DescribeCoverage": {
                   "SERVICE": "WCS",
@@ -47,7 +47,7 @@ layers = [
       },
       "services": {
          "wms": {
-            "url": "https://wci.earth2observe.eu/thredds/wms/cnr/tamsat-rfe-dekadal-agg.nc?",
+            "url": "https://vortices.npm.ac.uk/thredds/wms/cnr/tamsat-rfe-dekadal-agg.nc?",
             "params": {
                "GetCapabilities": {
                   "SERVICE": "WMS",
@@ -57,7 +57,7 @@ layers = [
             }
          },
          "wcs": {
-            "url": "https://wci.earth2observe.eu/thredds/wcs/cnr/tamsat-rfe-dekadal-agg.nc?",
+            "url": "https://vortices.npm.ac.uk/thredds/wcs/cnr/tamsat-rfe-dekadal-agg.nc?",
             "params": {
                "DescribeCoverage": {
                   "SERVICE": "WCS",
@@ -88,7 +88,7 @@ layers = [
       },
       "services": {
          "wms": {
-            "url": "https://wci.earth2observe.eu/thredds/wms/deltares/aet-pet/MOD16_AET_corr_monthly_2000_2013.nc?",
+            "url": "https://vortices.npm.ac.uk/thredds/wms/deltares/aet-pet/MOD16_AET_corr_monthly_2000_2013.nc?",
             "params": {
                "GetCapabilities": {
                   "SERVICE": "WMS",
@@ -98,7 +98,7 @@ layers = [
             }
          },
          "wcs": {
-            "url": "https://wci.earth2observe.eu/thredds/wcs/deltares/aet-pet/MOD16_AET_corr_monthly_2000_2013.nc?",
+            "url": "https://vortices.npm.ac.uk/thredds/wcs/deltares/aet-pet/MOD16_AET_corr_monthly_2000_2013.nc?",
             "params": {
                "DescribeCoverage": {
                   "SERVICE": "WCS",
@@ -140,7 +140,7 @@ layers = [
       },
       "services": {
          "wms": {
-            "url": "https://wci.earth2observe.eu/thredds/wms/deltares/aet-pet/MOD16_PET_corr_monthly_2000_2013.nc?",
+            "url": "https://vortices.npm.ac.uk/thredds/wms/deltares/aet-pet/MOD16_PET_corr_monthly_2000_2013.nc?",
             "params": {
                "GetCapabilities": {
                   "SERVICE": "WMS",
@@ -150,7 +150,7 @@ layers = [
             }
          },
          "wcs": {
-            "url": "https://wci.earth2observe.eu/thredds/wcs/deltares/aet-pet/MOD16_PET_corr_monthly_2000_2013.nc?",
+            "url": "https://vortices.npm.ac.uk/thredds/wcs/deltares/aet-pet/MOD16_PET_corr_monthly_2000_2013.nc?",
             "params": {
                "DescribeCoverage": {
                   "SERVICE": "WCS",
@@ -315,7 +315,7 @@ layers = [
       },
       "services": {
          "wms": {
-            "url": "https://wci.earth2observe.eu/thredds/wms/ecmwf/met_forcing_v0/lwdown_3hourly.nc?",
+            "url": "https://vortices.npm.ac.uk/thredds/wms/ecmwf/met_forcing_v0/lwdown_3hourly.nc?",
             "params": {
                "GetCapabilities": {
                   "SERVICE": "WMS",
@@ -325,7 +325,7 @@ layers = [
             }
          },
          "wcs": {
-            "url": "https://wci.earth2observe.eu/thredds/wcs/ecmwf/met_forcing_v0/lwdown_3hourly.nc?",
+            "url": "https://vortices.npm.ac.uk/thredds/wcs/ecmwf/met_forcing_v0/lwdown_3hourly.nc?",
             "params": {
                "DescribeCoverage": {
                   "SERVICE": "WCS",
@@ -360,7 +360,7 @@ layers = [
       },
       "services": {
          "wms": {
-            "url": "https://wci.earth2observe.eu/thredds/wms/ecmwf/met_forcing_v0/psurf_3hourly.nc?",
+            "url": "https://vortices.npm.ac.uk/thredds/wms/ecmwf/met_forcing_v0/psurf_3hourly.nc?",
             "params": {
                "GetCapabilities": {
                   "SERVICE": "WMS",
@@ -370,7 +370,7 @@ layers = [
             }
          },
          "wcs": {
-            "url": "https://wci.earth2observe.eu/thredds/wcs/ecmwf/met_forcing_v0/psurf_3hourly.nc?",
+            "url": "https://vortices.npm.ac.uk/thredds/wcs/ecmwf/met_forcing_v0/psurf_3hourly.nc?",
             "params": {
                "DescribeCoverage": {
                   "SERVICE": "WCS",
@@ -402,7 +402,7 @@ layers = [
       },
       "services": {
          "wms": {
-            "url": "https://wci.earth2observe.eu/thredds/wms/ecmwf/met_forcing_v0/qair_3hourly.nc?",
+            "url": "https://vortices.npm.ac.uk/thredds/wms/ecmwf/met_forcing_v0/qair_3hourly.nc?",
             "params": {
                "GetCapabilities": {
                   "SERVICE": "WMS",
@@ -412,7 +412,7 @@ layers = [
             }
          },
          "wcs": {
-            "url": "https://wci.earth2observe.eu/thredds/wcs/ecmwf/met_forcing_v0/qair_3hourly.nc?",
+            "url": "https://vortices.npm.ac.uk/thredds/wcs/ecmwf/met_forcing_v0/qair_3hourly.nc?",
             "params": {
                "DescribeCoverage": {
                   "SERVICE": "WCS",
@@ -444,7 +444,7 @@ layers = [
       },
       "services": {
          "wms": {
-            "url": "https://wci.earth2observe.eu/thredds/wms/ecmwf/met_forcing_v0/rainf_3hourly.nc?",
+            "url": "https://vortices.npm.ac.uk/thredds/wms/ecmwf/met_forcing_v0/rainf_3hourly.nc?",
             "params": {
                "GetCapabilities": {
                   "SERVICE": "WMS",
@@ -454,7 +454,7 @@ layers = [
             }
          },
          "wcs": {
-            "url": "https://wci.earth2observe.eu/thredds/wcs/ecmwf/met_forcing_v0/rainf_3hourly.nc?",
+            "url": "https://vortices.npm.ac.uk/thredds/wcs/ecmwf/met_forcing_v0/rainf_3hourly.nc?",
             "params": {
                "DescribeCoverage": {
                   "SERVICE": "WCS",
@@ -486,7 +486,7 @@ layers = [
       },
       "services": {
          "wms": {
-            "url": "https://wci.earth2observe.eu/thredds/wms/ecmwf/met_forcing_v0/swdown_3hourly.nc?",
+            "url": "https://vortices.npm.ac.uk/thredds/wms/ecmwf/met_forcing_v0/swdown_3hourly.nc?",
             "params": {
                "GetCapabilities": {
                   "SERVICE": "WMS",
@@ -496,7 +496,7 @@ layers = [
             }
          },
          "wcs": {
-            "url": "https://wci.earth2observe.eu/thredds/wcs/ecmwf/met_forcing_v0/swdown_3hourly.nc?",
+            "url": "https://vortices.npm.ac.uk/thredds/wcs/ecmwf/met_forcing_v0/swdown_3hourly.nc?",
             "params": {
                "DescribeCoverage": {
                   "SERVICE": "WCS",
@@ -528,7 +528,7 @@ layers = [
       },
       "services": {
          "wms": {
-            "url": "https://wci.earth2observe.eu/thredds/wms/ecmwf/met_forcing_v0/snowf_3hourly.nc?",
+            "url": "https://vortices.npm.ac.uk/thredds/wms/ecmwf/met_forcing_v0/snowf_3hourly.nc?",
             "params": {
                "GetCapabilities": {
                   "SERVICE": "WMS",
@@ -538,7 +538,7 @@ layers = [
             }
          },
          "wcs": {
-            "url": "https://wci.earth2observe.eu/thredds/wcs/ecmwf/met_forcing_v0/snowf_3hourly.nc?",
+            "url": "https://vortices.npm.ac.uk/thredds/wcs/ecmwf/met_forcing_v0/snowf_3hourly.nc?",
             "params": {
                "DescribeCoverage": {
                   "SERVICE": "WCS",
@@ -570,7 +570,7 @@ layers = [
       },
       "services": {
          "wms": {
-            "url": "https://wci.earth2observe.eu/thredds/wms/ecmwf/met_forcing_v0/tair_3hourly.nc?",
+            "url": "https://vortices.npm.ac.uk/thredds/wms/ecmwf/met_forcing_v0/tair_3hourly.nc?",
             "params": {
                "GetCapabilities": {
                   "SERVICE": "WMS",
@@ -580,7 +580,7 @@ layers = [
             }
          },
          "wcs": {
-            "url": "https://wci.earth2observe.eu/thredds/wcs/ecmwf/met_forcing_v0/tair_3hourly.nc?",
+            "url": "https://vortices.npm.ac.uk/thredds/wcs/ecmwf/met_forcing_v0/tair_3hourly.nc?",
             "params": {
                "DescribeCoverage": {
                   "SERVICE": "WCS",
@@ -612,7 +612,7 @@ layers = [
       },
       "services": {
          "wms": {
-            "url": "https://wci.earth2observe.eu/thredds/wms/ecmwf/met_forcing_v0/wind_3hourly.nc?",
+            "url": "https://vortices.npm.ac.uk/thredds/wms/ecmwf/met_forcing_v0/wind_3hourly.nc?",
             "params": {
                "GetCapabilities": {
                   "SERVICE": "WMS",
@@ -622,7 +622,7 @@ layers = [
             }
          },
          "wcs": {
-            "url": "https://wci.earth2observe.eu/thredds/wcs/ecmwf/met_forcing_v0/wind_3hourly.nc?",
+            "url": "https://vortices.npm.ac.uk/thredds/wcs/ecmwf/met_forcing_v0/wind_3hourly.nc?",
             "params": {
                "DescribeCoverage": {
                   "SERVICE": "WCS",
@@ -654,7 +654,7 @@ layers = [
       },
       "services": {
          "wms": {
-            "url": "https://wci.earth2observe.eu/thredds/wms/ecmwf/met_forcing_v0/lwdown_daily.nc?",
+            "url": "https://vortices.npm.ac.uk/thredds/wms/ecmwf/met_forcing_v0/lwdown_daily.nc?",
             "params": {
                "GetCapabilities": {
                   "SERVICE": "WMS",
@@ -664,7 +664,7 @@ layers = [
             }
          },
          "wcs": {
-            "url": "https://wci.earth2observe.eu/thredds/wcs/ecmwf/met_forcing_v0/lwdown_daily.nc?",
+            "url": "https://vortices.npm.ac.uk/thredds/wcs/ecmwf/met_forcing_v0/lwdown_daily.nc?",
             "params": {
                "DescribeCoverage": {
                   "SERVICE": "WCS",
@@ -699,7 +699,7 @@ layers = [
       },
       "services": {
          "wms": {
-            "url": "https://wci.earth2observe.eu/thredds/wms/ecmwf/met_forcing_v0/psurf_daily.nc?",
+            "url": "https://vortices.npm.ac.uk/thredds/wms/ecmwf/met_forcing_v0/psurf_daily.nc?",
             "params": {
                "GetCapabilities": {
                   "SERVICE": "WMS",
@@ -709,7 +709,7 @@ layers = [
             }
          },
          "wcs": {
-            "url": "https://wci.earth2observe.eu/thredds/wcs/ecmwf/met_forcing_v0/psurf_daily.nc?",
+            "url": "https://vortices.npm.ac.uk/thredds/wcs/ecmwf/met_forcing_v0/psurf_daily.nc?",
             "params": {
                "DescribeCoverage": {
                   "SERVICE": "WCS",
@@ -741,7 +741,7 @@ layers = [
       },
       "services": {
          "wms": {
-            "url": "https://wci.earth2observe.eu/thredds/wms/ecmwf/met_forcing_v0/qair_daily.nc?",
+            "url": "https://vortices.npm.ac.uk/thredds/wms/ecmwf/met_forcing_v0/qair_daily.nc?",
             "params": {
                "GetCapabilities": {
                   "SERVICE": "WMS",
@@ -751,7 +751,7 @@ layers = [
             }
          },
          "wcs": {
-            "url": "https://wci.earth2observe.eu/thredds/wcs/ecmwf/met_forcing_v0/qair_daily.nc?",
+            "url": "https://vortices.npm.ac.uk/thredds/wcs/ecmwf/met_forcing_v0/qair_daily.nc?",
             "params": {
                "DescribeCoverage": {
                   "SERVICE": "WCS",
@@ -783,7 +783,7 @@ layers = [
       },
       "services": {
          "wms": {
-            "url": "https://wci.earth2observe.eu/thredds/wms/ecmwf/met_forcing_v0/rainf_daily.nc?",
+            "url": "https://vortices.npm.ac.uk/thredds/wms/ecmwf/met_forcing_v0/rainf_daily.nc?",
             "params": {
                "GetCapabilities": {
                   "SERVICE": "WMS",
@@ -793,7 +793,7 @@ layers = [
             }
          },
          "wcs": {
-            "url": "https://wci.earth2observe.eu/thredds/wcs/ecmwf/met_forcing_v0/rainf_daily.nc?",
+            "url": "https://vortices.npm.ac.uk/thredds/wcs/ecmwf/met_forcing_v0/rainf_daily.nc?",
             "params": {
                "DescribeCoverage": {
                   "SERVICE": "WCS",
@@ -825,7 +825,7 @@ layers = [
       },
       "services": {
          "wms": {
-            "url": "https://wci.earth2observe.eu/thredds/wms/ecmwf/met_forcing_v0/swdown_daily.nc?",
+            "url": "https://vortices.npm.ac.uk/thredds/wms/ecmwf/met_forcing_v0/swdown_daily.nc?",
             "params": {
                "GetCapabilities": {
                   "SERVICE": "WMS",
@@ -835,7 +835,7 @@ layers = [
             }
          },
          "wcs": {
-            "url": "https://wci.earth2observe.eu/thredds/wcs/ecmwf/met_forcing_v0/swdown_daily.nc?",
+            "url": "https://vortices.npm.ac.uk/thredds/wcs/ecmwf/met_forcing_v0/swdown_daily.nc?",
             "params": {
                "DescribeCoverage": {
                   "SERVICE": "WCS",
@@ -867,7 +867,7 @@ layers = [
       },
       "services": {
          "wms": {
-            "url": "https://wci.earth2observe.eu/thredds/wms/ecmwf/met_forcing_v0/snowf_daily.nc?",
+            "url": "https://vortices.npm.ac.uk/thredds/wms/ecmwf/met_forcing_v0/snowf_daily.nc?",
             "params": {
                "GetCapabilities": {
                   "SERVICE": "WMS",
@@ -877,7 +877,7 @@ layers = [
             }
          },
          "wcs": {
-            "url": "https://wci.earth2observe.eu/thredds/wcs/ecmwf/met_forcing_v0/snowf_daily.nc?",
+            "url": "https://vortices.npm.ac.uk/thredds/wcs/ecmwf/met_forcing_v0/snowf_daily.nc?",
             "params": {
                "DescribeCoverage": {
                   "SERVICE": "WCS",
@@ -909,7 +909,7 @@ layers = [
       },
       "services": {
          "wms": {
-            "url": "https://wci.earth2observe.eu/thredds/wms/ecmwf/met_forcing_v0/tair_daily.nc?",
+            "url": "https://vortices.npm.ac.uk/thredds/wms/ecmwf/met_forcing_v0/tair_daily.nc?",
             "params": {
                "GetCapabilities": {
                   "SERVICE": "WMS",
@@ -919,7 +919,7 @@ layers = [
             }
          },
          "wcs": {
-            "url": "https://wci.earth2observe.eu/thredds/wcs/ecmwf/met_forcing_v0/tair_daily.nc?",
+            "url": "https://vortices.npm.ac.uk/thredds/wcs/ecmwf/met_forcing_v0/tair_daily.nc?",
             "params": {
                "DescribeCoverage": {
                   "SERVICE": "WCS",
@@ -951,7 +951,7 @@ layers = [
       },
       "services": {
          "wms": {
-            "url": "https://wci.earth2observe.eu/thredds/wms/ecmwf/met_forcing_v0/wind_daily.nc?",
+            "url": "https://vortices.npm.ac.uk/thredds/wms/ecmwf/met_forcing_v0/wind_daily.nc?",
             "params": {
                "GetCapabilities": {
                   "SERVICE": "WMS",
@@ -961,7 +961,7 @@ layers = [
             }
          },
          "wcs": {
-            "url": "https://wci.earth2observe.eu/thredds/wcs/ecmwf/met_forcing_v0/wind_daily.nc?",
+            "url": "https://vortices.npm.ac.uk/thredds/wcs/ecmwf/met_forcing_v0/wind_daily.nc?",
             "params": {
                "DescribeCoverage": {
                   "SERVICE": "WCS",
@@ -993,7 +993,7 @@ layers = [
       },
       "services": {
          "wms": {
-            "url": "https://wci.earth2observe.eu/thredds/wms/tuw/esa-cci-soilmoisture-daily-agg.nc?",
+            "url": "https://vortices.npm.ac.uk/thredds/wms/tuw/esa-cci-soilmoisture-daily-agg.nc?",
             "params": {
                "GetCapabilities": {
                   "SERVICE": "WMS",
@@ -1003,7 +1003,7 @@ layers = [
             }
          },
          "wcs": {
-            "url": "https://wci.earth2observe.eu/thredds/wcs/tuw/esa-cci-soilmoisture-daily-agg.nc?",
+            "url": "https://vortices.npm.ac.uk/thredds/wcs/tuw/esa-cci-soilmoisture-daily-agg.nc?",
             "params": {
                "DescribeCoverage": {
                   "SERVICE": "WCS",
@@ -1043,7 +1043,7 @@ layers = [
       },
       "services": {
          "wms": {
-            "url": "https://wci.earth2observe.eu/thredds/wms/ceh/wrr1-monthly-agg.nc?",
+            "url": "https://vortices.npm.ac.uk/thredds/wms/ceh/wrr1-monthly-agg.nc?",
             "params": {
                "GetCapabilities": {
                   "SERVICE": "WMS",
@@ -1053,7 +1053,7 @@ layers = [
             }
          },
          "wcs": {
-            "url": "https://wci.earth2observe.eu/thredds/wcs/ceh/wrr1-monthly-agg.nc?",
+            "url": "https://vortices.npm.ac.uk/thredds/wcs/ceh/wrr1-monthly-agg.nc?",
             "params": {
                "DescribeCoverage": {
                   "SERVICE": "WCS",
@@ -1528,7 +1528,7 @@ layers = [
       },
       "services": {
          "wms": {
-            "url": "https://wci.earth2observe.eu/thredds/wms/ceh/wrr1-daily-agg.nc?",
+            "url": "https://vortices.npm.ac.uk/thredds/wms/ceh/wrr1-daily-agg.nc?",
             "params": {
                "GetCapabilities": {
                   "SERVICE": "WMS",
@@ -1538,7 +1538,7 @@ layers = [
             }
          },
          "wcs": {
-            "url": "https://wci.earth2observe.eu/thredds/wcs/ceh/wrr1-daily-agg.nc?",
+            "url": "https://vortices.npm.ac.uk/thredds/wcs/ceh/wrr1-daily-agg.nc?",
             "params": {
                "DescribeCoverage": {
                   "SERVICE": "WCS",
@@ -2013,7 +2013,7 @@ layers = [
       },
       "services": {
          "wms": {
-            "url": "https://wci.earth2observe.eu/thredds/wms/csiro/wrr1-monthly-agg.nc?",
+            "url": "https://vortices.npm.ac.uk/thredds/wms/csiro/wrr1-monthly-agg.nc?",
             "params": {
                "GetCapabilities": {
                   "SERVICE": "WMS",
@@ -2023,7 +2023,7 @@ layers = [
             }
          },
          "wcs": {
-            "url": "https://wci.earth2observe.eu/thredds/wcs/csiro/wrr1-monthly-agg.nc?",
+            "url": "https://vortices.npm.ac.uk/thredds/wcs/csiro/wrr1-monthly-agg.nc?",
             "params": {
                "DescribeCoverage": {
                   "SERVICE": "WCS",
@@ -2498,7 +2498,7 @@ layers = [
       },
       "services": {
          "wms": {
-            "url": "https://wci.earth2observe.eu/thredds/wms/csiro/wrr1-daily-agg.nc?",
+            "url": "https://vortices.npm.ac.uk/thredds/wms/csiro/wrr1-daily-agg.nc?",
             "params": {
                "GetCapabilities": {
                   "SERVICE": "WMS",
@@ -2508,7 +2508,7 @@ layers = [
             }
          },
          "wcs": {
-            "url": "https://wci.earth2observe.eu/thredds/wcs/csiro/wrr1-daily-agg.nc?",
+            "url": "https://vortices.npm.ac.uk/thredds/wcs/csiro/wrr1-daily-agg.nc?",
             "params": {
                "DescribeCoverage": {
                   "SERVICE": "WCS",
@@ -2983,7 +2983,7 @@ layers = [
       },
       "services": {
          "wms": {
-            "url": "https://wci.earth2observe.eu/thredds/wms/ecmwf/wrr1-monthly-agg.nc?",
+            "url": "https://vortices.npm.ac.uk/thredds/wms/ecmwf/wrr1-monthly-agg.nc?",
             "params": {
                "GetCapabilities": {
                   "SERVICE": "WMS",
@@ -2993,7 +2993,7 @@ layers = [
             }
          },
          "wcs": {
-            "url": "https://wci.earth2observe.eu/thredds/wcs/ecmwf/wrr1-monthly-agg.nc?",
+            "url": "https://vortices.npm.ac.uk/thredds/wcs/ecmwf/wrr1-monthly-agg.nc?",
             "params": {
                "DescribeCoverage": {
                   "SERVICE": "WCS",
@@ -3468,7 +3468,7 @@ layers = [
       },
       "services": {
          "wms": {
-            "url": "https://wci.earth2observe.eu/thredds/wms/ecmwf/wrr1-daily-agg.nc?",
+            "url": "https://vortices.npm.ac.uk/thredds/wms/ecmwf/wrr1-daily-agg.nc?",
             "params": {
                "GetCapabilities": {
                   "SERVICE": "WMS",
@@ -3478,7 +3478,7 @@ layers = [
             }
          },
          "wcs": {
-            "url": "https://wci.earth2observe.eu/thredds/wcs/ecmwf/wrr1-daily-agg.nc?",
+            "url": "https://vortices.npm.ac.uk/thredds/wcs/ecmwf/wrr1-daily-agg.nc?",
             "params": {
                "DescribeCoverage": {
                   "SERVICE": "WCS",
@@ -3953,7 +3953,7 @@ layers = [
       },
       "services": {
          "wms": {
-            "url": "https://wci.earth2observe.eu/thredds/wms/eth/wrr1-monthly-agg.nc?",
+            "url": "https://vortices.npm.ac.uk/thredds/wms/eth/wrr1-monthly-agg.nc?",
             "params": {
                "GetCapabilities": {
                   "SERVICE": "WMS",
@@ -3963,7 +3963,7 @@ layers = [
             }
          },
          "wcs": {
-            "url": "https://wci.earth2observe.eu/thredds/wcs/eth/wrr1-monthly-agg.nc?",
+            "url": "https://vortices.npm.ac.uk/thredds/wcs/eth/wrr1-monthly-agg.nc?",
             "params": {
                "DescribeCoverage": {
                   "SERVICE": "WCS",
@@ -4438,7 +4438,7 @@ layers = [
       },
       "services": {
          "wms": {
-            "url": "https://wci.earth2observe.eu/thredds/wms/eth/wrr1-daily-agg.nc?",
+            "url": "https://vortices.npm.ac.uk/thredds/wms/eth/wrr1-daily-agg.nc?",
             "params": {
                "GetCapabilities": {
                   "SERVICE": "WMS",
@@ -4448,7 +4448,7 @@ layers = [
             }
          },
          "wcs": {
-            "url": "https://wci.earth2observe.eu/thredds/wcs/eth/wrr1-daily-agg.nc?",
+            "url": "https://vortices.npm.ac.uk/thredds/wcs/eth/wrr1-daily-agg.nc?",
             "params": {
                "DescribeCoverage": {
                   "SERVICE": "WCS",
@@ -4923,7 +4923,7 @@ layers = [
       },
       "services": {
          "wms": {
-            "url": "https://wci.earth2observe.eu/thredds/wms/eth/wrr1-exp1-monthly-agg.nc?",
+            "url": "https://vortices.npm.ac.uk/thredds/wms/eth/wrr1-exp1-monthly-agg.nc?",
             "params": {
                "GetCapabilities": {
                   "SERVICE": "WMS",
@@ -4933,7 +4933,7 @@ layers = [
             }
          },
          "wcs": {
-            "url": "https://wci.earth2observe.eu/thredds/wcs/eth/wrr1-exp1-monthly-agg.nc?",
+            "url": "https://vortices.npm.ac.uk/thredds/wcs/eth/wrr1-exp1-monthly-agg.nc?",
             "params": {
                "DescribeCoverage": {
                   "SERVICE": "WCS",
@@ -5408,7 +5408,7 @@ layers = [
       },
       "services": {
          "wms": {
-            "url": "https://wci.earth2observe.eu/thredds/wms/eth/wrr1-exp1-daily-agg.nc?",
+            "url": "https://vortices.npm.ac.uk/thredds/wms/eth/wrr1-exp1-daily-agg.nc?",
             "params": {
                "GetCapabilities": {
                   "SERVICE": "WMS",
@@ -5418,7 +5418,7 @@ layers = [
             }
          },
          "wcs": {
-            "url": "https://wci.earth2observe.eu/thredds/wcs/eth/wrr1-exp1-daily-agg.nc?",
+            "url": "https://vortices.npm.ac.uk/thredds/wcs/eth/wrr1-exp1-daily-agg.nc?",
             "params": {
                "DescribeCoverage": {
                   "SERVICE": "WCS",
@@ -5893,7 +5893,7 @@ layers = [
       },
       "services": {
          "wms": {
-            "url": "https://wci.earth2observe.eu/thredds/wms/metfr/wrr1-monthly-agg.nc?",
+            "url": "https://vortices.npm.ac.uk/thredds/wms/metfr/wrr1-monthly-agg.nc?",
             "params": {
                "GetCapabilities": {
                   "SERVICE": "WMS",
@@ -5903,7 +5903,7 @@ layers = [
             }
          },
          "wcs": {
-            "url": "https://wci.earth2observe.eu/thredds/wcs/metfr/wrr1-monthly-agg.nc?",
+            "url": "https://vortices.npm.ac.uk/thredds/wcs/metfr/wrr1-monthly-agg.nc?",
             "params": {
                "DescribeCoverage": {
                   "SERVICE": "WCS",
@@ -6378,7 +6378,7 @@ layers = [
       },
       "services": {
          "wms": {
-            "url": "https://wci.earth2observe.eu/thredds/wms/metfr/wrr1-daily-agg.nc?",
+            "url": "https://vortices.npm.ac.uk/thredds/wms/metfr/wrr1-daily-agg.nc?",
             "params": {
                "GetCapabilities": {
                   "SERVICE": "WMS",
@@ -6388,7 +6388,7 @@ layers = [
             }
          },
          "wcs": {
-            "url": "https://wci.earth2observe.eu/thredds/wcs/metfr/wrr1-daily-agg.nc?",
+            "url": "https://vortices.npm.ac.uk/thredds/wcs/metfr/wrr1-daily-agg.nc?",
             "params": {
                "DescribeCoverage": {
                   "SERVICE": "WCS",
@@ -6864,7 +6864,7 @@ layers = [
       },
       "services": {
          "wms": {
-            "url": "https://wci.earth2observe.eu/thredds/wms/univk/wrr1-monthly-agg.nc?",
+            "url": "https://vortices.npm.ac.uk/thredds/wms/univk/wrr1-monthly-agg.nc?",
             "params": {
                "GetCapabilities": {
                   "SERVICE": "WMS",
@@ -6874,7 +6874,7 @@ layers = [
             }
          },
          "wcs": {
-            "url": "https://wci.earth2observe.eu/thredds/wcs/univk/wrr1-monthly-agg.nc?",
+            "url": "https://vortices.npm.ac.uk/thredds/wcs/univk/wrr1-monthly-agg.nc?",
             "params": {
                "DescribeCoverage": {
                   "SERVICE": "WCS",
@@ -7349,7 +7349,7 @@ layers = [
       },
       "services": {
          "wms": {
-            "url": "https://wci.earth2observe.eu/thredds/wms/univk/wrr1-daily-agg.nc?",
+            "url": "https://vortices.npm.ac.uk/thredds/wms/univk/wrr1-daily-agg.nc?",
             "params": {
                "GetCapabilities": {
                   "SERVICE": "WMS",
@@ -7359,7 +7359,7 @@ layers = [
             }
          },
          "wcs": {
-            "url": "https://wci.earth2observe.eu/thredds/wcs/univk/wrr1-daily-agg.nc?",
+            "url": "https://vortices.npm.ac.uk/thredds/wcs/univk/wrr1-daily-agg.nc?",
             "params": {
                "DescribeCoverage": {
                   "SERVICE": "WCS",
@@ -7834,7 +7834,7 @@ layers = [
       },
       "services": {
          "wms": {
-            "url": "https://wci.earth2observe.eu/thredds/wms/uu/wrr1-monthly-agg.nc?",
+            "url": "https://vortices.npm.ac.uk/thredds/wms/uu/wrr1-monthly-agg.nc?",
             "params": {
                "GetCapabilities": {
                   "SERVICE": "WMS",
@@ -7844,7 +7844,7 @@ layers = [
             }
          },
          "wcs": {
-            "url": "https://wci.earth2observe.eu/thredds/wcs/uu/wrr1-monthly-agg.nc?",
+            "url": "https://vortices.npm.ac.uk/thredds/wcs/uu/wrr1-monthly-agg.nc?",
             "params": {
                "DescribeCoverage": {
                   "SERVICE": "WCS",
@@ -7855,7 +7855,461 @@ layers = [
          }
       },
       "indicators": {
-      __HERE__
+               "Precip": {
+            "niceName": "Total Precipitation",
+            "data_provider": "Universiteit Utrecht",
+            "interval": "Monthly",            
+            "model": "PCR-GLOBWB",
+            "data_type": "Ecosystem Model",
+            "forcing_version": "Version 0",
+            "region": "Global",
+            "indicator_type": [
+               "Water Resource Re-analysis v1",
+               "Water Balance Components",
+               "Precipitation"
+            ]
+         },
+         "Evap": {
+            "niceName": "Total Evapotranspiration",
+            "data_provider": "Universiteit Utrecht",
+            "interval": "Monthly",            
+            "model": "PCR-GLOBWB",
+            "data_type": "Ecosystem Model",
+            "forcing_version": "Version 0",
+            "region": "Global",
+            "indicator_type": [
+               "Water Resource Re-analysis v1",
+               "Water Balance Components",
+               "Evapotranspiration"
+            ]
+         },
+         "Runoff": {
+            "niceName": "Total Runoff",
+            "data_provider": "Universiteit Utrecht",
+            "interval": "Monthly",            
+            "model": "PCR-GLOBWB",
+            "data_type": "Ecosystem Model",
+            "forcing_version": "Version 0",
+            "region": "Global",
+            "indicator_type": [
+               "Water Resource Re-analysis v1",
+               "Water Balance Components",
+               "Surface Water"
+            ]
+         },
+         "Rainf": {
+            "niceName": "Rainfall",
+            "data_provider": "Universiteit Utrecht",
+            "interval": "Monthly",            
+            "model": "PCR-GLOBWB",
+            "data_type": "Ecosystem Model",
+            "forcing_version": "Version 0",
+            "region": "Global",
+            "indicator_type": [
+               "Water Resource Re-analysis v1",
+               "Water Balance Components",
+               "Meteorology",
+            ]
+         },
+         "Qs": {
+            "niceName": "Total Surface Runoff",
+            "data_provider": "Universiteit Utrecht",
+            "interval": "Monthly",            
+            "model": "PCR-GLOBWB",
+            "data_type": "Ecosystem Model",
+            "forcing_version": "Version 0",
+            "region": "Global",
+            "indicator_type": [
+               "Water Resource Re-analysis v1",
+               "Water Balance Components",
+               "Surface Water"
+            ]
+         },
+         "Qsb": {
+            "niceName": "Sub-Surface Runoff",
+            "data_provider": "Universiteit Utrecht",
+            "interval": "Monthly",            
+            "model": "PCR-GLOBWB",
+            "data_type": "Ecosystem Model",
+            "forcing_version": "Version 0",
+            "region": "Global",
+            "indicator_type": [
+               "Water Resource Re-analysis v1",
+               "Water Balance Components",
+               "Sub-Surface Water"
+            ]
+         },
+         "Qrec": {
+            "niceName": "Recharge",
+            "data_provider": "Universiteit Utrecht",
+            "interval": "Monthly",            
+            "model": "PCR-GLOBWB",
+            "data_type": "Ecosystem Model",
+            "forcing_version": "Version 0",
+            "region": "Global",
+            "indicator_type": [
+               "Water Resource Re-analysis v1",
+               "Water Balance Components",
+            ]
+         },
+         "Qsm": {
+            "niceName": "Snowmelt",
+            "data_provider": "Universiteit Utrecht",
+            "interval": "Monthly",            
+            "model": "PCR-GLOBWB",
+            "data_type": "Ecosystem Model",
+            "forcing_version": "Version 0",
+            "region": "Global",
+            "indicator_type": [
+               "Water Resource Re-analysis v1",
+               "Water Balance Components",
+               "Surface Water"
+            ]
+         },
+         "PotEvap": {
+            "niceName": "Potential Evapotranspiration",
+            "data_provider": "Universiteit Utrecht",
+            "interval": "Monthly",            
+            "model": "PCR-GLOBWB",
+            "data_type": "Ecosystem Model",
+            "forcing_version": "Version 0",
+            "region": "Global",
+            "indicator_type": [
+               "Water Resource Re-analysis v1",
+               "Water Balance Components",
+               "Evapotranspiration",
+            ]
+         },
+         "ECanop": {
+            "niceName": "Interception Evaporation",
+            "data_provider": "Universiteit Utrecht",
+            "interval": "Monthly",            
+            "model": "PCR-GLOBWB",
+            "data_type": "Ecosystem Model",
+            "forcing_version": "Version 0",
+            "region": "Global",
+            "indicator_type": [
+               "Water Resource Re-analysis v1",
+               "Water Balance Components",
+               "Evapotranspiration"
+            ]
+         },
+         "TVeg": {
+            "niceName": "Vegetation Transpiration",
+            "data_provider": "Universiteit Utrecht",
+            "interval": "Monthly",            
+            "model": "PCR-GLOBWB",
+            "data_type": "Ecosystem Model",
+            "forcing_version": "Version 0",
+            "region": "Global",
+            "indicator_type": [
+               "Water Resource Re-analysis v1",
+               "Water Balance Components",
+               "Evapotranspiration"
+            ]
+         },
+         "ESoil": {
+            "niceName": "Bare Soil Evaporation",
+            "data_provider": "Universiteit Utrecht",
+            "interval": "Monthly",            
+            "model": "PCR-GLOBWB",
+            "data_type": "Ecosystem Model",
+            "forcing_version": "Version 0",
+            "region": "Global",
+            "indicator_type": [
+               "Water Resource Re-analysis v1",
+               "Water Balance Components",
+               "Evapotranspiration"
+            ]
+         },
+         "EWater": {
+            "niceName": "Open Water Evaporation",
+            "data_provider": "Universiteit Utrecht",
+            "interval": "Monthly",            
+            "model": "PCR-GLOBWB",
+            "data_type": "Ecosystem Model",
+            "forcing_version": "Version 0",
+            "region": "Global",
+            "indicator_type": [
+               "Water Resource Re-analysis v1",
+               "Water Balance Components",
+               "Evapotranspiration"
+            ]
+         },
+         "RivOut": {
+            "niceName": "River Discharge",
+            "data_provider": "Universiteit Utrecht",
+            "interval": "Monthly",            
+            "model": "PCR-GLOBWB",
+            "data_type": "Ecosystem Model",
+            "forcing_version": "Version 0",
+            "region": "Global",
+            "indicator_type": [
+               "Water Resource Re-analysis v1",
+               "Water Balance Components",
+               "Surface Water"
+            ]
+         },
+         "Dis": {
+            "niceName": "Point River Discharge",
+            "data_provider": "Universiteit Utrecht",
+            "interval": "Monthly",            
+            "model": "PCR-GLOBWB",
+            "data_type": "Ecosystem Model",
+            "forcing_version": "Version 0",
+            "region": "Global",
+            "indicator_type": [
+               "Water Resource Re-analysis v1",
+               "Water Balance Components",
+               "Surface Water"
+            ]
+         },
+         "SWnet": {
+            "niceName": "Net Shortwave Radiation",
+            "data_provider": "Universiteit Utrecht",
+            "interval": "Monthly",            
+            "model": "PCR-GLOBWB",
+            "data_type": "Ecosystem Model",
+            "forcing_version": "Version 0",
+            "region": "Global",
+            "indicator_type": [
+               "Water Resource Re-analysis v1",
+               "Energy Balance Components",
+               "Radiation"
+            ]
+         },
+         "LWnet": {
+            "niceName": "Net Longwave Radiation",
+            "data_provider": "Universiteit Utrecht",
+            "interval": "Monthly",            
+            "model": "PCR-GLOBWB",
+            "data_type": "Ecosystem Model",
+            "forcing_version": "Version 0",
+            "region": "Global",
+            "indicator_type": [
+               "Water Resource Re-analysis v1",
+               "Energy Balance Components",
+               "Radiation"
+            ]
+         },
+         "Qle": {
+            "niceName": "Latent Heat Flux",
+            "data_provider": "Universiteit Utrecht",
+            "interval": "Monthly",            
+            "model": "PCR-GLOBWB",
+            "data_type": "Ecosystem Model",
+            "forcing_version": "Version 0",
+            "region": "Global",
+            "indicator_type": [
+               "Water Resource Re-analysis v1",
+               "Energy Balance Components",
+            ]
+         },
+         "Qh": {
+            "niceName": "Sensible Heat Flux",
+            "data_provider": "Universiteit Utrecht",
+            "interval": "Monthly",            
+            "model": "PCR-GLOBWB",
+            "data_type": "Ecosystem Model",
+            "forcing_version": "Version 0",
+            "region": "Global",
+            "indicator_type": [
+               "Water Resource Re-analysis v1",
+               "Energy Balance Components",
+            ]
+         },
+         "AvgSurfT": {
+            "niceName": "Average Surface Temperature",
+            "data_provider": "Universiteit Utrecht",
+            "interval": "Monthly",            
+            "model": "PCR-GLOBWB",
+            "data_type": "Ecosystem Model",
+            "forcing_version": "Version 0",
+            "region": "Global",
+            "indicator_type": [
+               "Water Resource Re-analysis v1",
+               "State Variables",
+               "Meteorology"
+            ]
+         },
+         "Albedo": {
+            "niceName": "Surface Albedo",
+            "data_provider": "Universiteit Utrecht",
+            "interval": "Monthly",            
+            "model": "PCR-GLOBWB",
+            "data_type": "Ecosystem Model",
+            "forcing_version": "Version 0",
+            "region": "Global",
+            "indicator_type": [
+               "Water Resource Re-analysis v1",
+               "State Variables",
+            ]
+         },
+         "LAI": {
+            "niceName": "Leaf Area Index",
+            "data_provider": "Universiteit Utrecht",
+            "interval": "Monthly",            
+            "model": "PCR-GLOBWB",
+            "data_type": "Ecosystem Model",
+            "forcing_version": "Version 0",
+            "region": "Global",
+            "indicator_type": [
+               "Water Resource Re-analysis v1",
+               "State Variables",
+            ]
+         },
+         "SWE": {
+            "niceName": "Snow Water Equivalent",
+            "data_provider": "Universiteit Utrecht",
+            "interval": "Monthly",            
+            "model": "PCR-GLOBWB",
+            "data_type": "Ecosystem Model",
+            "forcing_version": "Version 0",
+            "region": "Global",
+            "indicator_type": [
+               "Water Resource Re-analysis v1",
+               "State Variables",
+               "Surface Water"
+            ]
+         },
+         "CanopInt": {
+            "niceName": "Total Canopy water Storage",
+            "data_provider": "Universiteit Utrecht",
+            "interval": "Monthly",            
+            "model": "PCR-GLOBWB",
+            "data_type": "Ecosystem Model",
+            "forcing_version": "Version 0",
+            "region": "Global",
+            "indicator_type": [
+               "Water Resource Re-analysis v1",
+               "State Variables",
+            ]
+         },
+         "SWEVeg": {
+            "niceName": "SWE Intercepted by Vegetation",
+            "data_provider": "Universiteit Utrecht",
+            "interval": "Monthly",            
+            "model": "PCR-GLOBWB",
+            "data_type": "Ecosystem Model",
+            "forcing_version": "Version 0",
+            "region": "Global",
+            "indicator_type": [
+               "Water Resource Re-analysis v1",
+               "State Variables",
+            ]
+         },
+         "SurfStor": {
+            "niceName": "Surface Water Storage",
+            "data_provider": "Universiteit Utrecht",
+            "interval": "Monthly",            
+            "model": "PCR-GLOBWB",
+            "data_type": "Ecosystem Model",
+            "forcing_version": "Version 0",
+            "region": "Global",
+            "indicator_type": [
+               "Water Resource Re-analysis v1",
+               "State Variables",
+               "Surface Water"
+            ]
+         },
+         "WaterTableD": {
+            "niceName": "Water Table Depth",
+            "data_provider": "Universiteit Utrecht",
+            "interval": "Monthly",            
+            "model": "PCR-GLOBWB",
+            "data_type": "Ecosystem Model",
+            "forcing_version": "Version 0",
+            "region": "Global",
+            "indicator_type": [
+               "Water Resource Re-analysis v1",
+               "State Variables",
+               "Sub-Surface Water"
+            ]
+         },
+         "SnowFrac": {
+            "niceName": "Snow Covered Fraction",
+            "data_provider": "Universiteit Utrecht",
+            "interval": "Monthly",            
+            "model": "PCR-GLOBWB",
+            "data_type": "Ecosystem Model",
+            "forcing_version": "Version 0",
+            "region": "Global",
+            "indicator_type": [
+               "Water Resource Re-analysis v1",
+               "State Variables",
+               "Surface Water"
+            ]
+         },
+         "SnowDepth": {
+            "niceName": "Snow Depth",
+            "data_provider": "Universiteit Utrecht",
+            "interval": "Monthly",            
+            "model": "PCR-GLOBWB",
+            "data_type": "Ecosystem Model",
+            "forcing_version": "Version 0",
+            "region": "Global",
+            "indicator_type": [
+               "Water Resource Re-analysis v1",
+               "State Variables",
+               "Surface Water"
+            ]
+         },
+         "SurfMoist": {
+            "niceName": "Surface Soil Moisture",
+            "data_provider": "Universiteit Utrecht",
+            "interval": "Monthly",            
+            "model": "PCR-GLOBWB",
+            "data_type": "Ecosystem Model",
+            "forcing_version": "Version 0",
+            "region": "Global",
+            "indicator_type": [
+               "Water Resource Re-analysis v1",
+               "State Variables",
+               "Surface Water"
+            ]
+         },
+         "RootMoist": {
+            "niceName": "Root Zone Soil Moisture",
+            "data_provider": "Universiteit Utrecht",
+            "interval": "Monthly",            
+            "model": "PCR-GLOBWB",
+            "data_type": "Ecosystem Model",
+            "forcing_version": "Version 0",
+            "region": "Global",
+            "indicator_type": [
+               "Water Resource Re-analysis v1",
+               "State Variables",
+               "Sub-Surface Water"
+            ]
+         },
+         "TotMoist": {
+            "niceName": "Total Soil Moisture",
+            "data_provider": "Universiteit Utrecht",
+            "interval": "Monthly",            
+            "model": "PCR-GLOBWB",
+            "data_type": "Ecosystem Model",
+            "forcing_version": "Version 0",
+            "region": "Global",
+            "indicator_type": [
+               "Water Resource Re-analysis v1",
+               "State Variables",
+               "Sub-Surface Water"
+            ]
+         },
+         "GroundMoist": {
+            "niceName": "Ground Water",
+            "data_provider": "Universiteit Utrecht",
+            "interval": "Monthly",            
+            "model": "PCR-GLOBWB",
+            "data_type": "Ecosystem Model",
+            "forcing_version": "Version 0",
+            "region": "Global",
+            "indicator_type": [
+               "Water Resource Re-analysis v1",
+               "State Variables",
+               "Sub-Surface Water"
+            ]
+         }
       }
    },
    {
@@ -7865,7 +8319,7 @@ layers = [
       },
       "services": {
          "wms": {
-            "url": "https://wci.earth2observe.eu/thredds/wms/uu/wrr1-daily-agg.nc?",
+            "url": "https://vortices.npm.ac.uk/thredds/wms/uu/wrr1-daily-agg.nc?",
             "params": {
                "GetCapabilities": {
                   "SERVICE": "WMS",
@@ -7875,7 +8329,7 @@ layers = [
             }
          },
          "wcs": {
-            "url": "https://wci.earth2observe.eu/thredds/wcs/uu/wrr1-daily-agg.nc?",
+            "url": "https://vortices.npm.ac.uk/thredds/wcs/uu/wrr1-daily-agg.nc?",
             "params": {
                "DescribeCoverage": {
                   "SERVICE": "WCS",
@@ -7886,7 +8340,461 @@ layers = [
          }
       },
       "indicators": {
-      __HERE__
+               "Precip": {
+            "niceName": "Total Precipitation",
+            "data_provider": "Universiteit Utrecht",
+            "interval": "Daily",            
+            "model": "PCR-GLOBWB",
+            "data_type": "Ecosystem Model",
+            "forcing_version": "Version 0",
+            "region": "Global",
+            "indicator_type": [
+               "Water Resource Re-analysis v1",
+               "Water Balance Components",
+               "Precipitation"
+            ]
+         },
+         "Evap": {
+            "niceName": "Total Evapotranspiration",
+            "data_provider": "Universiteit Utrecht",
+            "interval": "Daily",            
+            "model": "PCR-GLOBWB",
+            "data_type": "Ecosystem Model",
+            "forcing_version": "Version 0",
+            "region": "Global",
+            "indicator_type": [
+               "Water Resource Re-analysis v1",
+               "Water Balance Components",
+               "Evapotranspiration"
+            ]
+         },
+         "Runoff": {
+            "niceName": "Total Runoff",
+            "data_provider": "Universiteit Utrecht",
+            "interval": "Daily",            
+            "model": "PCR-GLOBWB",
+            "data_type": "Ecosystem Model",
+            "forcing_version": "Version 0",
+            "region": "Global",
+            "indicator_type": [
+               "Water Resource Re-analysis v1",
+               "Water Balance Components",
+               "Surface Water"
+            ]
+         },
+         "Rainf": {
+            "niceName": "Rainfall",
+            "data_provider": "Universiteit Utrecht",
+            "interval": "Daily",            
+            "model": "PCR-GLOBWB",
+            "data_type": "Ecosystem Model",
+            "forcing_version": "Version 0",
+            "region": "Global",
+            "indicator_type": [
+               "Water Resource Re-analysis v1",
+               "Water Balance Components",
+               "Meteorology",
+            ]
+         },
+         "Qs": {
+            "niceName": "Total Surface Runoff",
+            "data_provider": "Universiteit Utrecht",
+            "interval": "Daily",            
+            "model": "PCR-GLOBWB",
+            "data_type": "Ecosystem Model",
+            "forcing_version": "Version 0",
+            "region": "Global",
+            "indicator_type": [
+               "Water Resource Re-analysis v1",
+               "Water Balance Components",
+               "Surface Water"
+            ]
+         },
+         "Qsb": {
+            "niceName": "Sub-Surface Runoff",
+            "data_provider": "Universiteit Utrecht",
+            "interval": "Daily",            
+            "model": "PCR-GLOBWB",
+            "data_type": "Ecosystem Model",
+            "forcing_version": "Version 0",
+            "region": "Global",
+            "indicator_type": [
+               "Water Resource Re-analysis v1",
+               "Water Balance Components",
+               "Sub-Surface Water"
+            ]
+         },
+         "Qrec": {
+            "niceName": "Recharge",
+            "data_provider": "Universiteit Utrecht",
+            "interval": "Daily",            
+            "model": "PCR-GLOBWB",
+            "data_type": "Ecosystem Model",
+            "forcing_version": "Version 0",
+            "region": "Global",
+            "indicator_type": [
+               "Water Resource Re-analysis v1",
+               "Water Balance Components",
+            ]
+         },
+         "Qsm": {
+            "niceName": "Snowmelt",
+            "data_provider": "Universiteit Utrecht",
+            "interval": "Daily",            
+            "model": "PCR-GLOBWB",
+            "data_type": "Ecosystem Model",
+            "forcing_version": "Version 0",
+            "region": "Global",
+            "indicator_type": [
+               "Water Resource Re-analysis v1",
+               "Water Balance Components",
+               "Surface Water"
+            ]
+         },
+         "PotEvap": {
+            "niceName": "Potential Evapotranspiration",
+            "data_provider": "Universiteit Utrecht",
+            "interval": "Daily",            
+            "model": "PCR-GLOBWB",
+            "data_type": "Ecosystem Model",
+            "forcing_version": "Version 0",
+            "region": "Global",
+            "indicator_type": [
+               "Water Resource Re-analysis v1",
+               "Water Balance Components",
+               "Evapotranspiration",
+            ]
+         },
+         "ECanop": {
+            "niceName": "Interception Evaporation",
+            "data_provider": "Universiteit Utrecht",
+            "interval": "Daily",            
+            "model": "PCR-GLOBWB",
+            "data_type": "Ecosystem Model",
+            "forcing_version": "Version 0",
+            "region": "Global",
+            "indicator_type": [
+               "Water Resource Re-analysis v1",
+               "Water Balance Components",
+               "Evapotranspiration"
+            ]
+         },
+         "TVeg": {
+            "niceName": "Vegetation Transpiration",
+            "data_provider": "Universiteit Utrecht",
+            "interval": "Daily",            
+            "model": "PCR-GLOBWB",
+            "data_type": "Ecosystem Model",
+            "forcing_version": "Version 0",
+            "region": "Global",
+            "indicator_type": [
+               "Water Resource Re-analysis v1",
+               "Water Balance Components",
+               "Evapotranspiration"
+            ]
+         },
+         "ESoil": {
+            "niceName": "Bare Soil Evaporation",
+            "data_provider": "Universiteit Utrecht",
+            "interval": "Daily",            
+            "model": "PCR-GLOBWB",
+            "data_type": "Ecosystem Model",
+            "forcing_version": "Version 0",
+            "region": "Global",
+            "indicator_type": [
+               "Water Resource Re-analysis v1",
+               "Water Balance Components",
+               "Evapotranspiration"
+            ]
+         },
+         "EWater": {
+            "niceName": "Open Water Evaporation",
+            "data_provider": "Universiteit Utrecht",
+            "interval": "Daily",            
+            "model": "PCR-GLOBWB",
+            "data_type": "Ecosystem Model",
+            "forcing_version": "Version 0",
+            "region": "Global",
+            "indicator_type": [
+               "Water Resource Re-analysis v1",
+               "Water Balance Components",
+               "Evapotranspiration"
+            ]
+         },
+         "RivOut": {
+            "niceName": "River Discharge",
+            "data_provider": "Universiteit Utrecht",
+            "interval": "Daily",            
+            "model": "PCR-GLOBWB",
+            "data_type": "Ecosystem Model",
+            "forcing_version": "Version 0",
+            "region": "Global",
+            "indicator_type": [
+               "Water Resource Re-analysis v1",
+               "Water Balance Components",
+               "Surface Water"
+            ]
+         },
+         "Dis": {
+            "niceName": "Point River Discharge",
+            "data_provider": "Universiteit Utrecht",
+            "interval": "Daily",            
+            "model": "PCR-GLOBWB",
+            "data_type": "Ecosystem Model",
+            "forcing_version": "Version 0",
+            "region": "Global",
+            "indicator_type": [
+               "Water Resource Re-analysis v1",
+               "Water Balance Components",
+               "Surface Water"
+            ]
+         },
+         "SWnet": {
+            "niceName": "Net Shortwave Radiation",
+            "data_provider": "Universiteit Utrecht",
+            "interval": "Daily",            
+            "model": "PCR-GLOBWB",
+            "data_type": "Ecosystem Model",
+            "forcing_version": "Version 0",
+            "region": "Global",
+            "indicator_type": [
+               "Water Resource Re-analysis v1",
+               "Energy Balance Components",
+               "Radiation"
+            ]
+         },
+         "LWnet": {
+            "niceName": "Net Longwave Radiation",
+            "data_provider": "Universiteit Utrecht",
+            "interval": "Daily",            
+            "model": "PCR-GLOBWB",
+            "data_type": "Ecosystem Model",
+            "forcing_version": "Version 0",
+            "region": "Global",
+            "indicator_type": [
+               "Water Resource Re-analysis v1",
+               "Energy Balance Components",
+               "Radiation"
+            ]
+         },
+         "Qle": {
+            "niceName": "Latent Heat Flux",
+            "data_provider": "Universiteit Utrecht",
+            "interval": "Daily",            
+            "model": "PCR-GLOBWB",
+            "data_type": "Ecosystem Model",
+            "forcing_version": "Version 0",
+            "region": "Global",
+            "indicator_type": [
+               "Water Resource Re-analysis v1",
+               "Energy Balance Components",
+            ]
+         },
+         "Qh": {
+            "niceName": "Sensible Heat Flux",
+            "data_provider": "Universiteit Utrecht",
+            "interval": "Daily",            
+            "model": "PCR-GLOBWB",
+            "data_type": "Ecosystem Model",
+            "forcing_version": "Version 0",
+            "region": "Global",
+            "indicator_type": [
+               "Water Resource Re-analysis v1",
+               "Energy Balance Components",
+            ]
+         },
+         "AvgSurfT": {
+            "niceName": "Average Surface Temperature",
+            "data_provider": "Universiteit Utrecht",
+            "interval": "Daily",            
+            "model": "PCR-GLOBWB",
+            "data_type": "Ecosystem Model",
+            "forcing_version": "Version 0",
+            "region": "Global",
+            "indicator_type": [
+               "Water Resource Re-analysis v1",
+               "State Variables",
+               "Meteorology"
+            ]
+         },
+         "Albedo": {
+            "niceName": "Surface Albedo",
+            "data_provider": "Universiteit Utrecht",
+            "interval": "Daily",            
+            "model": "PCR-GLOBWB",
+            "data_type": "Ecosystem Model",
+            "forcing_version": "Version 0",
+            "region": "Global",
+            "indicator_type": [
+               "Water Resource Re-analysis v1",
+               "State Variables",
+            ]
+         },
+         "LAI": {
+            "niceName": "Leaf Area Index",
+            "data_provider": "Universiteit Utrecht",
+            "interval": "Daily",            
+            "model": "PCR-GLOBWB",
+            "data_type": "Ecosystem Model",
+            "forcing_version": "Version 0",
+            "region": "Global",
+            "indicator_type": [
+               "Water Resource Re-analysis v1",
+               "State Variables",
+            ]
+         },
+         "SWE": {
+            "niceName": "Snow Water Equivalent",
+            "data_provider": "Universiteit Utrecht",
+            "interval": "Daily",            
+            "model": "PCR-GLOBWB",
+            "data_type": "Ecosystem Model",
+            "forcing_version": "Version 0",
+            "region": "Global",
+            "indicator_type": [
+               "Water Resource Re-analysis v1",
+               "State Variables",
+               "Surface Water"
+            ]
+         },
+         "CanopInt": {
+            "niceName": "Total Canopy water Storage",
+            "data_provider": "Universiteit Utrecht",
+            "interval": "Daily",            
+            "model": "PCR-GLOBWB",
+            "data_type": "Ecosystem Model",
+            "forcing_version": "Version 0",
+            "region": "Global",
+            "indicator_type": [
+               "Water Resource Re-analysis v1",
+               "State Variables",
+            ]
+         },
+         "SWEVeg": {
+            "niceName": "SWE Intercepted by Vegetation",
+            "data_provider": "Universiteit Utrecht",
+            "interval": "Daily",            
+            "model": "PCR-GLOBWB",
+            "data_type": "Ecosystem Model",
+            "forcing_version": "Version 0",
+            "region": "Global",
+            "indicator_type": [
+               "Water Resource Re-analysis v1",
+               "State Variables",
+            ]
+         },
+         "SurfStor": {
+            "niceName": "Surface Water Storage",
+            "data_provider": "Universiteit Utrecht",
+            "interval": "Daily",            
+            "model": "PCR-GLOBWB",
+            "data_type": "Ecosystem Model",
+            "forcing_version": "Version 0",
+            "region": "Global",
+            "indicator_type": [
+               "Water Resource Re-analysis v1",
+               "State Variables",
+               "Surface Water"
+            ]
+         },
+         "WaterTableD": {
+            "niceName": "Water Table Depth",
+            "data_provider": "Universiteit Utrecht",
+            "interval": "Daily",            
+            "model": "PCR-GLOBWB",
+            "data_type": "Ecosystem Model",
+            "forcing_version": "Version 0",
+            "region": "Global",
+            "indicator_type": [
+               "Water Resource Re-analysis v1",
+               "State Variables",
+               "Sub-Surface Water"
+            ]
+         },
+         "SnowFrac": {
+            "niceName": "Snow Covered Fraction",
+            "data_provider": "Universiteit Utrecht",
+            "interval": "Daily",            
+            "model": "PCR-GLOBWB",
+            "data_type": "Ecosystem Model",
+            "forcing_version": "Version 0",
+            "region": "Global",
+            "indicator_type": [
+               "Water Resource Re-analysis v1",
+               "State Variables",
+               "Surface Water"
+            ]
+         },
+         "SnowDepth": {
+            "niceName": "Snow Depth",
+            "data_provider": "Universiteit Utrecht",
+            "interval": "Daily",            
+            "model": "PCR-GLOBWB",
+            "data_type": "Ecosystem Model",
+            "forcing_version": "Version 0",
+            "region": "Global",
+            "indicator_type": [
+               "Water Resource Re-analysis v1",
+               "State Variables",
+               "Surface Water"
+            ]
+         },
+         "SurfMoist": {
+            "niceName": "Surface Soil Moisture",
+            "data_provider": "Universiteit Utrecht",
+            "interval": "Daily",            
+            "model": "PCR-GLOBWB",
+            "data_type": "Ecosystem Model",
+            "forcing_version": "Version 0",
+            "region": "Global",
+            "indicator_type": [
+               "Water Resource Re-analysis v1",
+               "State Variables",
+               "Surface Water"
+            ]
+         },
+         "RootMoist": {
+            "niceName": "Root Zone Soil Moisture",
+            "data_provider": "Universiteit Utrecht",
+            "interval": "Daily",            
+            "model": "PCR-GLOBWB",
+            "data_type": "Ecosystem Model",
+            "forcing_version": "Version 0",
+            "region": "Global",
+            "indicator_type": [
+               "Water Resource Re-analysis v1",
+               "State Variables",
+               "Sub-Surface Water"
+            ]
+         },
+         "TotMoist": {
+            "niceName": "Total Soil Moisture",
+            "data_provider": "Universiteit Utrecht",
+            "interval": "Daily",            
+            "model": "PCR-GLOBWB",
+            "data_type": "Ecosystem Model",
+            "forcing_version": "Version 0",
+            "region": "Global",
+            "indicator_type": [
+               "Water Resource Re-analysis v1",
+               "State Variables",
+               "Sub-Surface Water"
+            ]
+         },
+         "GroundMoist": {
+            "niceName": "Ground Water",
+            "data_provider": "Universiteit Utrecht",
+            "interval": "Daily",            
+            "model": "PCR-GLOBWB",
+            "data_type": "Ecosystem Model",
+            "forcing_version": "Version 0",
+            "region": "Global",
+            "indicator_type": [
+               "Water Resource Re-analysis v1",
+               "State Variables",
+               "Sub-Surface Water"
+            ]
+         }
       }
    }
 

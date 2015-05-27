@@ -14,8 +14,12 @@ gisportal.config = {
    browseCategories : {
       "indicator_type" : "Indicator Type",
       "data_provider" : "Data Provider",
+      "data_type" : "Data Type",
+      "forcing_version" : "Forcing Version"
       "region" : "Region"
    },
+   browseMode : 'selectlist',                       // (tabs|selectlist) tabs (default) = original method of 3 tabs; selectlist = makes all available categories selectable from a drop down list
+   defaultCategory: '',                     // only used when browseMode = selectlist; any key value from browseCategories
    //  Skip start screen only is the user has a saved state, requires T&C
    autoResumeSavedState: false,
    // Always skip the welcome page, also skips T&C

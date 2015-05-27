@@ -213,8 +213,8 @@ def createCache(server, capabilitiesXML, coverageXML):
    return utils.saveFile(SERVERCACHEPATH + server['name'] + FILEEXTENSIONJSON, json.dumps(subMasterCache))
 
 def layerHasMoreInfo( layerNiceName ):
-   print os.getcwd()
-   print "testing %s for more info" % layerNiceName
+   #print os.getcwd()
+   #print "testing %s for more info" % layerNiceName
    for root, dirs, files in os.walk(MARKDOWN_DIR):
       for _file in files:
          #print _file
