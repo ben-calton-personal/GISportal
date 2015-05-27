@@ -61,12 +61,12 @@ gisportal.scalebars.getScalebarDetails = function(id)  {
          }
       }
       
-      var isExponentOver4 = scalePoints.some(function( point ){
+      var isExponentOver3 = scalePoints.some(function( point ){
          //return point.toExponential().match(/\.(.+)e/)[1].length > 4
-         return ( Math.abs(Number(point.toExponential().split('e')[1])) > 4 )
+         return ( Math.abs(Number(point.toExponential().split('e')[1])) > 3 )
       })
       
-      if( isExponentOver4 ){
+      if( isExponentOver3 ){
 	      var makePointReadable = function( point ){
 	         point = point.toExponential();
 	         if( point.indexOf('.') == -1 )
@@ -80,7 +80,7 @@ gisportal.scalebars.getScalebarDetails = function(id)  {
       
       scalePoints = scalePoints.map(function( point ){
 	      return {
-	         original: isExponentOver4 ? point.toExponential() : point,
+	         original: isExponentOver3 ? point.toExponential() : point,
 	         nicePrint: makePointReadable(point)
 	      }
       })
@@ -136,7 +136,7 @@ gisportal.scalebars.autoScale = function(id, force)  {
          + l.exBoundingBox.NorthBoundLatitude;
 
       $.ajax({
-         url: OpenLayers.ProxyHost + encodeURIComponent(l.wmsURL + 'item=minmax&layers=' + l.urlName + '&bbox=' + bbox + '&elevation=' + (l.selectedElevation || -1) + '&time='+ new Date(l.selectedDateTime).toISOString() + '&crs=' + gisportal.lonlat.projCode + '&srs=' + gisportal.lonlat.projCode + '&width=50&height=50&request=GetMetadata'),
+         url: gisportal.ProxyHost + encodeURIComponent(l.wmsURL + 'item=minmax&layers=' + l.urlName + '&bbox=' + bbox + '&elevation=' + (l.selectedElevation || -1) + '&time='+ new Date(l.selectedDateTime).toISOString() + '&crs=' + gisportal.projection + '&srs=' + gisportal.projection + '&width=50&height=50&request=GetMetadata'),
          dataType: 'json',
          success: function( data ) {
             gisportal.scalebars.validateScale(id, data.min, data.max);

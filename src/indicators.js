@@ -108,15 +108,15 @@ gisportal.indicatorsPanel.initDOM = function() {
       if (indicator === null)
          return;
 
-      var bbox = new OpenLayers.Bounds(
-         indicator.exBoundingBox.WestBoundLongitude,
-         indicator.exBoundingBox.SouthBoundLatitude,
-         indicator.exBoundingBox.EastBoundLongitude,
-         indicator.exBoundingBox.NorthBoundLatitude
-      ).transform(map.displayProjection, map.projection);
-
-      map.zoomToExtent(bbox);
+      var bbox = [
+         parseFloat(indicator.exBoundingBox.WestBoundLongitude),
+         parseFloat(indicator.exBoundingBox.SouthBoundLatitude),
+         parseFloat(indicator.exBoundingBox.EastBoundLongitude),
+         parseFloat(indicator.exBoundingBox.NorthBoundLatitude)
+      ]
+      map.getView().fitExtent(bbox, map.getSize());
    });
+
    //Share this map
    $('.js-share').on('click', function() {
       gisportal.openid.showShare();
@@ -177,12 +177,7 @@ gisportal.indicatorsPanel.initDOM = function() {
       },
       stop : function(event, ui) {
          $(ui.item).children('div.indicator-header').removeClass('indicator-header-moving'); 
-         // change the layer order
-         var layers = [];
-         $('.sortable-list .indicator-header').each(function() {
-            layers.push($(this).data('provider') + ': ' + $(this).data('name'));
-         })
-         gisportal.indicatorsPanel.reorderLayers(layers);
+         gisportal.indicatorsPanel.reorderLayers();
       }
    });
 };
@@ -308,14 +303,34 @@ gisportal.indicatorsPanel.addToPanel = function(data) {
    gisportal.events.emit('layer.addtopanel', data)
 };
 
-gisportal.indicatorsPanel.reorderLayers = function(layers) {
-   var index = layers.length;
-   for(var i = 0; i < layers.length; i++) {
-      var layer = map.getLayersByName(layers[i])[0];
-      console.log('setting '+layer.name+' as '+ parseInt(index - i));
-      map.setLayerIndex(layer, index-i);
+gisportal.indicatorsPanel.reorderLayers = function() {
+   var layers = [];
+   $('.sortable-list .indicator-header').each(function() {
+      layers.push($(this).parent().data('id'));
+   })
+
+   // so, ol3 doesn't have a nice way to reorder layers; therefore, we take 'em all off and then add 'em back on
+   var currentLayers = map.getLayers().a;
+   if (currentLayers) {
+      for (var i = 0; i < map.getLayers().a.length + 1; i++) {
+         map.removeLayer(map.getLayers().a[0]);
+      }
+   }
+   
+   // stick the base layer back on
+   var selectedBaseMap = $('#select-basemap').data().ddslick.selectedData.value;
+   if (selectedBaseMap !== 'none') {
+      map.addLayer(gisportal.baseLayers[selectedBaseMap]);   
+   }
+   
+
+   // then the indicator layers
+   for (var l = layers.length - 1; l > -1; l--) {
+      map.addLayer(gisportal.layers[layers[l]].openlayers['anID']);
    }
 
+   gisportal.setCountryBordersToTopLayer();
+   gisportal.selectionTools.setVectorLayerToTop();
 }
 
 gisportal.indicatorsPanel.removeFromPanel = function(id) {
@@ -366,6 +381,21 @@ gisportal.indicatorsPanel.detailsTab = function(id) {
    var modifiedName = id.replace(/([A-Z])/g, '$1-'); // To prevent duplicate name, for radio button groups
    indicator.modifiedName = modifiedName;
    indicator.modified = gisportal.utils.nameToId(indicator.name);
+
+   // load the tag values based on the currently enabled gisportal.config.browseCategories
+   indicator.displayTags = [];
+   for (var index in gisportal.config.browseCategories) {
+      var name = gisportal.config.browseCategories[index];
+      var val = indicator.tags[index];
+      if (val) {
+         if (typeof(val) == "string") val = val.split(',');
+         indicator.displayTags.push({
+            displayName: name,
+            displayValues: val
+         });      
+      }
+   }
+   
    var rendered = gisportal.templates['tab-details'](indicator);
    $('[data-id="' + id + '"] .js-tab-details').html(rendered);
    $('[data-id="' + id + '"] .js-icon-details').toggleClass('hidden', false);
@@ -464,23 +494,38 @@ gisportal.indicatorsPanel.scalebarTab = function(id) {
          gisportal.layers[indicator.id].setOpacity( $(this).val() / 100 )
       });
 
-      $('#tab-' + indicator.id + '-elevation').on('change', function() {
-         var value = $(this).val();
-         indicator.selectedElevation = value;
-         indicator.mergeNewParams({
-            elevation: value
-         });
-      });
+      $('#tab-' + indicator.id + '-elevation').ddslick({
+         onSelected: function(data) {
+            if (data.selectedData) {
+               indicator.selectedElevation = data.selectedData.value;
+               indicator.mergeNewParams({
+                  elevation: data.selectedData.value
+               });   
+            }
+         }
+      })
 
-      $('#tab-' + indicator.id + '-layer-style').on('change', function() {
-         var value = $(this).val();
-         indicator.style = value;
-         indicator.mergeNewParams({
-            styles: value
-         });
-         gisportal.indicatorsPanel.scalebarTab(id);
+      $('#tab-' + indicator.id + '-layer-style').ddslick({
+         onSelected: function(data) {
+            if (data.selectedData) {
+               indicator.style = data.selectedData.value;
+               indicator.mergeNewParams({
+                  styles: data.selectedData.value
+               });
+               gisportal.indicatorsPanel.scalebarTab(id);
+            }
+         }
+      })
+      
+      // $('#tab-' + indicator.id + '-layer-style').on('change', function() {
+      //    var value = $(this).val();
+      //    indicator.style = value;
+      //    indicator.mergeNewParams({
+      //       styles: value
+      //    });
+      //    gisportal.indicatorsPanel.scalebarTab(id);
 
-      });
+      // });
       gisportal.indicatorsPanel.checkTabFromState(id);
    }
 
@@ -746,6 +791,16 @@ gisportal.indicatorsPanel.exportRawUrl = function(id) {
 
 gisportal.indicatorsPanel.addToPlot = function( id )  {
    var graphParams = this.getParams( id );
+
+   if( ! doesCurrentlySelectedRegionFallInLayerBounds( id ) ){
+      errorHtml = '<div class="alert alert-danger">The bounding box selected contains no data for this indicator.</div>';
+      var errorElement = $( errorHtml ).prependTo('.js-tab-analysis[data-id="' + id + '"] .analysis-coordinates');
+      setTimeout( function(){
+         errorElement.remove()
+      }, 6000 );
+      return;
+   }
+
    var indicator = gisportal.layers[id];
    
    var component = {
@@ -782,4 +837,66 @@ gisportal.indicatorsPanel.selectTab = function( layerId, tabName ){
    }, 2000).one('mousewheel', function(){
       $(this).stop();
    });
+}
+
+function bboxToWKT( bboxString ){
+   var elements = bboxString.split( "," );
+   if( elements.length == false )
+      return false;
+   var newPoints = [
+      elements[0] + " " + elements[1],
+      elements[0] + " " + elements[3],
+
+      elements[2] + " " + elements[3],
+      elements[0] + " " + elements[1],
+
+      elements[0] + " " + elements[1],
+   ];
+
+   return 'POLYGON((' + newPoints.join(",") + '))';
+
+}
+
+function doesCurrentlySelectedRegionFallInLayerBounds( layerId ){
+   // Skip if empty
+   if( gisportal.currentSelectedRegion == "" )
+      return true;
+
+   // Try to see if its WKT string
+   try{
+      var bb1 = Terraformer.WKT.parse( gisportal.currentSelectedRegion );
+   }catch( e ){
+      // Assume the old bbox style
+      var bb1 = Terraformer.WKT.parse( bboxToWKT(gisportal.currentSelectedRegion) );
+   };
+
+   var layer = gisportal.layers[ layerId ];
+   var bounds = layer.exBoundingBox;
+
+   var arr = [
+      [
+         Number(bounds.WestBoundLongitude),
+         Number(bounds.NorthBoundLatitude)
+      ],
+      [
+         Number(bounds.EastBoundLongitude),
+         Number(bounds.NorthBoundLatitude)
+      ],
+      [
+         Number(bounds.EastBoundLongitude),
+         Number(bounds.SouthBoundLatitude)
+      ],
+      [
+         Number(bounds.WestBoundLongitude),
+         Number(bounds.SouthBoundLatitude)
+      ]
+   ];
+
+   var bb2 = new Terraformer.Polygon( {
+      "type": "Polygon",
+      "coordinates": [arr] 
+   });
+
+   return bb1.intersects( bb2 ) || bb1.contains( bb2 ) || bb1.within( bb2 );
+
 }
