@@ -14,8 +14,8 @@ gisportal.config = {
    browseCategories : {
       "indicator_type" : "Indicator Type",
       "data_provider" : "Data Provider",
+      "model": "Model Name",
       "data_type" : "Data Type",
-      "forcing_version" : "Forcing Version",
       "interval": "Interval",
       "region" : "Region"
    },
