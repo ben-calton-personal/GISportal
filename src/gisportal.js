@@ -189,6 +189,8 @@ gisportal.createOpLayers = function() {
    if (!gisportal.stateLoadStarted && state) gisportal.loadState(state);
    gisportal.configurePanel.refreshData();
    // Batch add here in future.
+
+   gisportal.events.trigger('layers-loaded');
 };
 
 /**
@@ -281,6 +283,24 @@ gisportal.refreshDateCache = function() {
  * Sets up the map, plus its controls, layers, styling and events.
  */
 gisportal.mapInit = function() {
+   // these need to be declared using 'old school' getElementById or functions within the ol3 js don't work properly
+   var dataReadingPopupDiv = document.getElementById('data-reading-popup');
+   var dataReadingPopupContent = document.getElementById('data-reading-popup-content');
+   var dataReadingPopupCloser = document.getElementById('data-reading-popup-closer');
+
+   var dataReadingPopupOverlay = new ol.Overlay(/** @type {olx.OverlayOptions} */ ({
+     element: dataReadingPopupDiv,
+     autoPan: true,
+     autoPanAnimation: {
+       duration: 250
+     }
+   }));
+
+   dataReadingPopupCloser.onclick = function() {
+      dataReadingPopupOverlay.setPosition(undefined);
+      dataReadingPopupCloser.blur();
+      return false;
+   };
 
    map = new ol.Map({
       target: 'map',
@@ -293,6 +313,7 @@ gisportal.mapInit = function() {
             zoomOutLabel: $('<span class="icon-zoom-out"></span>').appendTo('body')
          })
       ],
+      overlays: [dataReadingPopupOverlay],
       view: new ol.View({
          projection: gisportal.projection,
          center: [0, 0],
@@ -308,6 +329,18 @@ gisportal.mapInit = function() {
          return e.originalEvent.type=='mousemove';
       }
    }));
+
+   //add a click event to get the clicked point's data reading
+   map.on('singleclick', function(e) {
+      var lon = e.coordinate[0].toFixed(3);
+      var lat = e.coordinate[1].toFixed(3);
+      var elementId = 'dataValue'+ String(e.coordinate[0]).replace('.','') + String(e.coordinate[1]).replace('.','');
+      var response = '<p>Measurement at:<br /><em>Longtitude</em>: '+ lon +', <em>Latitude</em>: '+ lat +'</p><ul id="'+ elementId +'"><li class="loading">Loading...</li></ul>';
+      dataReadingPopupContent.innerHTML = response;
+      dataReadingPopupOverlay.setPosition(e.coordinate);
+
+      gisportal.getPointReading(e);
+   })
    
    // Get both master cache files from the server. These files tells the server
    // what layers to load for Operation (wms) and Reference (wcs) layers.
@@ -469,7 +502,7 @@ gisportal.loadState = function(state) {
          // this stops the map from auto zooming to the max extent of all loaded layers
          indicator.preventAutoZoom = true;
 
-         gisportal.refinePanel.foundIndicator(indicator.id);
+         gisportal.refinePanel.layerFound(indicator.id);
         
       }
    }
@@ -485,12 +518,6 @@ gisportal.loadState = function(state) {
       gisportal.vectorLayer.getSource().addFeatures(features);
    }
    
-   // Load Quick Regions
-   if (stateMap.regions) {
-      gisportal.quickRegion = stateMap.regions;
-      gisportal.quickRegions.setup();
-   }
-
    if (stateTimeline)  {
       gisportal.timeline.zoomDate(stateTimeline.minDate, stateTimeline.maxDate);
       if (stateMap.date) gisportal.timeline.setDate(new Date(stateMap.date));
@@ -683,7 +710,6 @@ gisportal.main = function() {
       else {
          console.log('Loading Default State...');
       }
-
    });
 };
 
@@ -905,4 +931,88 @@ gisportal.validateBrowser = function(){
       throw new Error( 'Invalid config.browserRestristion value "' + gisportal.config.browserRestristion + '"' );
    }
 
+}
+
+
+/**
+ *  Gets the value at the user selected point for all currently loaded layers
+ *  
+ */
+gisportal.getPointReading = function(e) {
+
+   var elementId = '#dataValue'+ String(e.coordinate[0]).replace('.','') + String(e.coordinate[1]).replace('.','');
+
+   $.each(gisportal.selectedLayers, function(i, selectedLayer) {
+      var layer = gisportal.layers[selectedLayer];
+      // build the request URL, starting with the WMS URL
+      var request = layer.wmsURL;
+      var pixel = e.pixel;
+      var bbox = map.getView().calculateExtent(map.getSize());
+
+      request += 'LAYERS=' + layer.urlName;
+      if (layer.elevation) {
+         // add the currently selected elevation
+      } else {
+         request += '&ELEVATION=0';
+      }
+      request += '&TIME=' + layer.selectedDateTime;
+      request += '&TRANSPARENT=true';
+      request += '&STYLES=boxfill/rainbow';
+      request += '&CRS=EPSG:4326';
+      request += '&COLORSCALERANGE='+ layer.minScaleVal +','+ layer.maxScaleVal;
+      request += '&NUMCOLORBANDS=253';
+      request += '&LOGSCALE=false';
+      request += '&SERVICE=WMS&VERSION=1.1.1';
+      request += '&REQUEST=GetFeatureInfo';
+      request += '&EXCEPTIONS=application/vnd.ogc.se_inimage';
+      request += '&FORMAT=image/png';
+      request += '&SRS=EPSG:4326';
+      request += '&BBOX='+ bbox;
+      request += '&X='+ pixel[0];
+      request += '&Y='+ pixel[1];
+      request += '&INFO_FORMAT=text/xml';
+      request += '&QUERY_LAYERS='+ layer.urlName;
+      request += '&WIDTH='+ $('#map').width();
+      request += '&HEIGHT='+ $('#map').height();
+      request += '&url='+ layer.wmsURL;
+      request += '&server='+ layer.wmsURL;
+
+      var jqxhr = $.get(request, function(data) {
+         console.log(data);
+         var value = data.documentElement.getElementsByTagName('value')[0].childNodes[0].nodeValue;
+         if (value) {
+            $(elementId +' .loading').remove();
+            $(elementId).prepend('<li>'+ layer.descriptiveName +': '+ value +' '+ layer.units +'</li>');
+         }
+      })
+      .fail(function() {
+         $(elementId +' .loading').remove();
+         $(elementId).prepend('<li>Sorry, could not calculate value for '+ layer.descriptiveName +'</li>');
+      });   
+
+   });
+   
+}
+
+/**
+ *  Hides all ol popups/overlays
+ */
+gisportal.hideAllPopups = function() {
+   var overlays = map.getOverlays().getArray();
+
+   $.each(overlays, function(i, overlay) {
+      overlay.setPosition(undefined);
+   })
+}
+
+gisportal.showModalMessage = function(html, timeout) {
+   var t = parseInt(timeout) || 2000;
+   var holder = $('.js-modal-message-popup');
+   var target = $('.js-modal-message-html');
+
+   target.html(html);
+   holder.toggleClass('hidden', false);
+   setTimeout(function() {
+      holder.toggleClass('hidden', true)
+   }, t);
 }
