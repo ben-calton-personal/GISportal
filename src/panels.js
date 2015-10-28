@@ -13,7 +13,8 @@ gisportal.panels.initDOM = function() {
 };
 
 gisportal.panels.showPanel = function(panelName) {
-
+	gisportal.hideAllPopups();
+	
 	$('[data-panel-name="' + gisportal.panels.activePanel + '"]').removeClass('active');
 	$('[data-panel-name="' + panelName + '"]').addClass('active');
 	if (gisportal.panels.activePanel !== null) {
@@ -28,7 +29,7 @@ gisportal.panels.showPanel = function(panelName) {
 gisportal.panels.bind('close-panel', function(ev, data) {
 
 	if (data['panel-name'] === 'active-layers') {
-		gisportal.events.emit('metadata.close');
+		gisportal.events.trigger('metadata.close');
 	}
 
 });

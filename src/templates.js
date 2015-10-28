@@ -10,35 +10,36 @@ gisportal.templates = {};
  * @param  {Function} callback Callback on completion 
  */
 gisportal.loadTemplates = function( callback ){
-	var waitingFor = 0;
 	var callback = callback || function(){};
+   
+   function compileTemplates(all_templates, status, request) {
+      var templates = all_templates.split('#####')
+      for (var i = 0; i< templates.length; i++) {
+         if (templates[i].length > 0) {
+            var t = templates[i].split('###')
+            var templateName = t[0].substring( 0, t[0].length - 4 );
+            gisportal.templates[ templateName ] = Handlebars.compile( t[1] );   
+         }
+      }
+      callback();
+   }
 
-	function compileTemplate( template, status, request ){
-		var templateName = request.fileName.substring( 0, request.fileName.length - 4 )
-		gisportal.templates[ templateName ] = Handlebars.compile( template );
+   $.ajax({
+      url: 'templates/all_templates.mst',
+      success: compileTemplates
+   })
+   
+   gisportal.templatesLoaded = true;
+   gisportal.events.trigger("templates-loaded");
 
-		waitingFor--;
-		if( waitingFor == 0 )
-			callback();
-	}
-	
-	$.ajax({
-		url: 'templates/',
-		success: function( data ){
-			reg = RegExp(/href="(.+.mst?)"/g);
-			var match;
-			while (match = reg.exec(data)) {
-				waitingFor++;
-				var request = $.ajax({
-					url: 'templates/' + match[1],
-					success: compileTemplate
-				})
-				request.fileName = match[1];
-			};
-		}
-	})
-}
+};
 
+/**
+ * Runs an image through the middleware to rotate it on the server
+ * @param  {[string]} imgUrl URL of the original image you want to rotate
+ * @param  {[init]} angle The angle to rotate the image by
+ * @return {[string]} The new image URL
+ */
 Handlebars.registerHelper('rotate_image', function(imgUrl, angle) {
   return "/service/rotate?angle=" + angle + "&url=" + encodeURIComponent(imgUrl);
 });
@@ -49,6 +50,14 @@ Handlebars.registerHelper('if_equals', function(attr1, attr2, options) {
 });
 
 
+Handlebars.registerHelper('equals', function(attr1, attr2, options) {
+   return ( attr1 == attr2 )
+});
+
+
+/**
+ * Returns the index of the current handelbars loop + 1
+ */
 Handlebars.registerHelper('index_plus_one', function( options ) {
    return options.data.index + 1;
 });
